@@ -1,0 +1,131 @@
+.benefits-section {
+  padding: 5rem 0;
+  background-color: var(--off-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.benefits-bg-shape {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(
+    135deg,
+    rgba(46, 49, 146, 0.03) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.benefits-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.benefits-title {
+  font-size: var(--font-3xl);
+  margin-top: 0.5rem;
+  color: var(--black);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.benefit-card {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.benefit-icon {
+  margin-bottom: 1.5rem;
+  color: transparent;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    135deg,
+    var(--primary-blue) 0%,
+    var(--primary-red) 100%
+  );
+  border-radius: 50%;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.benefit-title {
+  font-size: var(--font-lg);
+  margin-bottom: 1rem;
+  color: var(--black);
+  font-weight: 600;
+}
+
+.benefit-description {
+  font-size: var(--font-base);
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+@media (max-width: 990px) {
+  .benefits-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits-section {
+    padding: 4rem 0;
+  }
+
+  .benefits-title {
+    font-size: var(--font-2xl);
+  }
+
+  .benefits-header {
+    margin-bottom: 3rem;
+  }
+
+  .benefit-card {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .benefits-section {
+    padding: 3rem 0;
+  }
+}
