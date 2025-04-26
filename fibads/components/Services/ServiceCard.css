@@ -1,0 +1,128 @@
+.service-card {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 400px;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.service-icon {
+  margin-bottom: 1.5rem;
+}
+
+.icon-container {
+  width: 70px;
+  height: 70px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .icon-container {
+  transform: scale(1.1);
+}
+
+.service-icon-branding {
+  background: linear-gradient(135deg, #ff6b52 0%, #f33007 100%);
+}
+
+.service-icon-web {
+  background: linear-gradient(135deg, #4d4fc8 0%, #2e3192 100%);
+}
+
+.service-icon-ads {
+  background: linear-gradient(135deg, #2e3192 0%, #f33007 100%);
+}
+
+.service-title {
+  font-size: var(--font-xl);
+  margin-bottom: 1.5rem;
+  color: var(--black);
+  font-weight: 700;
+}
+
+.service-content {
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.service-item {
+  margin-bottom: 1.5rem;
+}
+
+.service-item:last-child {
+  margin-bottom: 0;
+}
+
+.service-item-title {
+  font-size: var(--font-base);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--dark-gray);
+}
+
+.service-item-description {
+  font-size: var(--font-base);
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+.service-image {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.service-image img {
+  width: 100%;
+  height: auto;
+  transition: all 0.8s ease;
+}
+
+.service-card:hover .service-image img {
+  transform: scale(1.05);
+}
+
+.service-button {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: var(--primary-blue);
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  font-size: var(--font-sm);
+  margin-top: auto;
+}
+
+.service-button svg {
+  transition: transform 0.3s ease;
+}
+
+.service-button:hover {
+  color: var(--primary-red);
+}
+
+.service-button:hover svg {
+  transform: translateX(3px);
+}
+
+@media (max-width: 768px) {
+  .service-card {
+    padding: 2rem;
+  }
+}
