@@ -1,10 +1,12 @@
 import "./ServiceCard.css";
 
-const ServiceCard = ({ service, index }) => {
+const ServiceCard = ({ service, index, animationDelay }) => {
   return (
     <div
-      className={`service-card reveal`}
-      style={{ animationDelay: `${index * 0.2}s` }}
+      className="service-card gradient-border"
+      data-aos="fade-up"
+      data-aos-duration="800"
+      data-aos-delay={animationDelay}
     >
       <div className="service-icon">
         <div className={`icon-container ${service.iconClass}`}>
@@ -104,7 +106,7 @@ const ServiceCard = ({ service, index }) => {
         </div>
       </div>
 
-      <h3 className="service-title">{service.title}</h3>
+      <h3 className="service-title ethno-text">{service.title}</h3>
 
       <div className="service-content">
         {service.items.map((item, i) => (
@@ -117,9 +119,12 @@ const ServiceCard = ({ service, index }) => {
 
       <div className="service-image">
         <img src={service.imageUrl} alt={service.title} />
+        <div className="service-image-overlay">
+          <span className="ethno-text">Bekijk</span>
+        </div>
       </div>
 
-      <a href={service.btnLink} className="service-button">
+      <a href={service.btnLink} className="service-button btn-3d">
         {service.btnText}
         <svg
           width="16"

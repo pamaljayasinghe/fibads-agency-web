@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 @import "../styles/variables.css";
 @import "../styles/animations.css";
+@import "../styles/effects.css";
 
 /* Reset and base styles */
 * {
@@ -17,6 +18,13 @@ body {
   overflow-x: hidden;
   line-height: 1.6;
   transition: background-color 0.5s ease;
+  position: relative;
+  padding-top: env(safe-area-inset-top, 0); /* For iOS devices */
+}
+
+/* Remove custom cursor */
+body.custom-cursor {
+  cursor: auto;
 }
 
 @font-face {
@@ -41,14 +49,18 @@ h5 {
 
 h1 {
   font-size: 3.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 h2 {
   font-size: 2.5rem;
+  letter-spacing: 1.5px;
 }
 
 h3 {
   font-size: 1.75rem;
+  letter-spacing: 1px;
 }
 
 p {
@@ -59,6 +71,7 @@ a {
   color: inherit;
   text-decoration: none;
   transition: all 0.3s ease;
+  position: relative;
 }
 
 a:hover {
@@ -81,10 +94,16 @@ button {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .section {
   padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+  opacity: 1 !important; /* Ensure sections are visible */
+  visibility: visible !important;
 }
 
 .section-label {
@@ -95,8 +114,60 @@ button {
   margin-bottom: 0.5rem;
   letter-spacing: 1px;
   opacity: 0.8;
+  font-family: "Ethnocentric", sans-serif;
+  letter-spacing: 2px;
 }
 
+/* Optimize AOS animations */
+[data-aos] {
+  opacity: 0;
+  transition-property: transform, opacity;
+  pointer-events: auto; /* Enable interactions */
+  will-change: transform, opacity; /* Performance optimization */
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+[data-aos="fade-up"] {
+  transform: translate3d(0, 30px, 0); /* Reduced distance for smoother effect */
+}
+
+[data-aos="fade-down"] {
+  transform: translate3d(0, -30px, 0);
+}
+
+[data-aos="fade-left"] {
+  transform: translate3d(-30px, 0, 0);
+}
+
+[data-aos="fade-right"] {
+  transform: translate3d(30px, 0, 0);
+}
+
+[data-aos="zoom-in"] {
+  transform: scale(0.95); /* Less dramatic for better performance */
+}
+
+[data-aos="zoom-out"] {
+  transform: scale(1.05);
+}
+
+[data-aos].aos-animate {
+  transform: translate3d(0, 0, 0);
+}
+
+[data-aos="zoom-in"].aos-animate {
+  transform: scale(1);
+}
+
+[data-aos="zoom-out"].aos-animate {
+  transform: scale(1);
+}
+
+/* Standard animations */
 .fade-in {
   animation: fadeIn 1s ease-in-out;
 }
@@ -128,6 +199,7 @@ button {
     var(--primary-red) 100%
   );
   color: white;
+  background-size: 200% 200%;
 }
 
 .gradient-text {
@@ -141,25 +213,118 @@ button {
   color: transparent;
 }
 
-/* Dark mode specific styles */
-.dark-mode {
-  /* Add any additional dark mode specific styles */
+/* Beautiful scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    135deg,
+    var(--primary-blue) 0%,
+    var(--primary-red) 100%
+  );
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-red);
+}
+
+/* Fix section stacking and display issues */
+main {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh; /* Ensure main content fills the screen */
+  display: block; /* Changed from flex to block for better compatibility */
+  overflow: visible !important;
+}
+
+main > section {
+  position: relative;
+  z-index: 1;
+  display: block; /* Ensure sections display properly */
+}
+
+/* Optimize spacing for sections that come right after the header */
+main > section:first-child {
+  padding-top: 0 !important; /* No extra padding */
+}
+
+/* Fix section spacing and visibility */
+section {
+  position: relative;
+  z-index: 1;
+  overflow: visible !important; /* Ensure all sections are visible */
+}
+
+/* Fix stacking context issues */
+.skew-divider,
+.wave-divider {
+  z-index: 2;
+  overflow: visible !important; /* Prevent clipping of dividers */
+}
+
+/* Fix z-index issues with content sections */
+.cta-section {
+  position: relative;
+  z-index: 5 !important; /* Higher z-index to ensure visibility */
+  isolation: isolate;
+  z-index: 10 !important;
+}
+
+main > section:last-child {
+  margin-bottom: 0; /* Remove extra space after the last section */
+}
+
+/* Extra space for dividers between sections */
+.services-section {
+  margin-bottom: -1px;
+}
+
+.benefits-section {
+  margin-top: -1px;
+}
+
+/* Always show section content */
+.container {
+  z-index: 2;
+}
+
+/* Dark mode overflow fixes */
+.dark-mode section {
+  background-color: var(--dark-bg);
 }
 
 @media (max-width: 768px) {
   h1 {
     font-size: 2.5rem;
+    letter-spacing: 1.5px;
   }
 
   h2 {
     font-size: 2rem;
+    letter-spacing: 1px;
   }
 
   h3 {
     font-size: 1.5rem;
+    letter-spacing: 0.75px;
   }
 
   .section {
     padding: 3rem 0;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  main > section:first-child {
+    padding-top: calc(70px + 3rem); /* Adjusted space on mobile */
   }
 }

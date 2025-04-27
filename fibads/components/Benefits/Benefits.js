@@ -151,26 +151,63 @@ const Benefits = () => {
   ];
 
   return (
-    <section className="benefits-section">
-      <div className="benefits-bg-shape"></div>
+    <section className="benefits-section" id="benefits">
+      {/* Add visual elements to reduce empty space */}
+      <div className="benefits-background">
+        <div className="benefits-bg-shape"></div>
+        <div className="benefits-bg-shape shape-2"></div>
+        <div className="benefits-particle-grid"></div>
+      </div>
+
       <div className="container">
-        <div className="benefits-header reveal">
+        <div className="benefits-header" data-aos="fade-up">
           <span className="section-label">Voordelen</span>
           <h2 className="benefits-title">Bereik natuurlijk succes</h2>
+          <p className="benefits-subtitle">
+            Ontdek hoe onze aanpak jouw bedrijf helpt groeien met een effectieve
+            en natuurlijke strategie
+          </p>
         </div>
 
         <div className="benefits-grid">
           {benefits.map((benefit, index) => (
             <div
               key={benefit.id}
-              className={`benefit-card reveal`}
-              style={{ animationDelay: `${index * 0.15}s` }}
+              className="benefit-card"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
             >
               <div className="benefit-icon">{benefit.icon}</div>
               <h3 className="benefit-title">{benefit.title}</h3>
               <p className="benefit-description">{benefit.description}</p>
+
+              {/* Add feature bullets to reduce empty space */}
+              <ul className="benefit-features">
+                <li>Strategische aanpak</li>
+                <li>Meetbare resultaten</li>
+                <li>Persoonlijke ondersteuning</li>
+              </ul>
             </div>
           ))}
+        </div>
+
+        {/* Add extra visual element at the bottom */}
+        <div className="benefits-cta" data-aos="fade-up">
+          <a href="/contact" className="benefits-button">
+            Ontdek wat wij voor je kunnen doen
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
         </div>
       </div>
     </section>

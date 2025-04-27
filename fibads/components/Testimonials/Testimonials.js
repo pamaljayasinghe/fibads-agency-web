@@ -29,10 +29,10 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="testimonials-section">
+    <section className="testimonials-section" id="testimonials">
       <div className="testimonials-bg-shape"></div>
       <div className="container">
-        <div className="testimonials-header reveal">
+        <div className="testimonials-header" data-aos="fade-up">
           <span className="section-label">Ervaringen</span>
           <h2 className="testimonials-title">Wat onze klanten zeggen</h2>
         </div>
@@ -41,8 +41,10 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.id}
-              className="testimonial-card reveal"
-              style={{ animationDelay: `${index * 0.15}s` }}
+              className="testimonial-card"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+              data-aos-offset="200"
             >
               <div className="testimonial-rating">
                 {[...Array(testimonial.rating)].map((_, i) => (

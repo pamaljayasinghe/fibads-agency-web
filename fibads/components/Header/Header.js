@@ -1,9 +1,56 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import "./Header.css";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  let lastScrollTop = 0;
+
+  // Handle scroll effects
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > 50) {
+        setScrolled(true);
+        if (scrollTop > lastScrollTop) {
+          setHidden(true);
+        } else {
+          setHidden(false);
+        }
+      } else {
+        setScrolled(false);
+        setHidden(false);
+      }
+
+      lastScrollTop = scrollTop;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    // Lock/unlock body scroll when menu is open/closed
+    if (!isMenuOpen) {
+      document.body.classList.add("menu-open");
+    } else {
+      document.body.classList.remove("menu-open");
+    }
+  };
+
   return (
-    <header className="header">
+    <header
+      className={`header ${scrolled ? "scrolled" : ""} ${
+        hidden ? "hidden" : ""
+      }`}
+    >
       <div className="container header-container">
         <div className="logo-container">
           <a href="/" className="logo">
@@ -11,6 +58,7 @@ const Header = () => {
           </a>
         </div>
 
+        {/* Adjusted nav styling to align properly */}
         <nav className="main-nav">
           <ul className="nav-links">
             <li>
@@ -36,6 +84,7 @@ const Header = () => {
           </ul>
         </nav>
 
+        {/* DarkModeToggle and CTA button */}
         <div className="header-actions">
           <DarkModeToggle />
 
@@ -51,20 +100,24 @@ const Header = () => {
               >
                 <path
                   d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z"
-                  fill="white"
+                  fill="currentColor"
                 />
               </svg>
             </a>
           </div>
         </div>
 
-        <button className="mobile-menu-toggle" aria-label="Toggle Mobile Menu">
+        <button
+          className={`mobile-menu-toggle ${isMenuOpen ? "active" : ""}`}
+          aria-label="Toggle Mobile Menu"
+          onClick={toggleMenu}
+        >
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
         </button>
 
-        <div className="mobile-menu">
+        <div className={`mobile-menu ${isMenuOpen ? "active" : ""}`}>
           <ul className="mobile-nav-links">
             <li>
               <a href="/diensten" className="mobile-nav-link">
@@ -99,46 +152,6 @@ const Header = () => {
           </ul>
         </div>
       </div>
-
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-        document.addEventListener('DOMContentLoaded', function() {
-          const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-          const mobileMenu = document.querySelector('.mobile-menu');
-          const body = document.body;
-          
-          mobileMenuToggle.addEventListener('click', function() {
-            this.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            body.classList.toggle('menu-open');
-          });
-          
-          // Header scroll effect
-          const header = document.querySelector('.header');
-          let lastScrollTop = 0;
-          
-          window.addEventListener('scroll', function() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            if (scrollTop > 50) {
-              header.classList.add('scrolled');
-              if (scrollTop > lastScrollTop) {
-                header.classList.add('hidden');
-              } else {
-                header.classList.remove('hidden');
-              }
-            } else {
-              header.classList.remove('scrolled');
-              header.classList.remove('hidden');
-            }
-            
-            lastScrollTop = scrollTop;
-          });
-        });
-      `,
-        }}
-      />
     </header>
   );
 };

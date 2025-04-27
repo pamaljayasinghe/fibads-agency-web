@@ -67,17 +67,45 @@ const Services = () => {
 
   return (
     <section className="services-section">
+      <div className="mesh-gradient mesh-gradient-1"></div>
+      <div className="noise-overlay"></div>
+
       <div className="container">
-        <div className="services-header reveal">
+        <div
+          className="services-header"
+          data-aos="fade-up"
+          data-aos-duration="800"
+        >
           <span className="section-label">Diensten</span>
-          <h2 className="services-title">Op maat voor jouw bedrijf</h2>
+          <h2 className="services-title text-gradient">
+            Op maat voor jouw bedrijf
+          </h2>
         </div>
 
         <div className="services-grid">
           {services.map((service, index) => (
-            <ServiceCard key={service.id} service={service} index={index} />
+            <ServiceCard
+              key={service.id}
+              service={service}
+              index={index}
+              animationDelay={index * 200}
+            />
           ))}
         </div>
+      </div>
+
+      <div className="skew-divider">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+            className="shape-fill"
+          ></path>
+        </svg>
       </div>
     </section>
   );

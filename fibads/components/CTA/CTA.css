@@ -1,8 +1,26 @@
 .cta-section {
-  padding: 5rem 0;
-  background-color: var(--white);
+  padding: 10rem 0; /* Much more padding */
   position: relative;
-  overflow: hidden;
+  z-index: 10; /* Very high z-index to ensure visibility */
+  margin: 6rem 0; /* More margin for separation */
+  background: linear-gradient(
+    135deg,
+    rgba(46, 49, 146, 0.15) 0%,
+    rgba(243, 48, 7, 0.15) 100%
+  ); /* Stronger gradient */
+  border: none; /* Remove borders for less boxy look */
+  overflow: visible;
+}
+
+.dark-mode .cta-section {
+  background: linear-gradient(
+    135deg,
+    rgba(46, 49, 146, 0.25) 0%,
+    rgba(243, 48, 7, 0.25) 100%
+  );
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
 }
 
 .cta-section::before {
@@ -20,6 +38,49 @@
   z-index: 0;
 }
 
+/* Add a dramatic background pattern */
+.cta-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+/* More dramatic background shapes */
+.cta-bg-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.8;
+}
+
+.cta-shape-1 {
+  width: 600px;
+  height: 600px;
+  background-color: rgba(46, 49, 146, 0.2);
+  top: -20%;
+  right: -10%;
+}
+
+.cta-shape-2 {
+  width: 550px;
+  height: 550px;
+  background-color: rgba(243, 48, 7, 0.2);
+  bottom: -20%;
+  left: -10%;
+}
+
+.dark-mode .cta-shape-1 {
+  background-color: rgba(66, 69, 166, 0.2);
+}
+
+.dark-mode .cta-shape-2 {
+  background-color: rgba(243, 58, 17, 0.15);
+}
+
 .cta-wrapper {
   position: relative;
   z-index: 1;
@@ -32,59 +93,132 @@
 }
 
 .cta-title {
-  font-size: var(--font-2xl);
-  margin: 0.5rem 0 3rem;
+  font-size: var(--font-4xl); /* Much larger title */
+  margin: 0.5rem 0 5rem; /* More space below title */
   color: var(--black);
+  position: relative;
+  display: inline-block;
+  /* Gradient text effect */
+  background: linear-gradient(
+    135deg,
+    var(--primary-blue) 0%,
+    var(--primary-red) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cta-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -15px; /* Lower position */
+  transform: translateX(-50%);
+  width: 100px; /* Wider line */
+  height: 4px; /* Thicker line */
+  background: linear-gradient(
+    135deg,
+    var(--primary-blue) 0%,
+    var(--primary-red) 100%
+  );
+  border-radius: 3px;
 }
 
 .cta-boxes {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 4rem; /* Wider gap */
 }
 
+/* Make CTA boxes stand out more */
 .cta-box {
   background-color: var(--white);
   border-radius: var(--radius-lg);
-  padding: 2.5rem;
-  box-shadow: var(--shadow-md);
+  padding: 3.5rem; /* Even more padding */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); /* Stronger shadow */
   text-align: left;
   transition: all 0.3s ease;
-  border: 1px solid var(--light-gray);
+  border: none; /* Remove border */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transform: translateY(0); /* Starting position */
+}
+
+.dark-mode .cta-box {
+  background-color: var(--dark-surface);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.cta-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px; /* Wider accent line */
+  height: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--primary-blue),
+    var(--primary-red)
+  );
+  transition: height 0.4s ease;
+  z-index: -1;
 }
 
 .cta-box:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-15px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
 }
 
+.dark-mode .cta-box:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.cta-box:hover::before {
+  height: 100%;
+}
+
+/* Larger title */
 .cta-box-title {
-  font-size: var(--font-lg);
-  margin-bottom: 1rem;
+  font-size: var(--font-2xl);
+  margin-bottom: 1.5rem;
   color: var(--black);
-  font-weight: 600;
+  font-weight: 700;
+}
+
+.dark-mode .cta-box-title {
+  color: var(--dark-text);
 }
 
 .cta-box-description {
-  font-size: var(--font-base);
+  font-size: var(--font-md); /* Larger text */
   color: var(--gray);
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+  line-height: 1.7; /* Increased line height */
+  margin-bottom: 2rem; /* More space before button */
 }
 
+/* Make buttons more prominent */
 .cta-box-button {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.8rem 1.5rem;
+  gap: 0.6rem;
+  padding: 1rem 2rem; /* Larger padding */
   border-radius: var(--radius-full);
   font-weight: 600;
-  font-size: var(--font-sm);
+  font-size: var(--font-base);
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin-top: 1.5rem; /* More space above button */
 }
 
 .cta-box-button svg {
   transition: transform 0.3s ease;
+  position: relative;
+  z-index: 2;
 }
 
 .cta-box-button:hover svg {
@@ -103,16 +237,47 @@
   background-size: 200% auto;
 }
 
+.cta-box-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transition: all 0.6s ease;
+  z-index: 1;
+}
+
 .cta-box-button:hover {
   background-position: right center;
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
+.cta-box-button:hover::before {
+  left: 100%;
+}
+
+.cta-box-button span {
+  position: relative;
+  z-index: 2;
+}
+
 .cta-box-button.secondary {
   background: transparent;
   color: var(--dark-gray);
   border: 2px solid var(--light-gray);
+}
+
+.dark-mode .cta-box-button.secondary {
+  color: var(--dark-text);
+  border-color: var(--dark-border);
 }
 
 .cta-box-button.secondary:hover {
@@ -122,34 +287,45 @@
   box-shadow: var(--shadow-sm);
 }
 
+.dark-mode .cta-box-button.secondary:hover {
+  border-color: var(--dark-primary-blue);
+  color: var (--dark-primary-blue);
+}
+
 @media (max-width: 768px) {
   .cta-section {
-    padding: 4rem 0;
+    padding: 7rem 0;
+    margin: 4rem 0;
   }
 
   .cta-title {
-    font-size: var(--font-xl);
-    margin-bottom: 2rem;
+    font-size: var(--font-3xl);
+    margin-bottom: 4rem;
   }
 
   .cta-boxes {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
     max-width: 550px;
     margin: 0 auto;
   }
 
   .cta-box {
-    padding: 2rem;
+    padding: 2.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .cta-section {
-    padding: 3rem 0;
+    padding: 5rem 0;
+    margin: 2rem 0;
   }
 
   .cta-box {
-    padding: 1.5rem;
+    padding: 2rem;
+  }
+
+  .cta-box-title {
+    font-size: var(--font-xl);
   }
 }

@@ -14,39 +14,17 @@ export default function RootLayout({ children }) {
     <html lang="nl">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+
+        {/* Third-party libraries - load with defer to improve performance */}
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+        />
+
         {/* Dark mode initialization script */}
         <script
           dangerouslySetInnerHTML={{
             __html: initDarkMode(),
-          }}
-        />
-        {/* Animation script */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-            document.addEventListener('DOMContentLoaded', function() {
-              // Scroll reveal animation
-              function revealOnScroll() {
-                var reveals = document.querySelectorAll(".reveal");
-                
-                for (var i = 0; i < reveals.length; i++) {
-                  var windowHeight = window.innerHeight;
-                  var elementTop = reveals[i].getBoundingClientRect().top;
-                  var elementVisible = 150;
-                  
-                  if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                  }
-                }
-              }
-              
-              window.addEventListener("scroll", revealOnScroll);
-              revealOnScroll(); // Check on load
-              
-              // Add fade-in animation to page load
-              document.body.classList.add('fade-in');
-            });
-          `,
           }}
         />
       </head>
@@ -54,6 +32,39 @@ export default function RootLayout({ children }) {
         <Header />
         <main>{children}</main>
         <Footer />
+
+        {/* Load scripts at the end for better performance */}
+        <script
+          src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"
+          defer
+        ></script>
+
+        {/* Initialize AOS with simpler configuration */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            document.addEventListener('DOMContentLoaded', function() {
+              // Initialize AOS with minimal settings
+              if (typeof AOS !== 'undefined') {
+                AOS.init({
+                  duration: 800,
+                  once: true,
+                  disable: 'mobile'
+                });
+              }
+              
+              // Make sure AOS refreshes on window resize
+              window.addEventListener('resize', function() {
+                if (typeof AOS !== 'undefined') {
+                  setTimeout(function() {
+                    AOS.refresh();
+                  }, 500);
+                }
+              });
+            });
+          `,
+          }}
+        />
       </body>
     </html>
   );
