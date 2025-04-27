@@ -22,7 +22,7 @@
 /* Slide animations */
 @keyframes slideUp {
   from {
-    transform: translateY(50px);
+    transform: translateY(40px);
     opacity: 0;
   }
   to {
@@ -44,7 +44,7 @@
 
 @keyframes slideInLeft {
   from {
-    transform: translateX(-100px);
+    transform: translateX(-40px);
     opacity: 0;
   }
   to {
@@ -55,7 +55,7 @@
 
 @keyframes slideInRight {
   from {
-    transform: translateX(100px);
+    transform: translateX(40px);
     opacity: 0;
   }
   to {
@@ -154,13 +154,29 @@
 /* Scroll reveal class - to be used with JavaScript */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
+  transition: transform 1s ease, opacity 1s ease;
 }
 
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Apply specific starting positions for reveal elements */
+.reveal[data-direction="up"] {
+  transform: translateY(40px);
+}
+
+.reveal[data-direction="down"] {
+  transform: translateY(-40px);
+}
+
+.reveal[data-direction="left"] {
+  transform: translateX(40px);
+}
+
+.reveal[data-direction="right"] {
+  transform: translateX(-40px);
 }
 
 /* Stagger animations for lists */
@@ -191,16 +207,60 @@
 /* Floating animation */
 @keyframes float {
   0% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
   50% {
     transform: translateY(-10px);
   }
   100% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 }
 
 .floating {
   animation: float 4s ease-in-out infinite;
+}
+
+/* Glow animation */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(46, 49, 146, 0.3), 0 0 10px rgba(243, 48, 7, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(46, 49, 146, 0.4), 0 0 20px rgba(243, 48, 7, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(46, 49, 146, 0.3), 0 0 10px rgba(243, 48, 7, 0.2);
+  }
+}
+
+/* Theme transition */
+@keyframes themeTransition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Delay classes */
+.delay-100 {
+  transition-delay: 0.1s;
+}
+
+.delay-200 {
+  transition-delay: 0.2s;
+}
+
+.delay-300 {
+  transition-delay: 0.3s;
+}
+
+.delay-400 {
+  transition-delay: 0.4s;
+}
+
+.delay-500 {
+  transition-delay: 0.5s;
 }
