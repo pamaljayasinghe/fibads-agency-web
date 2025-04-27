@@ -13,10 +13,22 @@ export default function RootLayout({ children }) {
     <html lang="nl">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        {/* Add script for animations */}
+        <meta name="theme-color" content="#2e3192" />
+        <meta name="color-scheme" content="light dark" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        {/* Add script for animations and theme */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
+            // Check for saved theme preference or use device preference
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const savedTheme = localStorage.getItem('theme');
+            
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+              document.documentElement.classList.add('dark-mode');
+            }
+            
             document.addEventListener('DOMContentLoaded', function() {
               // Scroll reveal animation
               function revealOnScroll() {

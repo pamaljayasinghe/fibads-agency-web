@@ -10,12 +10,18 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: #fff;
-  color: #333;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   overflow-x: hidden;
   line-height: 1.6;
+  transition: background-color 0.5s ease;
 }
 
 @font-face {
@@ -35,6 +41,7 @@ h5 {
   margin-bottom: 1rem;
   line-height: 1.2;
   letter-spacing: 0.5px;
+  transition: color 0.5s ease;
 }
 
 h1 {
@@ -51,6 +58,7 @@ h3 {
 
 p {
   margin-bottom: 1rem;
+  transition: color 0.5s ease;
 }
 
 a {
@@ -60,7 +68,7 @@ a {
 }
 
 a:hover {
-  color: var(--primary-red);
+  color: var(--accent-primary);
 }
 
 img {
@@ -93,6 +101,7 @@ button {
   margin-bottom: 0.5rem;
   letter-spacing: 1px;
   opacity: 0.8;
+  transition: color 0.5s ease;
 }
 
 .fade-in {
@@ -120,23 +129,98 @@ button {
 }
 
 .gradient-bg {
-  background: linear-gradient(
-    135deg,
-    var(--primary-blue) 0%,
-    var(--primary-red) 100%
-  );
+  background: var(--accent-gradient);
   color: white;
 }
 
 .gradient-text {
-  background: linear-gradient(
-    135deg,
-    var(--primary-blue) 0%,
-    var(--primary-red) 100%
-  );
+  background: var(--logo-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* Modern card styling */
+.modern-card {
+  background-color: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease, background-color 0.5s ease, box-shadow 0.5s ease;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.modern-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Glass effect for certain elements */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .glass-effect {
+  background: rgba(18, 18, 41, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--accent-gradient);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+  transform: translateY(-2px);
+}
+
+/* Improved section styling */
+.modern-section {
+  position: relative;
+  padding: 6rem 0;
+  overflow: hidden;
+}
+
+.modern-section::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: var(--card-gradient);
+  z-index: -1;
+  opacity: 0.5;
 }
 
 @media (max-width: 768px) {
@@ -154,5 +238,9 @@ button {
 
   .section {
     padding: 3rem 0;
+  }
+
+  .modern-section {
+    padding: 4rem 0;
   }
 }

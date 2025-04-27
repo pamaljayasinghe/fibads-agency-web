@@ -1,6 +1,11 @@
 .footer {
-  background-color: var(--dark-gray);
-  color: var(--light-gray);
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.dark-mode .footer {
+  background-color: #0f0f24;
 }
 
 .footer-top {
@@ -26,7 +31,7 @@
   font-family: "Ethnocentric", sans-serif;
   font-size: 1.5rem;
   letter-spacing: 1px;
-  color: white;
+  color: var(--text-primary);
 }
 
 .footer-description {
@@ -49,16 +54,13 @@
   height: 40px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  color: white;
+  color: var(--text-primary);
   transition: all 0.3s ease;
 }
 
 .social-link:hover {
-  background: linear-gradient(
-    135deg,
-    var(--primary-blue) 0%,
-    var(--primary-red) 100%
-  );
+  background: var(--accent-gradient);
+  color: white;
   transform: translateY(-3px);
 }
 
@@ -66,7 +68,7 @@
   font-size: var(--font-md);
   font-weight: 600;
   margin-bottom: 1.5rem;
-  color: white;
+  color: var(--text-primary);
 }
 
 .footer-menu,
@@ -86,6 +88,7 @@
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
+  color: var(--text-secondary);
 }
 
 .footer-link::after {
@@ -95,17 +98,13 @@
   height: 1px;
   bottom: -2px;
   left: 0;
-  background: linear-gradient(
-    135deg,
-    var(--primary-blue) 0%,
-    var(--primary-red) 100%
-  );
+  background: var(--accent-gradient);
   transition: width 0.3s ease;
 }
 
 .footer-link:hover {
   opacity: 1;
-  color: white;
+  color: var(--text-primary);
 }
 
 .footer-link:hover::after {
@@ -127,16 +126,17 @@
 
 .contact-item a {
   transition: all 0.3s ease;
+  color: var(--text-secondary);
 }
 
 .contact-item:hover a {
-  color: white;
+  color: var(--text-primary);
   opacity: 1;
 }
 
 .footer-bottom {
   padding: 1.5rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--border-color);
 }
 
 .footer-bottom-content {
@@ -161,11 +161,12 @@
   font-size: var(--font-xs);
   opacity: 0.6;
   transition: all 0.3s ease;
+  color: var(--text-secondary);
 }
 
 .legal-link:hover {
   opacity: 1;
-  color: white;
+  color: var(--text-primary);
 }
 
 @media (max-width: 1024px) {
