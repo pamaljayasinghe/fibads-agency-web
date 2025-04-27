@@ -2,7 +2,7 @@
   position: relative;
   padding: 8rem 0 2rem;
   overflow: hidden;
-  background-color: var(--bg-primary);
+  background-color: var(--white);
 }
 
 .hero-background {
@@ -29,14 +29,6 @@
   z-index: var(--z-negative);
 }
 
-.dark-mode .hero-gradient {
-  background: radial-gradient(
-    ellipse at center,
-    rgba(46, 49, 146, 0.08) 0%,
-    rgba(18, 18, 41, 0) 70%
-  );
-}
-
 .hero-container {
   display: flex;
   align-items: center;
@@ -58,13 +50,13 @@
   line-height: 1.1;
   font-weight: 700;
   letter-spacing: 0.5px;
-  color: var(--text-primary);
+  color: var(--black);
 }
 
 .hero-description {
   font-size: var(--font-md);
   line-height: 1.6;
-  color: var(--text-secondary);
+  color: var(--gray);
   margin-bottom: 2rem;
   max-width: 550px;
 }
@@ -95,7 +87,11 @@
 }
 
 .hero-button.primary {
-  background: var(--accent-gradient);
+  background: linear-gradient(
+    135deg,
+    var(--primary-blue) 0%,
+    var(--primary-red) 100%
+  );
   color: white;
   box-shadow: var(--shadow-md);
   border: none;
@@ -110,8 +106,8 @@
 
 .hero-button.secondary {
   background: transparent;
-  color: var(--text-secondary);
-  border: 2px solid var(--border-color);
+  color: var(--dark-gray);
+  border: 2px solid var(--light-gray);
 }
 
 .hero-button.secondary:hover {
@@ -140,7 +136,11 @@
   position: relative;
   width: 100%;
   height: 100%;
-  background: var(--accent-gradient);
+  background: linear-gradient(
+    135deg,
+    var(--primary-blue) 0%,
+    var(--primary-red) 100%
+  );
   border-radius: 12px;
   overflow: hidden;
   box-shadow: var(--shadow-xl);
@@ -182,9 +182,9 @@
 }
 
 .partner-logos {
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--light-gray);
   padding: 2rem 0;
-  background-color: var(--bg-secondary);
+  background-color: var(--off-white);
 }
 
 .partner-logos-wrapper {
@@ -197,22 +197,13 @@
 
 .partner-logo {
   opacity: 0.7;
-  transition: opacity 0.3s ease, filter 0.3s ease;
+  transition: opacity 0.3s ease;
   filter: grayscale(100%);
-}
-
-.dark-mode .partner-logo {
-  filter: grayscale(100%) invert(1);
 }
 
 .partner-logo:hover {
   opacity: 1;
   filter: grayscale(0%);
-}
-
-.dark-mode .partner-logo:hover {
-  opacity: 1;
-  filter: grayscale(0%) invert(1);
 }
 
 @media (max-width: 1024px) {
