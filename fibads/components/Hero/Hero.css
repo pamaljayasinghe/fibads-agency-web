@@ -8,6 +8,7 @@
   flex-direction: column;
   justify-content: center;
   z-index: 1;
+  width: 100%;
 }
 
 .particles-container {
@@ -267,25 +268,28 @@
   }
 }
 
-/* Enhance hero container spacing */
+/* Restore hero container spacing */
 .hero-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
   z-index: var(--z-elevate);
-  padding: 10rem 0 5rem; /* Push content down to compensate for header */
+  padding: 9rem 2rem 5rem; /* Adjusted padding */
+  width: 100%;
+  max-width: 1300px; /* Match site's original container width */
+  margin: 0 auto;
 }
 
 .hero-content {
   flex: 1;
-  max-width: 600px;
-  padding-right: 2rem;
+  max-width: 580px; /* Adjusted width */
+  padding-right: 2rem; /* Reduced padding */
 }
 
 .hero-title {
-  margin: 0.5rem 0 1.5rem;
-  font-size: 4.5rem;
+  margin: 0.5rem 0 1.5rem; /* Reduced margin */
+  font-size: 4rem; /* Adjusted size */
   line-height: 1.1;
   font-weight: 700;
   background: linear-gradient(
@@ -297,20 +301,8 @@
   background-clip: text;
   color: transparent;
   position: relative;
-  letter-spacing: 2px;
-  /* Enhanced 3D text effect */
+  letter-spacing: 2px; /* Reduced spacing */
   text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
-}
-
-.dark-mode .hero-title {
-  background: linear-gradient(
-    135deg,
-    var(--dark-primary-blue) 0%,
-    var(--dark-primary-red) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
 }
 
 .highlight-text {
@@ -352,29 +344,30 @@
 }
 
 .hero-description {
-  font-size: var(--font-md);
-  line-height: 1.6;
+  font-size: 1.125rem; /* Adjusted size */
+  line-height: 1.7;
   color: var(--gray);
-  margin-bottom: 2rem;
+  margin-bottom: 2rem; /* Reduced margin */
   max-width: 550px;
   position: relative;
+  letter-spacing: 0.3px;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem; /* Reduced gap */
   flex-wrap: wrap;
 }
 
 .hero-button {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.9rem 1.8rem;
-  border-radius: var(--radius-full);
+  gap: 0.7rem;
+  padding: 0.9rem 1.8rem; /* Reduced padding */
+  border-radius: var(--radius-md);
   font-weight: 600;
-  font-size: var(--font-base);
-  transition: all 0.3s ease;
+  font-size: var(--font-base); /* Use original site variable */
+  transition: all 0.35s ease;
   position: relative;
   overflow: hidden;
 }
@@ -509,29 +502,30 @@
   align-items: center;
   max-width: 45%;
   position: relative;
+  margin-top: 0; /* Reset margin */
 }
 
 .logo-container {
   position: relative;
   width: 100%;
-  max-width: 320px;
-  height: 320px;
+  max-width: 330px; /* Smaller size */
+  height: 330px; /* Smaller size */
 }
 
 .logo-glow {
   position: absolute;
-  width: 150%;
-  height: 150%;
-  top: -25%;
-  left: -25%;
+  width: 180%; /* Larger glow */
+  height: 180%;
+  top: -40%;
+  left: -40%;
   background: radial-gradient(
     circle,
     rgba(46, 49, 146, 0.4) 0%,
     rgba(243, 48, 7, 0.2) 50%,
     transparent 70%
   );
-  filter: blur(40px);
-  opacity: 0.6;
+  filter: blur(50px); /* Increased blur */
+  opacity: 0.7;
   border-radius: 50%;
   animation: pulse 8s infinite alternate;
   z-index: -1;
@@ -757,24 +751,50 @@
   transform: translateY(-3px);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1400px) {
+  .hero-container {
+    max-width: 1300px;
+    padding: 10rem 2rem 7rem; /* Add horizontal padding */
+  }
+
+  .hero-title {
+    font-size: 4.5rem;
+  }
+}
+
+@media (max-width: 1200px) {
   .hero-title {
     font-size: 3.5rem;
   }
 
-  .logo-showcase {
-    max-width: 280px;
+  .hero-content {
+    padding-right: 2rem;
+  }
+
+  .logo-container {
+    max-width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 3.2rem;
+  }
+
+  .hero-container {
+    padding: 8rem 2rem 5rem;
   }
 }
 
 @media (max-width: 768px) {
   .hero-section {
-    padding-top: 6rem; /* More padding on mobile */
+    padding-top: 5rem;
     min-height: auto;
   }
 
   .hero-container {
-    padding: 7rem 0 3rem;
+    padding: 8rem 1.5rem 4rem; /* Adjusted padding for mobile */
     flex-direction: column;
   }
 
@@ -782,11 +802,12 @@
     max-width: 100%;
     padding-right: 0;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem; /* More space before image on mobile */
   }
 
   .hero-title {
-    font-size: 2.8rem;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
   }
 
   .hero-buttons {
