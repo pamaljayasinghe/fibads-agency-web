@@ -91,15 +91,16 @@ button {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1300px; /* Restore to original site width */
   margin: 0 auto;
   padding: 0 2rem;
   position: relative;
   z-index: 2;
+  width: 100%;
 }
 
 .section {
-  padding: 5rem 0;
+  padding: 6rem 0; /* More vertical padding for sections */
   position: relative;
   overflow: hidden;
   opacity: 1 !important; /* Ensure sections are visible */
@@ -253,6 +254,7 @@ main > section {
 /* Optimize spacing for sections that come right after the header */
 main > section:first-child {
   padding-top: 0 !important; /* No extra padding */
+  margin-top: -1px; /* Fix potential gap between header and first section */
 }
 
 /* Fix section spacing and visibility */
@@ -317,7 +319,7 @@ main > section:last-child {
   }
 
   .section {
-    padding: 3rem 0;
+    padding: 4rem 0; /* Reduced but still spacious padding on mobile */
   }
 
   ::-webkit-scrollbar {
@@ -326,5 +328,9 @@ main > section:last-child {
 
   main > section:first-child {
     padding-top: calc(70px + 3rem); /* Adjusted space on mobile */
+  }
+
+  .container {
+    padding: 0 1.5rem; /* Adjust padding for mobile */
   }
 }
