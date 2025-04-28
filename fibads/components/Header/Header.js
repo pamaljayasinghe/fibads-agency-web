@@ -16,7 +16,8 @@ const Header = () => {
       const scrollTop =
         window.pageYOffset || document.documentElement.scrollTop;
 
-      if (scrollTop > 50) {
+      if (scrollTop > 20) {
+        // Trigger header change sooner
         setScrolled(true);
         if (scrollTop > lastScrollTop) {
           setHidden(true);

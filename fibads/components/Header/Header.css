@@ -5,24 +5,25 @@
   left: 0;
   z-index: var(--z-sticky);
   transition: all 0.3s ease;
-  background: none; /* Completely transparent initially */
-  height: auto; /* Remove fixed height to prevent boxy look */
+  background-color: rgba(255, 255, 255, 0.98); /* Solid background */
+  height: 70px; /* Reduced height */
+  display: flex;
+  align-items: center;
 }
 
 .dark-mode .header {
-  background: none;
+  background-color: rgba(18, 23, 33, 0.98);
 }
 
 .header.scrolled {
-  background-color: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  height: 70px; /* Slightly smaller when scrolled */
 }
 
 .dark-mode .header.scrolled {
-  background-color: rgba(15, 21, 35, 0.9);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  background-color: rgba(18, 23, 33, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .header.hidden {
@@ -33,11 +34,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 0; /* Increased vertical padding */
+  padding: 0 1rem;
+  height: 100%;
+  width: 100%;
+  max-width: 1300px; /* Restored to match original site width */
+  margin: 0 auto;
 }
 
 .header.scrolled .header-container {
-  padding: 1rem 0; /* Less padding when scrolled */
+  padding: 0; /* Consistent padding when scrolled */
 }
 
 .logo-container {
@@ -48,12 +53,12 @@
   display: flex;
   align-items: center;
   font-family: "Ethnocentric", sans-serif;
-  font-size: 1.3rem; /* Increased font size for better visibility */
+  font-size: 1.25rem; /* Larger font size */
   font-weight: 700;
   color: var(--black);
   transition: all 0.3s ease;
-  padding: 0.5rem 0; /* Add padding to logo */
-  height: 100%; /* Make logo use full height */
+  padding: 0 0.5rem; /* Add some horizontal padding to logo */
+  height: 100%;
 }
 
 /* Make logo more elegant */
@@ -67,8 +72,8 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  font-size: 1.3rem;
-  letter-spacing: 2px;
+  font-size: 1.25rem; /* Smaller text size */
+  letter-spacing: 1.5px; /* Increased letter spacing for elegance */
   font-weight: 700;
 }
 
@@ -84,8 +89,8 @@
     var(--primary-blue) 0%,
     var(--primary-red) 100%
   );
-  opacity: 0.2;
-  filter: blur(8px);
+  opacity: 0.1; /* Reduced opacity */
+  filter: blur(6px); /* Reduced blur */
   z-index: -1;
   transform: translateY(20%);
 }
@@ -94,23 +99,24 @@
   display: flex;
 }
 
-/* Enhance navigation links */
+/* Fix navigation links spacing */
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 2.5rem; /* More spacing between links */
+  gap: 2.5rem; /* Balanced spacing */
   margin: 0;
   padding: 0;
 }
 
 .nav-link {
   font-weight: 500;
-  font-size: var(--font-sm);
+  font-size: 1rem; /* Larger font size */
   color: var(--dark-gray);
   transition: all 0.3s ease;
   position: relative;
-  padding: 0.5rem 0;
-  letter-spacing: 0.4px;
+  padding: 0.5rem 0; /* Increased vertical padding */
+  letter-spacing: 0.5px; /* Increased letter spacing */
+  opacity: 1; /* Full opacity for better visibility */
 }
 
 .nav-link:hover {
@@ -135,7 +141,8 @@
     var(--primary-blue) 0%,
     var(--primary-red) 100%
   );
-  transition: width 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+  transition: width 0.3s ease;
+  opacity: 0.8;
 }
 
 .animated-underline:hover::after {
@@ -154,18 +161,18 @@
   display: flex;
 }
 
-/* Prettier CTA button */
+/* Prettier CTA button with more elegant styling */
 .cta-button {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1.4rem;
-  border-radius: var(--radius-full);
+  gap: 0.8rem; /* More space between icon and text */
+  padding: 0.8rem 1.8rem; /* More padding */
+  border-radius: var(--radius-md); /* Less rounded for modern look */
   font-weight: 600;
-  font-size: var(--font-sm); /* Slightly larger font */
+  font-size: 1rem; /* Larger text */
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.35s ease;
   background: linear-gradient(
     135deg,
     var(--primary-blue) 0%,
@@ -173,10 +180,10 @@
   );
   background-size: 200% auto;
   color: white;
-  box-shadow: 0 4px 15px rgba(243, 48, 7, 0.15); /* More elegant shadow */
+  box-shadow: 0 4px 12px rgba(243, 48, 7, 0.12); /* Subtle shadow */
   position: relative;
   overflow: hidden;
-  letter-spacing: 0.5px; /* Added letter spacing */
+  letter-spacing: 0.6px; /* Increased letter spacing */
 }
 
 .cta-button::before {
@@ -340,8 +347,8 @@ body.menu-open {
 
 @media (max-width: 768px) {
   .header {
-    height: 50px;
-    padding: 0.5rem 0; /* Consistent padding on mobile */
+    height: 60px; /* Taller on mobile for better touch targets */
+    padding: 0; /* Remove padding */
   }
 
   .main-nav,
@@ -354,6 +361,6 @@ body.menu-open {
   }
 
   .header-container {
-    padding: 1rem 0;
+    padding: 0; /* Remove padding for mobile */
   }
 }
