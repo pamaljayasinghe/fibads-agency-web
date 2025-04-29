@@ -76,10 +76,11 @@ const Hero = () => {
             <div className="logo-glow"></div>
             <div className="logo-wrapper">
               <div className="logo-inner">
-                <div className="logo-text">
-                  <span className="fib">FIB</span>
-                  <span className="ads">ADS</span>
-                </div>
+                <img
+                  src="/img/iconwhite.png"
+                  alt="FIB ADS Logo"
+                  className="logo-img"
+                />
                 <div className="orbit orbit-1">
                   <div className="orbit-circle"></div>
                   <div className="orbit-dot"></div>
