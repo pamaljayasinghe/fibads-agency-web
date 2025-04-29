@@ -23,6 +23,7 @@ body {
   overflow-x: hidden; /* Prevent horizontal scrolling */
   width: 100%;
   max-width: 100%;
+  overflow-y: auto; /* Allow vertical scrolling */
   scrollbar-width: thin; /* Firefox */
   -ms-overflow-style: auto; /* IE and Edge */
 }
@@ -120,12 +121,13 @@ button {
   z-index: 2;
   width: 100%;
   overflow-x: hidden; /* Prevent container overflow */
+  overflow: hidden !important; /* Force hidden overflow */
 }
 
 .section {
   padding: 6rem 0; /* More vertical padding for sections */
   position: relative;
-  overflow: hidden;
+  overflow: hidden !important; /* Ensure sections are visible */
   opacity: 1 !important; /* Ensure sections are visible */
   visibility: visible !important;
   width: 100%;
@@ -335,16 +337,19 @@ main > section {
 /* Optimize spacing for sections that come right after the header */
 main > section:first-child {
   padding-top: 0 !important; /* No extra padding */
-  margin-top: -1px; /* Fix potential gap between header and first section */
+  margin-top: 0; /* Fix potential gap between header and first section */
+  overflow: hidden !important;
 }
 
 /* Fix section spacing and visibility */
 section {
   position: relative;
   z-index: 1;
-  overflow: visible !important; /* Ensure all sections are visible */
+  overflow: hidden !important; /* Ensure all sections are visible */
   opacity: 1 !important; /* Force visibility */
   display: block !important; /* Ensure sections display as blocks */
+  width: 100%;
+  max-width: 100%;
 }
 
 /* Fix stacking context issues */
@@ -383,6 +388,13 @@ main > section:last-child {
 /* Dark mode overflow fixes */
 .dark-mode section {
   background-color: var(--dark-bg);
+}
+
+.hero-section {
+  overflow: hidden !important;
+  min-height: auto !important;
+  height: auto !important;
+  max-height: none !important;
 }
 
 @media (max-width: 768px) {

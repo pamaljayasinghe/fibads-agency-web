@@ -1,14 +1,17 @@
 .hero-section {
   position: relative;
-  padding: 0; /* Remove padding completely */
-  overflow: visible;
+  padding: 0;
+  overflow: hidden; /* Keep overflow hidden */
   background: none;
-  min-height: 100vh;
+  min-height: auto; /* Change from 100vh to auto */
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   z-index: 1;
   width: 100%;
+  max-height: none; /* Remove max-height constraint */
+  contain: layout paint; /* Improve performance */
 }
 
 .particles-container {
@@ -275,7 +278,7 @@
   justify-content: space-between;
   position: relative;
   z-index: var(--z-elevate);
-  padding: 9rem 2rem 5rem; /* Adjusted padding */
+  padding: 6rem 2rem 3rem; /* Reduced padding to help with scroll issues */
   width: 100%;
   max-width: 1300px; /* Match site's original container width */
   margin: 0 auto;
@@ -510,6 +513,7 @@
   width: 100%;
   max-width: 330px; /* Smaller size */
   height: 330px; /* Smaller size */
+  overflow: hidden;
 }
 
 .logo-glow {
@@ -588,10 +592,10 @@
 
 @keyframes rotate3d {
   0% {
-    transform: rotateY(0) rotateX(10deg);
+    transform: rotateY(0deg) rotateX(5deg); /* Reduce rotation angle */
   }
   100% {
-    transform: rotateY(360deg) rotateX(10deg);
+    transform: rotateY(360deg) rotateX(5deg); /* Reduce rotation angle */
   }
 }
 
@@ -629,19 +633,20 @@
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.2);
   animation: orbit-rotate linear infinite;
+  pointer-events: none; /* Prevent interaction with orbits */
 }
 
 .orbit-1 {
-  width: 140%;
-  height: 140%;
+  width: 120%; /* Reduce size */
+  height: 120%;
   top: -20%;
   left: -20%;
   animation-duration: 12s;
 }
 
 .orbit-2 {
-  width: 180%;
-  height: 180%;
+  width: 150%; /* Reduce size */
+  height: 150%;
   top: -40%;
   left: -40%;
   animation-duration: 20s;
@@ -649,8 +654,8 @@
 }
 
 .orbit-3 {
-  width: 120%;
-  height: 120%;
+  width: 100%; /* Reduce size */
+  height: 100%;
   top: -10%;
   left: -10%;
   animation-duration: 16s;
@@ -722,9 +727,11 @@
 .partner-logos {
   position: relative;
   z-index: 2;
-  padding: 2rem 0;
+  padding: 1rem 0; /* Reduced padding */
   background-color: var(--off-white);
   transition: background-color 0.5s ease;
+  width: 100%;
+  overflow: hidden;
 }
 
 .dark-mode .partner-logos {
@@ -754,7 +761,7 @@
 @media (max-width: 1400px) {
   .hero-container {
     max-width: 1300px;
-    padding: 10rem 2rem 7rem; /* Add horizontal padding */
+    padding: 6rem 2rem 3rem; /* Reduced padding */
   }
 
   .hero-title {
@@ -783,18 +790,19 @@
   }
 
   .hero-container {
-    padding: 8rem 2rem 5rem;
+    padding: 5rem 2rem 3rem; /* Reduced padding */
   }
 }
 
 @media (max-width: 768px) {
   .hero-section {
-    padding-top: 5rem;
+    padding-top: 3rem; /* Reduced padding */
     min-height: auto;
+    overflow: hidden;
   }
 
   .hero-container {
-    padding: 8rem 1.5rem 4rem; /* Adjusted padding for mobile */
+    padding: 5rem 1.5rem 3rem; /* Reduced padding */
     flex-direction: column;
   }
 
