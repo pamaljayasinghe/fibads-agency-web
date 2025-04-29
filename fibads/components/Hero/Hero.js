@@ -73,7 +73,6 @@ const Hero = () => {
 
         <div className="hero-image" data-aos="fade-up" data-aos-delay="100">
           <div className="logo-container">
-            <div className="logo-glow"></div>
             <div className="logo-wrapper">
               <div className="logo-inner">
                 <img
