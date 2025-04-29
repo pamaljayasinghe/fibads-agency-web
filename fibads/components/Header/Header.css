@@ -98,6 +98,26 @@
   transform: translateY(20%);
 }
 
+.logo-image {
+  max-height: 40px;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+/* Hide text but keep it accessible for screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .main-nav {
   display: flex;
 }
@@ -373,5 +393,9 @@ body.menu-open {
 
   .logo {
     font-size: 1rem; /* Smaller font on mobile */
+  }
+
+  .logo-image {
+    max-height: 32px; /* Smaller logo on mobile */
   }
 }

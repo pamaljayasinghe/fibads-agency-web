@@ -3,12 +3,33 @@
 import { useState, useEffect } from "react";
 import "./Header.css";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
+import Image from "next/image";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   let lastScrollTop = 0;
+
+  // Check dark mode status
+  useEffect(() => {
+    // Initial check
+    setIsDarkMode(document.body.classList.contains("dark-mode"));
+
+    // Set up observer to watch for class changes on body
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === "class") {
+          setIsDarkMode(document.body.classList.contains("dark-mode"));
+        }
+      });
+    });
+
+    observer.observe(document.body, { attributes: true });
+
+    return () => observer.disconnect();
+  }, []);
 
   // Handle scroll effects
   useEffect(() => {
@@ -55,7 +76,26 @@ const Header = () => {
       <div className="container header-container">
         <div className="logo-container">
           <a href="/" className="logo">
-            <span className="logo-text">FIB DIGITAL</span>
+            {isDarkMode ? (
+              <Image
+                src="/img/Logow.png"
+                alt="FIB DIGITAL Dark Logo"
+                width={140}
+                height={40}
+                className="logo-image"
+                priority
+              />
+            ) : (
+              <Image
+                src="/img/Logob.png"
+                alt="FIB DIGITAL Light Logo"
+                width={140}
+                height={40}
+                className="logo-image"
+                priority
+              />
+            )}
+            <span className="logo-text visually-hidden">FIB DIGITAL</span>
           </a>
         </div>
 
