@@ -312,6 +312,8 @@ section {
   position: relative;
   z-index: 1;
   overflow: visible !important; /* Ensure all sections are visible */
+  opacity: 1 !important; /* Force visibility */
+  display: block !important; /* Ensure sections display as blocks */
 }
 
 /* Fix stacking context issues */
@@ -324,9 +326,9 @@ section {
 /* Fix z-index issues with content sections */
 .cta-section {
   position: relative;
-  z-index: 5 !important; /* Higher z-index to ensure visibility */
+  z-index: 10 !important; /* Ensure CTA has high z-index */
   isolation: isolate;
-  z-index: 10 !important;
+  overflow: visible !important;
 }
 
 main > section:last-child {

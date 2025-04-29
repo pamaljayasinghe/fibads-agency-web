@@ -12,7 +12,7 @@ const CTA = () => {
 
       <div className="container">
         <div className="cta-wrapper">
-          <div className="cta-content reveal">
+          <div className="cta-content">
             <span className="section-label">Laten we samenwerken</span>
             <h2 className="cta-title">
               Klaar om jouw online aanwezigheid naar het volgende niveau te
