@@ -57,26 +57,32 @@
   color: var(--white);
   transition: opacity var(--transition-normal),
     transform var(--transition-normal);
+  position: relative;
+  z-index: 2;
 }
 
 .sun-icon {
   opacity: 1;
   transform: rotate(0);
+  visibility: visible;
 }
 
 .moon-icon {
   opacity: 0.5;
   transform: rotate(-90deg);
+  visibility: visible;
 }
 
 .dark-mode-toggle.dark .sun-icon {
   opacity: 0.5;
   transform: rotate(90deg);
+  visibility: visible;
 }
 
 .dark-mode-toggle.dark .moon-icon {
   opacity: 1;
   transform: rotate(0);
+  visibility: visible;
 }
 
 @media (max-width: 768px) {

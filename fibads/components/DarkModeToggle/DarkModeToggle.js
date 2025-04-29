@@ -42,7 +42,7 @@ const DarkModeToggle = () => {
     <button
       className={`dark-mode-toggle ${darkMode ? "dark" : "light"}`}
       onClick={toggleDarkMode}
-      aria-label="Toggle dark mode"
+      aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
     >
       <div className="toggle-wrapper">
         <div className="icons">
