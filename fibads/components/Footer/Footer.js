@@ -254,7 +254,7 @@ const Footer = () => {
         <div className="container">
           <div className="footer-bottom-content">
             <p className="copyright">
-              © Fib Ads {currentYear}. All rights reserved.
+              © Fib Digital {currentYear}. All rights reserved.
             </p>
             <div className="footer-legal">
               <a href="/algemene-voorwaarden" className="legal-link">
