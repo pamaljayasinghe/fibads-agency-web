@@ -10,7 +10,11 @@ const Footer = () => {
           <div className="footer-grid">
             <div className="footer-brand">
               <a href="/" className="footer-logo">
-                <span className="logo-text">FIB DIGITAL</span>
+                <img
+                  src="/img/Logog.png"
+                  alt="FIB DIGITAL logo"
+                  className="logo-image"
+                />
               </a>
               <p className="footer-description">
                 Fib Digital helpt ondernemers met effectieve online marketing

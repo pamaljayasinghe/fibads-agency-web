@@ -36,6 +36,11 @@
   color: #fff;
 }
 
+.logo-image {
+  max-height: 45px;
+  width: auto;
+}
+
 .footer-description {
   color: #a4b0be;
   margin-bottom: 1.5rem;
