@@ -9,6 +9,7 @@
   height: 70px; /* Reduced height */
   display: flex;
   align-items: center;
+  overflow: hidden; /* Prevent overflow */
 }
 
 .dark-mode .header {
@@ -37,8 +38,9 @@
   padding: 0 1rem;
   height: 100%;
   width: 100%;
-  max-width: 1300px; /* Restored to match original site width */
+  max-width: 1300px; /* Match container width */
   margin: 0 auto;
+  overflow: hidden; /* Prevent overflow */
 }
 
 .header.scrolled .header-container {
@@ -61,7 +63,7 @@
   height: 100%;
 }
 
-/* Make logo more elegant */
+/* Enhance logo for modern look */
 .logo-text {
   position: relative;
   background: linear-gradient(
@@ -73,8 +75,9 @@
   background-clip: text;
   color: transparent;
   font-size: 1.25rem; /* Smaller text size */
-  letter-spacing: 1.5px; /* Increased letter spacing for elegance */
+  letter-spacing: 2px; /* Increased letter spacing for more modern look */
   font-weight: 700;
+  text-transform: uppercase; /* More modern, clean look */
 }
 
 .logo-text::after {
@@ -161,7 +164,7 @@
   display: flex;
 }
 
-/* Prettier CTA button with more elegant styling */
+/* Prettier CTA button with glassmorphism styling for modern look */
 .cta-button {
   display: flex;
   align-items: center;
@@ -180,10 +183,12 @@
   );
   background-size: 200% auto;
   color: white;
-  box-shadow: 0 4px 12px rgba(243, 48, 7, 0.12); /* Subtle shadow */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* More subtle shadow */
   position: relative;
   overflow: hidden;
   letter-spacing: 0.6px; /* Increased letter spacing */
+  backdrop-filter: blur(5px); /* Glassmorphism effect */
+  -webkit-backdrop-filter: blur(5px);
 }
 
 .cta-button::before {
@@ -196,7 +201,7 @@
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.2) 50%,
     rgba(255, 255, 255, 0) 100%
   );
   transition: all 0.6s ease;
@@ -205,8 +210,8 @@
 
 .cta-button:hover {
   background-position: right center;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(243, 48, 7, 0.2);
+  transform: translateY(-3px); /* More noticeable hover effect */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .cta-button:hover::before {
@@ -347,8 +352,9 @@ body.menu-open {
 
 @media (max-width: 768px) {
   .header {
-    height: 60px; /* Taller on mobile for better touch targets */
-    padding: 0; /* Remove padding */
+    height: 60px;
+    padding: 0;
+    width: 100vw; /* Ensure full width on mobile */
   }
 
   .main-nav,
@@ -361,6 +367,11 @@ body.menu-open {
   }
 
   .header-container {
-    padding: 0; /* Remove padding for mobile */
+    padding: 0 1rem; /* Add some padding for better spacing */
+    justify-content: space-between; /* Ensure proper spacing */
+  }
+
+  .logo {
+    font-size: 1rem; /* Smaller font on mobile */
   }
 }
