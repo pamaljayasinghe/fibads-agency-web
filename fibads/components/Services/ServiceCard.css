@@ -74,15 +74,15 @@
 }
 
 .service-icon-branding {
-  background: linear-gradient(135deg, #ff6b52 0%, #f33007 100%);
+  background: linear-gradient(135deg, #333333 0%, #0f0f0f 100%);
 }
 
 .service-icon-web {
-  background: linear-gradient(135deg, #4d4fc8 0%, #2e3192 100%);
+  background: linear-gradient(135deg, #252525 0%, #0f0f0f 100%);
 }
 
 .service-icon-ads {
-  background: linear-gradient(135deg, #2e3192 0%, #f33007 100%);
+  background: linear-gradient(135deg, #0f0f0f 0%, #333333 100%);
 }
 
 .service-title {
@@ -159,8 +159,8 @@
   height: 100%;
   background: linear-gradient(
     135deg,
-    rgba(46, 49, 146, 0.9) 0%,
-    rgba(243, 48, 7, 0.9) 100%
+    rgba(15, 15, 15, 0.9) 0%,
+    rgba(37, 37, 37, 0.9) 100%
   );
   display: flex;
   align-items: center;
@@ -194,7 +194,7 @@
   align-self: flex-start;
   padding: 0.5rem 1rem;
   border-radius: var(--radius-full);
-  background-color: rgba(46, 49, 146, 0.1);
+  background-color: rgba(15, 15, 15, 0.1);
 }
 
 .service-button svg {
@@ -203,7 +203,7 @@
 
 .service-button:hover {
   color: var(--primary-red);
-  background-color: rgba(243, 48, 7, 0.1);
+  background-color: rgba(37, 37, 37, 0.1);
 }
 
 .service-button:hover svg {
