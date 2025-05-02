@@ -1,19 +1,19 @@
 /* variables.css */
 :root {
   /* Brand colors based on your guidelines */
-  --primary-blue: #2e3192;
-  --primary-red: #f33007;
-  --dark-blue: #0a0b3b;
-  --light-blue: #3a3db5;
-  --dark-red: #c72706;
-  --light-red: #ff4d29;
+  --primary-blue: #1a1a1a; /* Changed to black */
+  --primary-red: #333333; /* Changed to darker gray */
+  --dark-blue: #000000; /* Changed to pure black */
+  --light-blue: #444444; /* Changed to mid-gray */
+  --dark-red: #121212; /* Changed to near-black */
+  --light-red: #555555; /* Changed to gray */
 
   /* Neutral colors */
-  --black: #1a1a1a;
-  --dark-gray: #333333;
-  --gray: #666666;
-  --light-gray: #eeeeee;
-  --off-white: #f9f9f9;
+  --black: #0a0a0a; /* Made slightly darker */
+  --dark-gray: #1a1a1a;
+  --gray: #444444; /* Darkened for better contrast */
+  --light-gray: #e0e0e0; /* Slightly darker */
+  --off-white: #f7f7f7; /* More subtle off-white */
   --white: #ffffff;
 
   /* Font sizes */
@@ -69,24 +69,24 @@
   --z-tooltip: 600;
 
   /* Colors - Light Mode */
-  --primary-blue: #2e3192;
-  --primary-red: #f33007;
+  --primary-blue: #0f0f0f;
+  --primary-red: #252525;
   --white: #ffffff;
-  --off-white: #f9f9fb;
-  --light-gray: #e5e5e5;
-  --gray: #6b7280;
-  --dark-gray: #374151;
-  --black: #111827;
+  --off-white: #f8f8f8;
+  --light-gray: #e0e0e0;
+  --gray: #555555;
+  --dark-gray: #333333;
+  --black: #0a0a0a;
 
   /* Colors - Dark Mode */
-  --dark-primary-blue: #3b3dbe;
-  --dark-primary-red: #ff4a28;
-  --dark-bg: #121721; /* Slightly darker for more modern look */
-  --dark-surface: #1a202c; /* Adjusted for modern look */
-  --dark-surface-2: #252d44;
-  --dark-text: #e6edf3; /* Slightly brighter text */
-  --dark-text-muted: #a0aec0;
-  --dark-border: #2d3748;
+  --dark-primary-blue: #e0e0e0;
+  --dark-primary-red: #cccccc;
+  --dark-bg: #0a0a0a; /* Very dark for better contrast */
+  --dark-surface: #111111; /* Darker surface */
+  --dark-surface-2: #1a1a1a; /* Slightly lighter than surface */
+  --dark-text: #f0f0f0; /* Slightly off-white for better eye comfort */
+  --dark-text-muted: #b0b0b0; /* Light gray */
+  --dark-border: #333333; /* Dark gray for borders */
 
   /* Gradients */
   --gradient-primary: linear-gradient(
