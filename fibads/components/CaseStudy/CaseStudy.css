@@ -24,7 +24,7 @@
 .shape-1 {
   width: 500px;
   height: 500px;
-  background-color: rgba(46, 49, 146, 0.04);
+  background-color: rgba(15, 15, 15, 0.04);
   top: -10%;
   right: -5%;
   animation: morphShape 20s ease-in-out infinite alternate;
@@ -33,18 +33,18 @@
 .shape-2 {
   width: 600px;
   height: 600px;
-  background-color: rgba(243, 48, 7, 0.04);
+  background-color: rgba(37, 37, 37, 0.04);
   bottom: -20%;
   left: -10%;
   animation: morphShape 25s ease-in-out infinite alternate-reverse;
 }
 
 .dark-mode .shape-1 {
-  background-color: rgba(66, 69, 166, 0.1);
+  background-color: rgba(224, 224, 224, 0.1);
 }
 
 .dark-mode .shape-2 {
-  background-color: rgba(243, 58, 17, 0.08);
+  background-color: rgba(204, 204, 204, 0.08);
 }
 
 @keyframes morphShape {
@@ -343,20 +343,20 @@
 }
 
 .dark-mode .floating-element-1 {
-  background-color: rgba(46, 49, 146, 0.3);
+  background-color: rgba(224, 224, 224, 0.3);
   opacity: 0.4;
 }
 
 .dark-mode .floating-element-2 {
-  background-color: rgba(243, 48, 7, 0.3);
+  background-color: rgba(204, 204, 204, 0.3);
   opacity: 0.4;
 }
 
 .dark-mode .floating-element-3 {
   background: linear-gradient(
     135deg,
-    rgba(46, 49, 146, 0.3) 0%,
-    rgba(243, 48, 7, 0.3) 100%
+    rgba(224, 224, 224, 0.3) 0%,
+    rgba(204, 204, 204, 0.3) 100%
   );
   opacity: 0.3;
 }

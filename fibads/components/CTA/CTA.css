@@ -1,24 +1,24 @@
 .cta-section {
-  padding: 10rem 0; /* Much more padding */
+  padding: 10rem 0;
   position: relative;
-  z-index: 10; /* Very high z-index to ensure visibility */
-  margin: 6rem 0; /* More margin for separation */
+  z-index: 10;
+  margin: 6rem 0;
   background: linear-gradient(
     135deg,
-    rgba(46, 49, 146, 0.15) 0%,
-    rgba(243, 48, 7, 0.15) 100%
-  ); /* Stronger gradient */
-  border: none; /* Remove borders for less boxy look */
-  overflow: visible !important; /* Force visibility */
-  display: block !important; /* Ensure display */
+    rgba(15, 15, 15, 0.15) 0%,
+    rgba(37, 37, 37, 0.15) 100%
+  );
+  border: none;
+  overflow: visible !important;
+  display: block !important;
   width: 100%;
 }
 
 .dark-mode .cta-section {
   background: linear-gradient(
     135deg,
-    rgba(46, 49, 146, 0.25) 0%,
-    rgba(243, 48, 7, 0.25) 100%
+    rgba(224, 224, 224, 0.25) 0%,
+    rgba(204, 204, 204, 0.25) 100%
   );
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -62,7 +62,7 @@
 .cta-shape-1 {
   width: 600px;
   height: 600px;
-  background-color: rgba(46, 49, 146, 0.2);
+  background-color: rgba(15, 15, 15, 0.2);
   top: -20%;
   right: -10%;
 }
@@ -70,17 +70,17 @@
 .cta-shape-2 {
   width: 550px;
   height: 550px;
-  background-color: rgba(243, 48, 7, 0.2);
+  background-color: rgba(37, 37, 37, 0.2);
   bottom: -20%;
   left: -10%;
 }
 
 .dark-mode .cta-shape-1 {
-  background-color: rgba(66, 69, 166, 0.2);
+  background-color: rgba(224, 224, 224, 0.2);
 }
 
 .dark-mode .cta-shape-2 {
-  background-color: rgba(243, 58, 17, 0.15);
+  background-color: rgba(204, 204, 204, 0.15);
 }
 
 .cta-wrapper {
@@ -95,8 +95,8 @@
 }
 
 .cta-title {
-  font-size: var(--font-4xl); /* Much larger title */
-  margin: 0.5rem 0 5rem; /* More space below title */
+  font-size: var(--font-4xl);
+  margin: 0.5rem 0 5rem;
   color: var(--black);
   position: relative;
   display: inline-block;
@@ -116,10 +116,10 @@
   content: "";
   position: absolute;
   left: 50%;
-  bottom: -15px; /* Lower position */
+  bottom: -15px;
   transform: translateX(-50%);
-  width: 100px; /* Wider line */
-  height: 4px; /* Thicker line */
+  width: 100px;
+  height: 4px;
   background: linear-gradient(
     135deg,
     var(--primary-blue) 0%,
@@ -131,22 +131,22 @@
 .cta-boxes {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem; /* Wider gap */
+  gap: 4rem;
 }
 
 /* Make CTA boxes stand out more */
 .cta-box {
   background-color: var(--white);
   border-radius: var(--radius-lg);
-  padding: 3.5rem; /* Even more padding */
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+  padding: 3.5rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
   text-align: left;
   transition: all 0.3s ease;
-  border: none; /* Remove border */
+  border: none;
   position: relative;
   z-index: 1;
   overflow: hidden;
-  transform: translateY(0); /* Starting position */
+  transform: translateY(0);
 }
 
 .dark-mode .cta-box {
@@ -159,7 +159,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 8px; /* Wider accent line */
+  width: 8px;
   height: 0;
   background: linear-gradient(
     to bottom,
@@ -196,10 +196,10 @@
 }
 
 .cta-box-description {
-  font-size: var(--font-md); /* Larger text */
+  font-size: var(--font-md);
   color: var(--gray);
-  line-height: 1.7; /* Increased line height */
-  margin-bottom: 2rem; /* More space before button */
+  line-height: 1.7;
+  margin-bottom: 2rem;
 }
 
 /* Make buttons more prominent */
@@ -207,14 +207,14 @@
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 1rem 2rem; /* Larger padding */
+  padding: 1rem 2rem;
   border-radius: var(--radius-full);
   font-weight: 600;
   font-size: var(--font-base);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  margin-top: 1.5rem; /* More space above button */
+  margin-top: 1.5rem;
 }
 
 .cta-box-button svg {
