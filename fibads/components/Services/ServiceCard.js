@@ -117,10 +117,18 @@ const ServiceCard = ({ service, index, animationDelay }) => {
         ))}
       </div>
 
-      <div className="service-image">
-        <img src={service.imageUrl} alt={service.title} />
-        <div className="service-image-overlay">
-          <span className="ethno-text">Bekijk</span>
+      <div className="service-image-container">
+        <div className="service-image default">
+          <img src={service.imageUrl} alt={service.title} />
+        </div>
+        <div className="service-image hover">
+          <img
+            src={service.hoverImageUrl || service.imageUrl}
+            alt={`${service.title} hover`}
+          />
+          <div className="service-image-overlay">
+            <span className="ethno-text">Bekijk</span>
+          </div>
         </div>
       </div>
 

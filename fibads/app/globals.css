@@ -1,5 +1,5 @@
 /* globals.css */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 @import "../styles/variables.css";
 @import "../styles/animations.css";
 @import "../styles/effects.css";
@@ -396,40 +396,81 @@ main > section:last-child {
   max-height: none !important;
 }
 
+/* Fix for stat section - prevent global overrides */
+.stats-section {
+  margin-bottom: 0 !important;
+  padding-bottom: 6rem !important;
+}
+
+.stats-section .stat-item {
+  text-align: center !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 auto !important; /* Override any flex settings */
+  width: auto !important;
+  max-width: none !important;
+}
+
+.stats-section .stats-container {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 5rem !important;
+  flex-wrap: nowrap !important;
+  width: 100% !important;
+  padding: 0 2rem !important;
+}
+
+.stats-section .stat-number,
+.stats-section .counter-value,
+.stats-section .stat-label {
+  text-align: center !important;
+}
+
+.stats-section .counter-value {
+  font-size: 110px !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 300 !important;
+  -webkit-text-stroke: 0.8px var(--dark-gray) !important;
+  text-stroke: 0.8px var(--dark-gray) !important;
+}
+
+.stats-section .stat-label {
+  font-size: 20px !important;
+  line-height: 1.4 !important;
+  color: var(--black) !important;
+  margin-top: 15px !important;
+  text-transform: none !important;
+}
+
+@media (max-width: 992px) {
+  .stats-section .stats-container {
+    gap: 3rem !important;
+  }
+
+  .stats-section .counter-value {
+    font-size: 90px !important;
+  }
+}
+
 @media (max-width: 768px) {
-  h1 {
-    font-size: 2.5rem;
-    letter-spacing: 1.5px;
+  .stats-section .stats-container {
+    flex-wrap: wrap !important;
+    gap: 3rem !important;
   }
 
-  h2 {
-    font-size: 2rem;
-    letter-spacing: 1px;
+  .stats-section .stat-item,
+  .stats-section .stat-number,
+  .stats-section .counter-value,
+  .stats-section .stat-label {
+    text-align: center !important;
   }
+}
 
-  h3 {
-    font-size: 1.5rem;
-    letter-spacing: 0.75px;
-  }
-
-  .section {
-    padding: 4rem 0; /* Reduced but still spacious padding on mobile */
-  }
-
-  body::-webkit-scrollbar {
-    width: 5px;
-  }
-
-  ::-webkit-scrollbar {
-    width: 5px;
-  }
-
-  main > section:first-child {
-    padding-top: calc(70px + 3rem); /* Adjusted space on mobile */
-  }
-
-  .container {
-    padding: 0 1rem; /* Reduced padding for mobile */
-    overflow: hidden;
+@media (max-width: 480px) {
+  .stats-section .stats-container {
+    flex-direction: column !important;
+    gap: 3rem !important;
   }
 }

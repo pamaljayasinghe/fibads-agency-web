@@ -1023,3 +1023,264 @@
     flex: 0 0 calc(50% - 1rem);
   }
 }
+
+/* Statistics Section - Updated to match exact design in image */
+.stats-section {
+  width: 100%;
+  padding: 4rem 0 6rem;
+  background-color: transparent;
+  position: relative;
+  z-index: var(--z-elevate);
+  margin-top: 0;
+  overflow: hidden;
+  border-top: none; /* Remove border */
+}
+
+.dark-mode .stats-section {
+  background-color: transparent;
+  border-top: none;
+}
+
+.stats-title {
+  text-align: left;
+  margin-bottom: 3rem;
+  color: var(--gray);
+  font-size: var(--font-base);
+  font-weight: normal;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: normal;
+  opacity: 0.8;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 5rem; /* Increased gap between stat items to match image */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stat-item {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center !important; /* Center align everything */
+  justify-content: center !important;
+  padding: 2.5rem 1rem;
+  position: relative;
+  transition: transform 0.3s ease;
+  text-align: center !important;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  position: relative;
+  text-align: center !important;
+}
+
+/* New animated counter styles */
+.counter-value {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 110px;
+  font-weight: 300;
+  color: transparent;
+  -webkit-text-stroke: 0.8px var(--dark-gray);
+  text-stroke: 0.8px var(--dark-gray);
+  line-height: 1;
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease;
+  text-align: center !important;
+}
+
+.counter-value:hover {
+  transform: translateY(-5px);
+}
+
+.dark-mode .counter-value {
+  -webkit-text-stroke: 0.8px var(--dark-text);
+  text-stroke: 0.8px var(--dark-text);
+  opacity: 0.9;
+}
+
+/* Add a subtle animation for when the counter is being updated */
+@keyframes pulse-number {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.stat-number::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-blue) 0%,
+    var(--primary-red) 100%
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s ease-out;
+  opacity: 0;
+}
+
+.stat-item:hover .stat-number::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.stat-label {
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  color: var(--black) !important;
+  text-transform: none !important;
+  font-family: "Montserrat", sans-serif !important;
+  position: relative;
+  display: block !important;
+  margin-top: 15px !important;
+  padding-left: 0 !important;
+  letter-spacing: 0.3px;
+  text-align: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  line-height: 1.4 !important;
+}
+
+/* Replace vertical line with horizontal line for all viewports */
+.stat-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 40%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--primary-red));
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.stat-item:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) scaleX(1);
+}
+
+.dark-mode .stat-label {
+  color: var(--dark-text);
+  font-size: 20px !important; /* Ensure it's also applied in dark mode */
+}
+
+/* Add a highlight effect for the label on hover */
+.stat-item:hover .stat-label {
+  background: linear-gradient(
+    90deg,
+    var(--primary-blue) 0%,
+    var(--primary-red) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 20px !important; /* Maintain size on hover */
+}
+
+@media (max-width: 992px) {
+  .stats-container {
+    padding: 0 1.5rem;
+  }
+
+  .counter-value {
+    font-size: 90px;
+  }
+
+  .stat-label {
+    font-size: 20px !important; /* Force override on tablet */
+  }
+
+  .stat-item {
+    padding: 1.5rem 1rem 1.5rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-section {
+    padding: 2rem 0 4rem;
+  }
+
+  .stats-title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .stats-container {
+    gap: 1.5rem;
+  }
+
+  .stat-item {
+    min-width: 200px;
+    padding: 1.5rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .stat-item::after {
+    display: none;
+  }
+
+  /* For mobile, add a subtle line under the number instead */
+  .stat-number::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--primary-red));
+    transition: transform 0.3s ease;
+  }
+
+  .stat-item:hover .stat-number::before {
+    transform: translateX(-50%) scaleX(1);
+  }
+
+  .stat-label {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .stat-item {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .counter-value {
+    font-size: 70px;
+  }
+
+  .stats-section {
+    padding: 2rem 0 3rem;
+  }
+}
