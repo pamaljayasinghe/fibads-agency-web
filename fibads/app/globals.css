@@ -336,7 +336,6 @@ main > section {
 
 /* Optimize spacing for sections that come right after the header */
 main > section:first-child {
-  padding-top: 0 !important; /* No extra padding */
   margin-top: 0; /* Fix potential gap between header and first section */
   overflow: hidden !important;
 }

@@ -1,6 +1,7 @@
 .hero-section {
   position: relative;
-  padding: 6rem 0 4rem;
+  padding: 9rem 0 4rem;
+  margin-top: 0;
   overflow: hidden;
   background: var(--white);
   height: auto;
@@ -428,7 +429,9 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    padding: 4rem 0 3rem;
+    padding: 10rem 0 3rem; /* Increased padding-top from 8rem to 10rem */
+    min-height: auto;
+    overflow: hidden;
   }
 
   .hero-title {
@@ -441,6 +444,10 @@
 }
 
 @media (max-width: 480px) {
+  .hero-section {
+    padding: 9rem 0 3rem; /* Set specific padding for smallest screens */
+  }
+
   .hero-title {
     font-size: 2.5rem;
   }
@@ -932,7 +939,7 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    padding-top: 3rem; /* Reduced padding */
+    padding-top: 10rem; /* Increased padding-top from 8rem to 10rem */
     min-height: auto;
     overflow: hidden;
   }
@@ -980,6 +987,10 @@
 }
 
 @media (max-width: 480px) {
+  .hero-section {
+    padding: 9rem 0 3rem; /* Set specific padding for smallest screens */
+  }
+
   .hero-title {
     font-size: 2.5rem;
   }
