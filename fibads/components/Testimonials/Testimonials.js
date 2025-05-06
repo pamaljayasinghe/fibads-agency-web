@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import "./Testimonials.css";
 
 const Testimonials = () => {
@@ -5,68 +8,115 @@ const Testimonials = () => {
     {
       id: 1,
       rating: 5,
-      text: "Fib Ads heeft ons geholpen onze online zichtbaarheid te vergroten. Dankzij hun strategie zien we dagelijks nieuwe leads binnenkomen.",
-      author: "Hanna Koster",
-      position: "Marketing Manager",
-      imageUrl: "/api/placeholder/60/60",
+      text: "\"Innovative and impactful\"",
+      description: "The agency's creative approach was exactly what our business needed. Their work made us stand out in an already crowded market. We've seen an impressive increase in website traffic and customer inquiries, all thanks to their fresh ideas and strategic thinking.",
+      author: "Emily Roberts",
+      position: "Founder, Urban Innovators",
+      company: "SupplyHog",
+      imageUrl: "/img/Logob.png", // Using an existing image
     },
     {
       id: 2,
       rating: 5,
-      text: "De samenwerking met Fib Ads was professioneel en klantgericht. Het resultaat overtrof onze verwachtingen.",
-      author: "John de Vries",
-      position: "Eigenaar De Vries Tuinen",
-      imageUrl: "/api/placeholder/60/60",
+      text: "\"Exceeded our expectations\"",
+      description: "Working with this team transformed our digital presence completely. They took the time to understand our unique challenges and delivered solutions that perfectly aligned with our goals. Our conversion rates have improved significantly since the launch.",
+      author: "Michael Chen",
+      position: "CEO, TechNova",
+      company: "TechNova",
+      imageUrl: "/img/Logob.png", // Using an existing image
     },
     {
       id: 3,
       rating: 5,
-      text: "Zeer tevreden over het ontwerp en de support van Fib Ads. Ze denken echt met je mee!",
-      author: "Joris van Leeuwen",
-      position: "Eigenaar Golf Boutique",
-      imageUrl: "/api/placeholder/60/60",
+      text: "\"Professional and results-driven\"",
+      description: "The level of expertise and dedication we received was outstanding. From the initial consultation to the final implementation, every step was handled with precision and care. They delivered measurable results that have positively impacted our bottom line.",
+      author: "Sarah Johnson",
+      position: "Marketing Director, EcoSmart",
+      company: "EcoSmart",
+      imageUrl: "/img/Logow.png", // Using an existing image
     },
   ];
 
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [animating, setAnimating] = useState(false);
+  const [direction, setDirection] = useState("next");
+
+  const nextTestimonial = () => {
+    if (!animating) {
+      setDirection("next");
+      setAnimating(true);
+      setActiveIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+      setTimeout(() => setAnimating(false), 600);
+    }
+  };
+
+  const prevTestimonial = () => {
+    if (!animating) {
+      setDirection("prev");
+      setAnimating(true);
+      setActiveIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+      setTimeout(() => setAnimating(false), 600);
+    }
+  };
+
   return (
     <section className="testimonials-section" id="testimonials">
-      <div className="testimonials-bg-shape"></div>
       <div className="container">
-        <div className="testimonials-header" data-aos="fade-up">
-          <span className="section-label">Ervaringen</span>
-          <h2 className="testimonials-title">Wat onze klanten zeggen</h2>
-        </div>
+        <div className="testimonials-wrapper">
+          <span className="section-label">Client</span>
+          <h2 className="testimonials-title">journeys</h2>
 
-        <div className="testimonials-grid">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={testimonial.id}
-              className="testimonial-card"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-              data-aos-offset="200"
-            >
+          <div className="testimonial-content">
+            <div className="testimonial-company">
+              <div className="company-logo">
+                <span className="company-name">{testimonials[activeIndex].company}</span>
+              </div>
               <div className="testimonial-rating">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <span key={i} className="star">
-                    ★
-                  </span>
+                {[...Array(testimonials[activeIndex].rating)].map((_, i) => (
+                  <span key={i} className="star">★</span>
                 ))}
               </div>
+            </div>
 
-              <p className="testimonial-text">{testimonial.text}</p>
+            <div className={`testimonial-quote ${animating ? `slide-${direction}` : ""}`}>
+              <h3 className="quote-text">{testimonials[activeIndex].text}</h3>
+            </div>
 
-              <div className="testimonial-author">
-                <div className="author-image">
-                  <img src={testimonial.imageUrl} alt={testimonial.author} />
-                </div>
-                <div className="author-info">
-                  <h4 className="author-name">{testimonial.author}</h4>
-                  <p className="author-position">{testimonial.position}</p>
-                </div>
+            <div className={`testimonial-description ${animating ? `fade-${direction}` : ""}`}>
+              <p>{testimonials[activeIndex].description}</p>
+            </div>
+
+            <div className="testimonial-author">
+              <div className="author-image">
+                <img src={testimonials[activeIndex].imageUrl} alt={testimonials[activeIndex].author} />
+              </div>
+              <div className="author-info">
+                <h4 className="author-name">{testimonials[activeIndex].author}</h4>
+                <p className="author-position">{testimonials[activeIndex].position}</p>
               </div>
             </div>
-          ))}
+          </div>
+
+          <div className="testimonial-navigation">
+            <button 
+              className="nav-button prev" 
+              onClick={prevTestimonial}
+              aria-label="Previous testimonial"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            <button 
+              className="nav-button next" 
+              onClick={nextTestimonial}
+              aria-label="Next testimonial"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
