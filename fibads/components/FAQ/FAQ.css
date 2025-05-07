@@ -1,252 +1,218 @@
 .faq-section {
   padding: 5rem 0;
-  background-color: var(--off-white);
   position: relative;
-  overflow: hidden;
+  background-color: var(--white);
 }
 
-/* Background elements */
-.faq-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-
-.faq-mesh-gradient {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(
-      ellipse at top right,
-      rgba(15, 15, 15, 0.1) 0%,
-      rgba(255, 255, 255, 0) 50%
-    ),
-    radial-gradient(
-      ellipse at bottom left,
-      rgba(37, 37, 37, 0.1) 0%,
-      rgba(255, 255, 255, 0) 50%
-    );
-}
-
-.faq-dotted-pattern {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-  background-size: 20px 20px;
-  opacity: 0.5;
+.dark-mode .faq-section {
+  background-color: var(--dark-bg);
 }
 
 .faq-header {
-  text-align: center;
   margin-bottom: 3rem;
-  position: relative;
-  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .faq-title {
   font-size: var(--font-3xl);
   margin-top: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   color: var(--black);
 }
 
-.faq-description {
-  max-width: 700px;
-  margin: 0 auto;
-  color: var(--gray);
-  font-size: var(--font-md);
-  margin-bottom: 1.5rem;
+/* Fix for FAQ main title in dark mode */
+.dark-mode .faq-title {
+  color: var(--dark-text);
 }
 
-.faq-wrapper {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: start;
-  z-index: 1;
-}
-
-.faq-accordion {
+.faq-content {
   max-width: 100%;
 }
 
 .faq-item {
-  margin-bottom: 1rem;
-  border-radius: var(--radius-md);
-  background-color: var(--white);
-  box-shadow: var(--shadow-sm);
-  overflow: hidden;
+  position: relative;
+  margin-bottom: 1px;
+  border-bottom: 1px solid var(--light-gray);
   transition: all 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  padding: 1.5rem 0;
 }
 
-.faq-item:hover {
-  box-shadow: var(--shadow-md);
+/* Updated hover states for better dark mode compatibility */
+.faq-item:hover .faq-question {
+  color: var(--primary-blue);
 }
 
-.faq-item.active {
-  box-shadow: var(--shadow-md);
+.dark-mode .faq-item:hover .faq-question {
+  color: var(--dark-primary-blue);
+}
+
+.faq-number {
+  font-family: "Ethnocentric", sans-serif;
+  font-size: var(--font-md);
+  color: var(--dark-gray);
+  margin-right: 1.5rem;
+  padding-top: 0.2rem;
+  flex-shrink: 0;
+  width: 2.5rem;
+}
+
+/* Fix for FAQ number in dark mode */
+.dark-mode .faq-number {
+  color: var(--dark-text);
+}
+
+.faq-item.active .faq-number {
+  color: var(--white);
+  background-color: var(--black);
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0;
+  transform: translateX(-0.25rem);
+}
+
+/* Fix for active FAQ number in dark mode */
+.dark-mode .faq-item.active .faq-number {
+  background-color: var(--white);
+  color: var(--dark-bg);
+}
+
+.faq-details {
+  flex: 1;
 }
 
 .faq-question {
   width: 100%;
-  padding: 1.5rem;
   text-align: left;
-  font-size: var(--font-md);
+  font-size: var(--font-lg);
   font-weight: 600;
   color: var(--dark-gray);
-  background-color: var(--white);
+  background: transparent;
   border: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
   transition: all 0.3s ease;
+  padding: 0;
+  padding-right: 1rem;
 }
 
-.faq-question:hover {
-  color: var(--primary-blue);
+/* Fix for FAQ question in dark mode */
+.dark-mode .faq-question {
+  color: var(--dark-text);
 }
 
+/* Fix for active FAQ question in light mode */
+.faq-item.active .faq-question {
+  color: var(--black);
+  font-weight: 700;
+}
+
+/* Fix for active FAQ question in dark mode */
+.dark-mode .faq-item.active .faq-question {
+  color: var(--dark-text);
+  font-weight: 700;
+}
+
+/* Added hover effects for icons */
 .faq-icon {
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  min-width: 20px;
+  min-width: 24px;
+}
+
+.dark-mode .faq-icon {
+  color: var(--dark-text);
+}
+
+.faq-item:hover .faq-icon {
+  transform: scale(1.1);
+}
+
+.dark-mode .faq-item:hover .faq-icon {
+  color: var(--dark-primary-blue);
 }
 
 .faq-item.active .faq-icon {
   transform: rotate(45deg);
-  color: var(--primary-red);
+}
+
+/* Fix for active FAQ icon in dark mode */
+.dark-mode .faq-item.active .faq-icon {
+  color: var(--dark-text);
+}
+
+.faq-item.active:hover .faq-icon {
+  transform: rotate(45deg) scale(1.1);
 }
 
 .faq-answer {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease, padding 0.5s ease;
-  padding: 0 1.5rem;
+  padding-top: 0;
 }
 
 .faq-item.active .faq-answer {
   max-height: 500px;
-  padding-bottom: 1.5rem;
+  padding-top: 1rem;
 }
 
 .faq-answer p {
   color: var(--gray);
   line-height: 1.6;
+  margin: 0;
 }
 
-/* Added visual balance with image */
-.faq-image-container {
-  position: relative;
+/* Fix for FAQ answer text in dark mode */
+.dark-mode .faq-answer p {
+  color: var(--dark-text-muted);
 }
 
-.faq-image {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
+.faq-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
 }
 
-.faq-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.8s ease;
-}
-
-.faq-image:hover img {
-  transform: scale(1.03);
-}
-
-.faq-image-shape {
-  position: absolute;
-  width: 120%;
-  height: 120%;
-  top: -10%;
-  left: -10%;
-  background: linear-gradient(
-    135deg,
-    rgba(15, 15, 15, 0.3) 0%,
-    rgba(37, 37, 37, 0.3) 100%
-  );
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  filter: blur(60px);
-  z-index: -1;
-  animation: morphShape 15s ease-in-out infinite;
-}
-
-@keyframes morphShape {
-  0% {
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  }
-  25% {
-    border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
-  }
-  50% {
-    border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
-  }
-  75% {
-    border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
-  }
-  100% {
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  }
-}
-
-.faq-cta {
-  text-align: center;
-  margin-top: 3.5rem;
-  position: relative;
-  z-index: 1;
-}
-
-.faq-cta-text {
-  margin-bottom: 1.5rem;
-  font-size: var(--font-md);
-  font-weight: 500;
-}
-
-.faq-button {
-  display: inline-flex;
+.view-faq-btn {
+  display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.9rem 1.8rem;
-  border-radius: var(--radius-full);
-  font-weight: 600;
   font-size: var(--font-base);
-  background: linear-gradient(
-    135deg,
-    var(--primary-blue) 0%,
-    var(--primary-red) 100%
-  );
-  color: white;
-  box-shadow: var(--shadow-md);
-  border: none;
-  background-size: 200% auto;
+  color: var(--dark-gray);
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 
-.faq-button:hover {
-  background-position: right center;
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+.dark-mode .view-faq-btn {
+  color: var(--dark-text);
 }
 
-.faq-button svg {
-  transition: transform 0.3s ease;
+.view-faq-btn:hover {
+  color: var(--primary-blue);
 }
 
-.faq-button:hover svg {
+.dark-mode .view-faq-btn:hover {
+  color: var(--dark-primary-blue);
+}
+
+.view-faq-btn:hover svg {
   transform: translateX(3px);
+}
+
+.view-faq-btn svg {
+  transition: transform 0.3s ease;
 }
 
 @media (max-width: 768px) {
@@ -258,24 +224,18 @@
     font-size: var(--font-2xl);
   }
 
-  .faq-header {
-    margin-bottom: 2rem;
-  }
-
-  .faq-wrapper {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .faq-image-container {
-    order: -1; /* Show image above the FAQs on mobile */
-    max-width: 350px;
-    margin: 0 auto 2rem;
-  }
-
   .faq-question {
-    padding: 1.25rem;
+    font-size: var(--font-md);
+  }
+
+  .faq-number {
     font-size: var(--font-base);
+    width: 2rem;
+  }
+
+  .faq-item.active .faq-number {
+    width: 2.5rem;
+    height: 2.5rem;
   }
 }
 
@@ -284,11 +244,11 @@
     padding: 3rem 0;
   }
 
-  .faq-header {
-    margin-bottom: 2rem;
+  .faq-item {
+    padding: 1.25rem 0;
   }
 
-  .faq-accordion {
-    margin-bottom: 2rem;
+  .faq-number {
+    margin-right: 1rem;
   }
 }
