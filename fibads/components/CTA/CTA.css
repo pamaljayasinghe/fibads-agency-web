@@ -308,6 +308,11 @@
   margin-top: auto;
 }
 
+.cta-button span {
+  position: relative;
+  z-index: 2;
+}
+
 .cta-button::before {
   content: "";
   position: absolute;
@@ -327,6 +332,21 @@
 .cta-button.primary {
   background-color: var(--primary-blue);
   color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.dark-mode .cta-button.primary {
+  background-color: var(--dark-primary-blue);
+  color: var(--dark-bg);
+  box-shadow: var(--shadow-md-dark);
+}
+
+.cta-button.primary span {
+  color: white;
+}
+
+.dark-mode .cta-button.primary span {
+  color: var(--dark-bg);
 }
 
 .cta-button.secondary {
@@ -335,9 +355,49 @@
   border: 1px solid var(--primary-blue);
 }
 
+.dark-mode .cta-button.secondary {
+  background-color: white;
+  border: 1px solid transparent;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button.secondary span {
+  color: var(--primary-blue);
+}
+
+.dark-mode .cta-button.secondary span {
+  color: black;
+  font-weight: 600;
+  text-shadow: none;
+}
+
+.cta-button.secondary svg {
+  color: var(--primary-blue);
+}
+
+.dark-mode .cta-button.secondary svg {
+  color: black;
+}
+
 .cta-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .cta-button:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button.secondary:hover {
+  background-color: rgba(224, 224, 224, 0.25);
+  border-color: var(--dark-primary-red);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.dark-mode .cta-button.secondary:hover {
+  background-color: #f5f5f5;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button-icon {
@@ -345,7 +405,7 @@
 }
 
 .cta-button-icon.icon-move {
-  animation: arrowMove 0.8s ease infinite;
+  transform: translateX(3px);
 }
 
 /* Testimonial section */
@@ -476,8 +536,25 @@
 }
 
 .dark-mode .cta-button.secondary {
-  color: var(--dark-text);
-  border-color: var(--dark-primary-blue);
+  background-color: white;
+  border: 1px solid transparent;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .cta-button.secondary span {
+  color: black;
+  font-weight: 600;
+  text-shadow: none;
+}
+
+.dark-mode .cta-button.secondary svg {
+  color: black;
+}
+
+.dark-mode .cta-button.secondary:hover {
+  background-color: #f5f5f5;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .dark-mode .cta-description {

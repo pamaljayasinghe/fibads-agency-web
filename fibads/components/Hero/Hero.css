@@ -553,6 +553,7 @@
     var(--dark-primary-blue) 0%,
     var(--dark-primary-red) 100%
   );
+  color: var(--dark-bg);
 }
 
 .hero-button.primary::before {
@@ -576,6 +577,10 @@
   background-position: right center;
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
+}
+
+.dark-mode .hero-button.primary:hover {
+  box-shadow: var(--shadow-lg-dark);
 }
 
 .hero-button.primary:hover::before {
@@ -636,6 +641,7 @@
 .dark-mode .hero-button.secondary:hover {
   border-color: var(--dark-primary-blue);
   color: var(--dark-primary-blue);
+  box-shadow: var(--shadow-md-dark);
 }
 
 .hero-button.secondary:hover::before {
