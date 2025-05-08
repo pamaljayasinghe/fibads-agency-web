@@ -71,14 +71,6 @@ h5 {
   color: var(--black);
 }
 
-.dark-mode h1,
-.dark-mode h2,
-.dark-mode h3,
-.dark-mode h4,
-.dark-mode h5 {
-  color: var(--dark-text);
-}
-
 h1 {
   font-size: 3.5rem;
   letter-spacing: 2px;
@@ -99,10 +91,6 @@ p {
   margin-bottom: 1rem;
 }
 
-.dark-mode p {
-  color: var(--dark-text-muted);
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -112,10 +100,6 @@ a {
 
 a:hover {
   color: var(--primary-red);
-}
-
-.dark-mode a:hover {
-  color: var(--dark-primary-red);
 }
 
 img {
@@ -129,12 +113,6 @@ button {
   outline: none;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
-}
-
-/* Improved button hover states for both light and dark mode */
-button:hover {
-  transform: translateY(-2px);
-  transition: transform 0.3s ease;
 }
 
 .container {
@@ -167,11 +145,6 @@ button:hover {
   opacity: 0.8;
   font-family: "Eurostile Bold Extended", sans-serif;
   letter-spacing: 2px;
-}
-
-.dark-mode .section-label {
-  color: var(--dark-primary-blue);
-  opacity: 0.9;
 }
 
 /* Optimize AOS animations */
@@ -259,15 +232,6 @@ button:hover {
   animation: gradientShift 15s ease infinite;
 }
 
-.dark-mode .gradient-bg {
-  background: linear-gradient(
-    135deg,
-    var(--dark-primary-blue) 0%,
-    var(--dark-primary-red) 100%
-  );
-  color: var(--dark-bg);
-}
-
 @keyframes gradientShift {
   0% {
     background-position: 0% 50%;
@@ -291,17 +255,6 @@ button:hover {
   color: transparent;
 }
 
-.dark-mode .gradient-text {
-  background: linear-gradient(
-    135deg,
-    var(--dark-primary-blue) 0%,
-    var(--dark-primary-red) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
 /* Modern box shadow for cards and elements */
 .modern-shadow {
   box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.1);
@@ -313,14 +266,6 @@ button:hover {
   transform: translateY(-5px);
 }
 
-.dark-mode .modern-shadow {
-  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.3);
-}
-
-.dark-mode .modern-shadow:hover {
-  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.4);
-}
-
 /* Beautiful scrollbar with brand colors and animation */
 ::-webkit-scrollbar {
   width: 10px;
@@ -328,10 +273,6 @@ button:hover {
 
 ::-webkit-scrollbar-track {
   background: var(--light-gray);
-}
-
-.dark-mode ::-webkit-scrollbar-track {
-  background: var(--dark-border);
 }
 
 @keyframes scrollbarGradientFlow {
@@ -372,32 +313,10 @@ button:hover {
   animation: scrollbarGradientFlow 2s ease infinite;
 }
 
-.dark-mode ::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    135deg,
-    var(--dark-primary-blue) 0%,
-    var(--dark-primary-red) 50%,
-    var(--dark-primary-blue) 100%
-  );
-}
-
-.dark-mode ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(
-    135deg,
-    var(--dark-primary-red) 0%,
-    var(--dark-primary-blue) 50%,
-    var(--dark-primary-red) 100%
-  );
-}
-
 /* For Firefox */
 html {
   scrollbar-color: var(--primary-red) var(--light-gray);
   scrollbar-width: thin;
-}
-
-.dark-mode html {
-  scrollbar-color: var(--dark-primary-red) var(--dark-border);
 }
 
 /* Fix section stacking and display issues */
@@ -519,21 +438,12 @@ main > section:last-child {
   text-stroke: 0.8px var(--dark-gray) !important;
 }
 
-.dark-mode .stats-section .counter-value {
-  -webkit-text-stroke: 0.8px var(--dark-text) !important;
-  text-stroke: 0.8px var(--dark-text) !important;
-}
-
 .stats-section .stat-label {
   font-size: 20px !important;
   line-height: 1.4 !important;
   color: var(--black) !important;
   margin-top: 15px !important;
   text-transform: none !important;
-}
-
-.dark-mode .stats-section .stat-label {
-  color: var(--dark-text) !important;
 }
 
 @media (max-width: 992px) {
