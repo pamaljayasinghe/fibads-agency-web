@@ -99,19 +99,10 @@
   animation: fadeIn 0.5s ease-out;
 }
 
-.dark-mode .company-logo {
-  background-color: var(--dark-surface-2);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
 .company-name {
   font-weight: 600;
   letter-spacing: 0.5px;
   color: var(--black);
-}
-
-.dark-mode .company-name {
-  color: var(--dark-text);
 }
 
 .testimonial-rating {
