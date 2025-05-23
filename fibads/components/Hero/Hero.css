@@ -1,36 +1,24 @@
 .hero-section {
   position: relative;
-  padding: 9rem 0 6rem;
-  margin-top: 0;
+  padding: 0;
+  margin: 0;
   overflow: hidden;
   background: #000000; /* Black background */
-  height: 100vh; /* Full viewport height */
+  min-height: 100vh; /* Full viewport height */
   display: flex;
   align-items: center;
   width: 100%;
   color: #ffffff;
 }
 
-/* Remove background elements */
-.particles-container,
-.hero-background,
-.animated-gradient,
-.hero-mesh-gradient,
-.animated-shapes,
-.hero-curves,
-.curve {
-  display: none;
-}
-
 /* Hero container */
 .hero-container {
   display: flex;
   position: relative;
-  z-index: var(--z-elevate);
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  gap: 5rem;
+  gap: 6rem;
   padding: 0 3rem;
 }
 
@@ -47,18 +35,18 @@
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-end;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
 }
 
 /* Agency location text */
 .agency-location {
-  margin-bottom: 4.5rem;
+  margin-bottom: 5rem;
 }
 
 .location-text {
   font-size: 14px;
   color: #ffffff;
-  opacity: 0.8;
+  opacity: 0.7;
   font-weight: 400;
   line-height: 1.5;
 }
@@ -71,7 +59,7 @@
 .title-row {
   display: flex;
   align-items: center;
-  margin-bottom: -0.5rem; /* Tighter line spacing */
+  margin-bottom: -1rem; /* Tighter line spacing */
 }
 
 .hero-title {
@@ -84,24 +72,34 @@
   text-transform: uppercase;
 }
 
+.hero-title.first-title {
+  font-size: 5.8rem;
+}
+
 /* Larger title for BRANDING */
 .hero-title.large-title {
-  font-size: 7.8rem;
+  font-size: 8.5rem;
+}
+
+.hero-title.last-title {
+  font-size: 5.8rem;
 }
 
 /* Rotating star styling */
 .rotating-star {
   margin-left: 15px;
   fill: #ffffff; /* White star */
-  height: 90px;
-  width: 90px;
+  height: 80px;
+  width: 80px;
   transition: transform 0.1s linear;
+  position: relative;
+  top: -10px;
 }
 
 /* Smiley icon styling */
 .smiley-icon {
   color: #ffff00; /* Yellow smiley */
-  font-size: 5rem;
+  font-size: 5.5rem;
   margin-left: 20px;
   position: relative;
   top: -10px;
@@ -115,21 +113,72 @@
 
 .hero-description {
   color: #ffffff;
-  font-size: 1.5rem;
-  line-height: 1.5;
+  font-size: 1.6rem;
+  line-height: 1.6;
   font-weight: 400;
   text-align: right;
   opacity: 0.9;
 }
 
-/* Media queries for responsive design */
+/* Advanced responsive design */
+@media (min-width: 1601px) {
+  .hero-container {
+    max-width: 1600px;
+    gap: 8rem;
+  }
+  
+  .hero-title.first-title {
+    font-size: 7rem;
+  }
+  
+  .hero-title.large-title {
+    font-size: 10rem;
+  }
+  
+  .hero-title.last-title {
+    font-size: 7rem;
+  }
+  
+  .rotating-star {
+    height: 100px;
+    width: 100px;
+  }
+  
+  .smiley-icon {
+    font-size: 7rem;
+  }
+  
+  .hero-description {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 1600px) {
+  .hero-container {
+    max-width: 1400px;
+    gap: 6rem;
+  }
+  
+  .hero-title.first-title {
+    font-size: 6rem;
+  }
+  
+  .hero-title.large-title {
+    font-size: 8.5rem;
+  }
+  
+  .hero-title.last-title {
+    font-size: 6rem;
+  }
+}
+
 @media (max-width: 1400px) {
   .hero-container {
     max-width: 1200px;
-    gap: 3rem;
+    gap: 4rem;
   }
   
-  .hero-title {
+  .hero-title.first-title {
     font-size: 5rem;
   }
   
@@ -137,107 +186,194 @@
     font-size: 7rem;
   }
   
-  .rotating-star {
-    height: 80px;
-    width: 80px;
-  }
-}
-
-@media (max-width: 1200px) {
-  .hero-title {
-    font-size: 4.5rem;
-  }
-  
-  .hero-title.large-title {
-    font-size: 6rem;
-  }
-  
-  .hero-description {
-    font-size: 1.3rem;
+  .hero-title.last-title {
+    font-size: 5rem;
   }
   
   .rotating-star {
     height: 70px;
     width: 70px;
   }
+  
+  .smiley-icon {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .hero-title.first-title {
+    font-size: 4.5rem;
+  }
+  
+  .hero-title.large-title {
+    font-size: 6.2rem;
+  }
+  
+  .hero-title.last-title {
+    font-size: 4.5rem;
+  }
+  
+  .hero-description {
+    font-size: 1.4rem;
+  }
+  
+  .rotating-star {
+    height: 60px;
+    width: 60px;
+  }
+  
+  .smiley-icon {
+    font-size: 4.5rem;
+  }
+  
+  .title-row {
+    margin-bottom: -0.8rem;
+  }
 }
 
 @media (max-width: 992px) {
   .hero-section {
-    height: auto;
-    padding: 8rem 0 5rem;
+    min-height: auto;
+    padding: 8rem 0;
   }
   
   .hero-container {
     flex-direction: column;
-    gap: 4rem;
+    gap: 5rem;
   }
   
-  .hero-title {
-    font-size: 4rem;
+  .hero-title.first-title {
+    font-size: 4.2rem;
   }
   
   .hero-title.large-title {
-    font-size: 5.5rem;
+    font-size: 5.8rem;
+  }
+  
+  .hero-title.last-title {
+    font-size: 4.2rem;
   }
   
   .hero-right-column {
     align-items: flex-start;
+    padding-bottom: 0;
   }
   
   .hero-description {
     text-align: left;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+  }
+  
+  .agency-location {
+    margin-bottom: 4rem;
   }
 }
 
 @media (max-width: 768px) {
   .hero-section {
-    padding: 7rem 0 4rem;
+    padding: 7rem 0;
   }
   
-  .hero-title {
-    font-size: 3rem;
+  .hero-title.first-title {
+    font-size: 3.5rem;
   }
   
   .hero-title.large-title {
-    font-size: 4rem;
+    font-size: 4.8rem;
+  }
+  
+  .hero-title.last-title {
+    font-size: 3.5rem;
   }
   
   .rotating-star {
     height: 50px;
     width: 50px;
+    top: -5px;
   }
   
   .smiley-icon {
-    font-size: 3.5rem;
+    font-size: 3.8rem;
+    top: -5px;
   }
   
   .agency-location {
     margin-bottom: 3rem;
   }
+  
+  .title-row {
+    margin-bottom: -0.6rem;
+  }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   .hero-section {
-    padding: 6rem 0 3rem;
+    padding: 6rem 0;
   }
   
-  .hero-title {
-    font-size: 2.5rem;
+  .hero-container {
+    padding: 0 1.5rem;
+  }
+  
+  .hero-title.first-title {
+    font-size: 2.8rem;
   }
   
   .hero-title.large-title {
-    font-size: 3.5rem;
+    font-size: 3.8rem;
+  }
+  
+  .hero-title.last-title {
+    font-size: 2.8rem;
   }
   
   .rotating-star {
     height: 40px;
     width: 40px;
+    margin-left: 10px;
   }
   
   .smiley-icon {
+    font-size: 3.2rem;
+    margin-left: 10px;
+  }
+  
+  .hero-description {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+  
+  .title-row {
+    margin-bottom: -0.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 5rem 0;
+  }
+  
+  .hero-title.first-title {
+    font-size: 2.2rem;
+  }
+  
+  .hero-title.large-title {
     font-size: 3rem;
+  }
+  
+  .hero-title.last-title {
+    font-size: 2.2rem;
+  }
+  
+  .rotating-star {
+    height: 30px;
+    width: 30px;
+    margin-left: 8px;
+  }
+  
+  .smiley-icon {
+    font-size: 2.5rem;
+    margin-left: 8px;
   }
   
   .hero-description {
@@ -248,4 +384,39 @@
   .agency-location {
     margin-bottom: 2rem;
   }
+  
+  .title-row {
+    margin-bottom: -0.3rem;
+  }
+}
+
+/* Add animation from animation.css */
+.hero-section {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.hero-title, .rotating-star, .smiley-icon {
+  animation: fadeIn 1.2s ease-in-out, slideUp 1.2s ease-in-out;
+}
+
+.agency-location {
+  animation: fadeIn 1.5s ease-in-out, slideDown 1.5s ease-in-out;
+}
+
+.hero-description {
+  animation: fadeIn 1.8s ease-in-out, slideInRight 1.8s ease-in-out;
+}
+
+/* Custom rotating animation for star */
+@keyframes rotateStar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotating-star {
+  animation: rotateStar 10s linear infinite;
 }
