@@ -1,143 +1,116 @@
-🚀 Features
+# Arolax Digital Agency - Next.js Website
 
-✨ Modern Design - Clean and professional UI with gradient color scheme
-🎯 Responsive Layout - Optimized for all devices from mobile to desktop
-🎨 Custom Animations - Smooth scroll reveal and hover effects
-🎭 Component Based - Well-organized, reusable React components
-📱 Mobile Menu - Hamburger navigation for smaller screens
-🌐 Dutch Language Support - All content in Dutch for the Dutch market
-⚡ Performance Optimized - Fast loading times and efficient code
+![Arolax Digital Agency](https://img.shields.io/badge/Arolax-Digital%20Agency-80bdff)
+![Next.js](https://img.shields.io/badge/Built%20with-Next.js-000c19)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
-🛠️ Tech Stack
+A modern, responsive digital agency website built with Next.js, featuring a beautiful UI with bold typography and an elegant blue color scheme.
 
-Framework: Next.js
-Frontend: React
-Styling: CSS3 (Custom external stylesheets)
-Animations: Custom CSS animations
-Fonts: Ethnocentric (custom), Montserrat (Google Fonts)
-Icons: Custom SVG icons
+![Website Screenshot](screenshot.png)
 
-📁 Project Structure
-fibads-agency-web/
-├── app/
-│   ├── layout.js           # Main layout
-│   ├── page.js            # Homepage
-│   └── globals.css        # Global styles
-├── components/
-│   ├── Header/            # Navigation component
-│   ├── Hero/              # Hero section
-│   ├── Services/          # Services showcase
-│   ├── Benefits/          # Benefits section
-│   ├── CaseStudy/         # Portfolio showcase
-│   ├── Testimonials/      # Client reviews
-│   ├── CTA/               # Call to action
-│   ├── FAQ/               # FAQ section
-│   └── Footer/            # Footer component
-├── public/
-│   ├── images/            # Image assets
-│   └── js/                # JavaScript files
-├── styles/
-│   ├── variables.css      # CSS variables
-│   └── animations.css     # Animation definitions
-└── package.json
-🚦 Getting Started
-Prerequisites
+## ✨ Features
 
-Node.js 14.x or higher
-npm or yarn
+- 🎨 Modern, clean design with bold typography
+- 🌊 Custom light blue (#80bdff) and dark blue (#000c19) color scheme
+- 📱 Fully responsive layout for all device sizes
+- ⚡ Fast performance with Next.js
+- 🧩 Component-based architecture for easy maintenance
+- 🎭 Smooth animations and transitions
 
-Installation
+## 🚀 Getting Started
 
-Clone the repository:
-bashgit clone https://github.com/yourusername/fibads-agency-web.git
-cd fibads-agency-web
+### Prerequisites
 
-Install dependencies:
-bashnpm install
+- Node.js 14.6.0 or newer
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/arolax-digital-agency.git
+cd arolax-digital-agency
+```
+
+2. Install dependencies:
+```bash
+npm install
 # or
-yarn install
+yarn
+```
 
-Add the custom Ethnocentric font:
-
-Create a /public/fonts directory
-Add the Ethnocentric font files
-Update paths in globals.css if needed
-
-
-Start the development server:
-bashnpm run dev
+3. Start the development server:
+```bash
+npm run dev
 # or
 yarn dev
+```
 
-Open http://localhost:3000 in your browser.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-🎨 Brand Guidelines
-The project follows strict brand guidelines:
+## 📁 Project Structure
 
-Colors:
+```
+arolax-digital-agency/
+├── public/             # Static files
+│   ├── logo.png        # Agency logo
+│   ├── person1.jpg     # Team member image
+│   ├── person2.jpg     # Team member image
+│   └── person3.jpg     # Team members collaborating image
+├── pages/              # Next.js pages
+│   ├── _app.js         # Custom App component
+│   └── index.js        # Homepage
+├── styles/             # CSS styles
+│   ├── globals.css     # Global styles
+│   └── Home.module.css # Component-specific styles
+├── components/         # React components (can be extended)
+└── package.json        # Project dependencies and scripts
+```
 
-Primary Blue: #2E3192
-Primary Red: #F33007
-Gradient: Blue to Red transition
+## 🎨 Customization
 
+### Colors
 
-Typography:
+The main colors used throughout the site are:
+- Primary blue: `#80bdff`
+- Dark blue: `#000c19`
+- White: `#ffffff`
 
-Headings: Ethnocentric
-Body: Montserrat
+These can be easily changed in the `styles/Home.module.css` file.
 
+### Images
 
-Design Elements:
+Replace the images in the `public` directory with your own:
+- `logo.png`: Your agency logo
+- `person1.jpg`, `person2.jpg`, `person3.jpg`: Team member photos
 
-Gradient backgrounds and buttons
-Rounded corners and modern shapes
-Smooth animations and transitions
+### Content
 
+Update the text content in `pages/index.js` to match your agency's services and mission.
 
+## 📱 Responsive Design
 
-🔧 Customization
-Updating Content
-Edit the content directly in component files:
+The website is fully responsive and works well on:
+- Desktop: 1200px and above
+- Laptop: 992px - 1199px
+- Tablet: 768px - 991px
+- Mobile: Below 768px
 
-/components/Hero/Hero.js - Update hero text
-/components/Services/Services.js - Modify service offerings
-/components/Footer/Footer.js - Update contact information
+## 🛠️ Built With
 
-Styling
+- [Next.js](https://nextjs.org/) - React framework
+- [React](https://reactjs.org/) - JavaScript library for building user interfaces
+- CSS Modules - For component-level styling
 
-Global styles: /app/globals.css
-Color variables: /styles/variables.css
-Component styles: Each component has its own CSS file
+## 📄 License
 
-Adding Pages
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Create a new directory in /app/
-Add a page.js file for the new route
-Create any necessary components
+## 🙌 Acknowledgements
 
-📱 Responsive Design
-The website is fully responsive with breakpoints:
+- Design inspiration: Arolax Digital Agency
+- [Next.js Documentation](https://nextjs.org/docs)
+- [React Documentation](https://reactjs.org/docs)
 
-Desktop: 1024px and above
-Tablet: 768px to 1023px
-Mobile: Below 768px
+---
 
-🚀 Deployment
-
-Build the project:
-bashnpm run build
-
-Deploy to your preferred hosting service:
-
-Vercel (recommended for Next.js)
-Netlify
-Any other hosting service supporting Node.js
-
-
-
-📚 Documentation
-For more detailed documentation:
-
-Next.js Documentation
-CSS Documentation
-Component Guide
