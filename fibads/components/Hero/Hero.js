@@ -15,6 +15,9 @@ const Hero = () => {
   const [counters, setCounters] = useState(stats.map(() => 0));
   const statsRef = useRef(null);
   const hasAnimated = useRef(false);
+  
+  // Star rotation state
+  const [rotation, setRotation] = useState(0);
 
   const animateValue = (start, end, duration, index) => {
     let startTimestamp = null;
@@ -72,45 +75,47 @@ const Hero = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Rotate star animation
+  useEffect(() => {
+    const rotateInterval = setInterval(() => {
+      setRotation(prev => (prev + 1) % 360);
+    }, 30);
+    
+    return () => clearInterval(rotateInterval);
+  }, []);
+
+  // Create Star SVG component
+  const StarIcon = ({ className }) => (
+    <svg 
+      className={className} 
+      style={{ transform: `rotate(${rotation}deg)` }}
+      width="60" 
+      height="60" 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M12 1L15.5 8.5H23L17 13.5L19 22L12 17.5L5 22L7 13.5L1 8.5H8.5L12 1Z" fill="white" />
+    </svg>
+  );
+
   return (
     <section className="hero-section">
       <div className="container hero-container">
         <div className="hero-left-column">
           <div className="hero-content" data-aos="fade-up">
-            <span className="section-label">Digital agency</span>
-            <h1 className="hero-title">
-              We drive you
-              <br />
-              to digital
-              <br />
-              world
-            </h1>
-
-            <div className="hero-rating">
-              {[...Array(5)].map((_, i) => (
-                <span key={i} className="hero-star">
-                  ★
-                </span>
-              ))}
-              <p className="hero-trust">
-                Trusted globally by over 199+ clients
-              </p>
-            </div>
-
-            <div className="hero-avatars">
-              <div className="avatar avatar-1">
-                <img src="/api/placeholder/50/50" alt="Client" />
-              </div>
-              <div className="avatar avatar-2">
-                <img src="/api/placeholder/50/50" alt="Client" />
-              </div>
-              <div className="avatar avatar-3">
-                <img src="/api/placeholder/50/50" alt="Client" />
-              </div>
-              <div className="avatar avatar-4">
-                <img src="/api/placeholder/50/50" alt="Client" />
-              </div>
-              <div className="avatar avatar-you">You</div>
+            <span className="section-label">Creative Agency Beside<br />New York USA</span>
+            
+            <div className="creative-title-container">
+              <h1 className="hero-title">
+                CRETIVE <StarIcon className="rotating-star" />
+              </h1>
+              <h1 className="hero-title large-title">
+                BRANDING <span className="smiley-icon">☺</span>
+              </h1>
+              <h1 className="hero-title">
+                WORLD.
+              </h1>
             </div>
           </div>
         </div>
@@ -120,20 +125,13 @@ const Hero = () => {
           data-aos="fade-up"
           data-aos-delay="100"
         >
-          <div className="laptop-mockup">
-            <img
-              src="/img/Logog.png"
-              alt="Laptop showing website"
-              className="laptop-img"
-            />
+          <div className="agency-description">
+            <p className="hero-description">
+              Elevate Your Brand With The<br />
+              Agencyo Agency – Everything From<br />
+              Strategy To Advertising & Scale
+            </p>
           </div>
-
-          <p className="hero-description">
-            At <strong>Lunex</strong>, we propel your business into the digital
-            world by combining innovative strategies, cutting-edge design, and
-            tailored solutions to drive growth, boost engagement, and ensure
-            your brand thrives in the digital landscape.
-          </p>
         </div>
       </div>
 
