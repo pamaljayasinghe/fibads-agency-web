@@ -1,17 +1,17 @@
 .hero-section {
   position: relative;
-  padding: 9rem 0 4rem;
+  padding: 9rem 0 6rem;
   margin-top: 0;
   overflow: hidden;
-  background: #000000; /* Changed to black background */
-  height: auto;
+  background: #000000; /* Black background */
+  height: 100vh; /* Full viewport height */
   display: flex;
-  flex-direction: column;
+  align-items: center;
   width: 100%;
-  color: #ffffff; /* White text for all elements */
+  color: #ffffff;
 }
 
-/* Removing background gradients and particles that don't match the design */
+/* Remove background elements */
 .particles-container,
 .hero-background,
 .animated-gradient,
@@ -28,45 +28,50 @@
   position: relative;
   z-index: var(--z-elevate);
   width: 100%;
-  max-width: 1300px;
+  max-width: 1400px;
   margin: 0 auto;
-  gap: 3rem;
-  padding: 2rem;
+  gap: 5rem;
+  padding: 0 3rem;
 }
 
 .hero-left-column {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .hero-right-column {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: flex-end;
+  padding-bottom: 2rem;
 }
 
-/* Section label styling - small text at top */
-.section-label {
+/* Agency location text */
+.agency-location {
+  margin-bottom: 4.5rem;
+}
+
+.location-text {
   font-size: 14px;
   color: #ffffff;
-  display: block;
-  margin-bottom: 3rem;
-  position: relative;
+  opacity: 0.8;
   font-weight: 400;
   line-height: 1.5;
 }
 
-.section-label::before {
-  display: none; /* Remove the slash prefix */
-}
-
-/* Creative title styling */
+/* Creative title container */
 .creative-title-container {
   margin-bottom: 2rem;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: -0.5rem; /* Tighter line spacing */
 }
 
 .hero-title {
@@ -74,24 +79,22 @@
   line-height: 1;
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 0; /* Remove spacing between title lines */
-  letter-spacing: -1px;
+  margin-bottom: 0;
+  letter-spacing: -0.5px;
   text-transform: uppercase;
-  display: flex;
-  align-items: center;
 }
 
 /* Larger title for BRANDING */
 .hero-title.large-title {
-  font-size: 7rem;
+  font-size: 7.8rem;
 }
 
 /* Rotating star styling */
 .rotating-star {
   margin-left: 15px;
   fill: #ffffff; /* White star */
-  height: 70px;
-  width: 70px;
+  height: 90px;
+  width: 90px;
   transition: transform 0.1s linear;
 }
 
@@ -99,72 +102,89 @@
 .smiley-icon {
   color: #ffff00; /* Yellow smiley */
   font-size: 5rem;
-  margin-left: 15px;
+  margin-left: 20px;
+  position: relative;
+  top: -10px;
 }
 
 /* Agency description styling */
 .agency-description {
-  margin-top: auto; /* Push to bottom */
+  margin-top: auto;
   align-self: flex-end;
 }
 
 .hero-description {
   color: #ffffff;
   font-size: 1.5rem;
-  line-height: 1.4;
+  line-height: 1.5;
   font-weight: 400;
   text-align: right;
-}
-
-/* Remove elements not in the design */
-.hero-rating,
-.hero-trust,
-.hero-avatars,
-.avatar,
-.laptop-mockup,
-.hero-footer,
-.partner-logos {
-  display: none;
-}
-
-/* Hide the stats section as it's not in the design */
-.stats-section {
-  display: none;
+  opacity: 0.9;
 }
 
 /* Media queries for responsive design */
+@media (max-width: 1400px) {
+  .hero-container {
+    max-width: 1200px;
+    gap: 3rem;
+  }
+  
+  .hero-title {
+    font-size: 5rem;
+  }
+  
+  .hero-title.large-title {
+    font-size: 7rem;
+  }
+  
+  .rotating-star {
+    height: 80px;
+    width: 80px;
+  }
+}
+
 @media (max-width: 1200px) {
   .hero-title {
     font-size: 4.5rem;
   }
-
+  
   .hero-title.large-title {
     font-size: 6rem;
   }
-
+  
   .hero-description {
     font-size: 1.3rem;
+  }
+  
+  .rotating-star {
+    height: 70px;
+    width: 70px;
   }
 }
 
 @media (max-width: 992px) {
+  .hero-section {
+    height: auto;
+    padding: 8rem 0 5rem;
+  }
+  
   .hero-container {
     flex-direction: column;
-    gap: 2rem;
+    gap: 4rem;
   }
-
+  
   .hero-title {
     font-size: 4rem;
   }
-
+  
   .hero-title.large-title {
     font-size: 5.5rem;
   }
-
+  
   .hero-right-column {
     align-items: flex-start;
   }
-
+  
   .hero-description {
     text-align: left;
     font-size: 1.2rem;
@@ -173,51 +193,59 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    padding: 8rem 0 3rem;
+    padding: 7rem 0 4rem;
   }
-
+  
   .hero-title {
     font-size: 3rem;
   }
-
+  
   .hero-title.large-title {
     font-size: 4rem;
   }
-
+  
   .rotating-star {
     height: 50px;
     width: 50px;
   }
-
+  
   .smiley-icon {
     font-size: 3.5rem;
+  }
+  
+  .agency-location {
+    margin-bottom: 3rem;
   }
 }
 
 @media (max-width: 480px) {
   .hero-section {
-    padding: 7rem 0 3rem;
+    padding: 6rem 0 3rem;
   }
-
+  
   .hero-title {
     font-size: 2.5rem;
   }
-
+  
   .hero-title.large-title {
     font-size: 3.5rem;
   }
-
+  
   .rotating-star {
     height: 40px;
     width: 40px;
   }
-
+  
   .smiley-icon {
     font-size: 3rem;
   }
-
+  
   .hero-description {
     font-size: 1rem;
     line-height: 1.4;
+  }
+  
+  .agency-location {
+    margin-bottom: 2rem;
   }
 }

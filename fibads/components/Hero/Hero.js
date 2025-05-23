@@ -89,8 +89,8 @@ const Hero = () => {
     <svg 
       className={className} 
       style={{ transform: `rotate(${rotation}deg)` }}
-      width="60" 
-      height="60" 
+      width="70" 
+      height="70" 
       viewBox="0 0 24 24" 
       fill="none" 
       xmlns="http://www.w3.org/2000/svg"
@@ -103,57 +103,34 @@ const Hero = () => {
     <section className="hero-section">
       <div className="container hero-container">
         <div className="hero-left-column">
-          <div className="hero-content" data-aos="fade-up">
-            <span className="section-label">Creative Agency Beside<br />New York USA</span>
+          <div className="hero-content">
+            <div className="agency-location">
+              <span className="location-text">Creative Agency Beside New York USA</span>
+            </div>
             
             <div className="creative-title-container">
-              <h1 className="hero-title">
-                CRETIVE <StarIcon className="rotating-star" />
-              </h1>
-              <h1 className="hero-title large-title">
-                BRANDING <span className="smiley-icon">☺</span>
-              </h1>
-              <h1 className="hero-title">
-                WORLD.
-              </h1>
+              <div className="title-row">
+                <h1 className="hero-title">CREATIVE</h1>
+                <StarIcon className="rotating-star" />
+              </div>
+              <div className="title-row">
+                <h1 className="hero-title large-title">BRANDING</h1>
+                <span className="smiley-icon">☺</span>
+              </div>
+              <div className="title-row">
+                <h1 className="hero-title">WORLD.</h1>
+              </div>
             </div>
           </div>
         </div>
 
-        <div
-          className="hero-right-column"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
+        <div className="hero-right-column">
           <div className="agency-description">
             <p className="hero-description">
               Elevate Your Brand With The<br />
               Agencyo Agency – Everything From<br />
               Strategy To Advertising & Scale
             </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Statistics Section */}
-      <div
-        className="stats-section"
-        data-aos="fade-up"
-        data-aos-delay="200"
-        ref={statsRef}
-      >
-        <div className="container">
-          <h3 className="stats-title">Completion milestone</h3>
-          <div className="stats-container">
-            {stats.map((stat, index) => (
-              <div className="stat-item" key={index}>
-                <span className="counter-value">
-                  {counters[index]}
-                  {stat.suffix}
-                </span>
-                <span className="stat-label">{stat.label}</span>
-              </div>
-            ))}
           </div>
         </div>
       </div>
