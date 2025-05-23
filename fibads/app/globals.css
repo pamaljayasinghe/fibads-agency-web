@@ -43,7 +43,7 @@ body {
   line-height: 1.6;
   transition: background-color 0.5s ease;
   position: relative;
-  padding-top: env(safe-area-inset-top, 0); /* For iOS devices */
+  padding-top: 0; /* Remove top padding */
 }
 
 /* Remove custom cursor */
@@ -325,9 +325,11 @@ main {
   z-index: 1;
   min-height: 100vh; /* Ensure main content fills the screen */
   display: block; /* Changed from flex to block for better compatibility */
-  overflow: hidden !important; /* Prevent horizontal scrolling */
+  overflow: visible; /* Changed from hidden to visible */
   width: 100%;
   max-width: 100%;
+  margin-top: 0; /* Ensure no extra margin */
+  padding-top: 0; /* Ensure no extra padding */
 }
 
 main > section {
@@ -339,14 +341,14 @@ main > section {
 /* Optimize spacing for sections that come right after the header */
 main > section:first-child {
   margin-top: 0; /* Fix potential gap between header and first section */
-  overflow: hidden !important;
+  padding-top: 0; /* Remove padding that might cause spacing */
 }
 
 /* Fix section spacing and visibility */
 section {
   position: relative;
   z-index: 1;
-  overflow: hidden !important; /* Ensure all sections are visible */
+  overflow: visible; /* Changed from hidden to visible */
   opacity: 1 !important; /* Force visibility */
   display: block !important; /* Ensure sections display as blocks */
   width: 100%;
@@ -392,10 +394,16 @@ main > section:last-child {
 }
 
 .hero-section {
-  overflow: hidden !important;
-  min-height: auto !important;
-  height: auto !important;
+  display: flex !important;
+  position: relative !important;
+  z-index: 1 !important;
+  overflow: visible !important;
+  margin-top: 0 !important;
+  padding-top: 80px !important; /* Account for header height */
+  min-height: 100vh !important;
   max-height: none !important;
+  height: auto !important;
+  background-color: #000000 !important;
 }
 
 /* Fix for stat section - prevent global overrides */
