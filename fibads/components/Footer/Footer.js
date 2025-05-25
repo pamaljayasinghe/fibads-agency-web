@@ -27,7 +27,7 @@ const Footer = () => {
         <div className="footer-content">
           {/* Left Column with Services and Information */}
           <div className="footer-column">
-            {/* Star Logo */}
+            {/* Star Logo - Moved to top of the column for better mobile layout */}
             <div className="footer-star-container">
               <svg
                 className="footer-star rotate-animation"

@@ -264,171 +264,228 @@
 
 @media (max-width: 768px) {
   .footer {
-    padding: 3rem 0 1.5rem;
+    padding: 2rem 0 1.5rem;
   }
 
-  .footer-top .container,
-  .footer-bottom .container {
+  .footer .container {
     padding: 0 1.5rem;
   }
 
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-
-  .footer-brand {
-    text-align: center;
-    align-items: center;
-  }
-
-  .footer-description {
-    max-width: 100%;
-    text-align: center;
-  }
-
-  .footer-social {
-    justify-content: center;
-  }
-
-  /* Center headings on mobile */
-  .footer-heading {
-    text-align: center;
-    margin-bottom: 1.75rem;
-  }
-
-  .footer-heading::after {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-  }
-
-  /* Enhance footer menu for mobile */
-  .footer-menu {
-    display: flex;
+  /* Header section adjustments */
+  .footer-header {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    margin-bottom: 2rem;
   }
 
-  .footer-menu li {
-    margin-bottom: 1rem;
+  .footer-title, 
+  .footer-title-second {
+    font-size: 3rem;
   }
 
-  .footer-link {
-    font-size: 1rem;
-    padding: 0.5rem;
-  }
-
-  /* Better contact item layout for mobile */
-  .footer-contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .contact-item {
-    margin-bottom: 1.25rem;
+  .contact-btn {
+    width: 100%;
     justify-content: center;
+    padding: 0.85rem 1rem;
+    font-size: 0.95rem;
   }
 
-  .contact-item span,
-  .contact-item a {
-    font-size: 1rem;
+  /* Content grid adjustments */
+  .footer-content {
+    flex-direction: column;
   }
 
-  /* Enhanced social links for mobile */
-  .social-link {
-    width: 42px;
-    height: 42px;
+  .footer-column {
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .address-column {
+    flex: 1;
+    padding-left: 0;
+  }
+
+  /* Service and info sections in a row */
+  .footer-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .footer-star-container {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1.5rem;
+  }
+
+  /* Address section enhancements */
+  .address-section {
+    text-align: left;
+  }
+
+  .phone a {
+    font-size: 1.2rem;
+  }
+
+  /* Social links adjustments */
+  .social-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.8rem;
+    max-width: 200px;
+  }
+
+  .social-links a {
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
   }
 
   /* Footer bottom adjustments */
   .footer-bottom-content {
     flex-direction: column;
     text-align: center;
-    gap: 1.25rem;
+    gap: 1rem;
   }
 
   .footer-legal {
     justify-content: center;
-    flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   .legal-link {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     padding: 0.5rem;
   }
 
   .copyright {
     padding: 0.5rem;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 }
 
 /* Additional breakpoint for very small screens */
 @media (max-width: 480px) {
-  .footer-top .container {
+  .footer .container {
     padding: 0 1rem;
   }
-
-  .footer-grid {
+  
+  /* Further reduce title size */
+  .footer-title, 
+  .footer-title-second {
+    font-size: 2.5rem;
+  }
+  
+  /* Make services and info full width */
+  .footer-column {
+    grid-template-columns: 1fr;
     gap: 2rem;
   }
-
-  .logo-image {
-    max-height: 40px;
+  
+  /* Adjust content spacing */
+  .service-section h3,
+  .info-section h3,
+  .address-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
   }
-
-  .footer-description {
-    font-size: 0.85rem;
+  
+  .footer-content ul li {
+    margin-bottom: 0.75rem;
   }
-
-  .footer-link,
-  .contact-item span,
-  .contact-item a {
-    font-size: 0.9rem;
+  
+  .footer-content ul li a {
+    font-size: 0.95rem;
   }
-
-  .social-link {
-    width: 38px;
-    height: 38px;
+  
+  /* Address and phone */
+  .address {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
   }
-
-  .footer {
-    padding: 3rem 0 1.5rem;
+  
+  .phone a {
+    font-size: 1.1rem;
   }
-
+  
+  /* Social links - 2x2 grid */
+  .social-links {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 140px;
+  }
+  
+  /* Legal links on separate lines */
+  .footer-legal {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
   .legal-link,
   .copyright {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
   }
 }
 
 /* Extra small devices */
 @media (max-width: 360px) {
-  .logo-image {
-    max-height: 35px;
+  .footer-title, 
+  .footer-title-second {
+    font-size: 2rem;
   }
-
-  .footer-description {
-    font-size: 0.8rem;
+  
+  .contact-btn {
+    font-size: 0.85rem;
+    padding: 0.75rem 1rem;
   }
-
-  .footer-link,
-  .contact-item span,
-  .contact-item a,
+  
+  .footer-star-container {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .footer-content ul li a,
+  .address,
   .legal-link,
   .copyright {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
   }
-
-  .social-link {
-    width: 34px;
-    height: 34px;
+  
+  .phone a {
+    font-size: 1rem;
   }
+  
+  .social-links a {
+    height: 36px;
+  }
+  
+  .footer-bottom {
+    margin-top: 2rem;
+  }
+}
 
-  .footer-heading {
-    font-size: 1.1rem;
+/* Improved tap targets for mobile */
+@media (max-width: 768px) {
+  .footer-content ul li a {
+    display: block;
+    padding: 8px 0;
+  }
+  
+  .legal-link {
+    display: block;
+    padding: 8px 0;
+  }
+  
+  .social-links a {
+    transition: transform 0.2s ease;
+  }
+  
+  .social-links a:active {
+    transform: scale(0.95);
+  }
+  
+  /* Contact button touch feedback */
+  .contact-btn:active {
+    transform: scale(0.98);
   }
 }
