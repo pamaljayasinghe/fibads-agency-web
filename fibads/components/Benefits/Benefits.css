@@ -85,7 +85,7 @@
   position: absolute;
   opacity: 0.04;
   pointer-events: none;
-  animation: float 15s infinite ease-in-out;
+  animation: benefits-float 15s infinite ease-in-out;
 }
 
 .floating-shape.circle {
@@ -503,7 +503,7 @@
   }
 }
 
-@keyframes float {
+@keyframes benefits-float {
   0%,
   100% {
     transform: translateY(0) rotate(0deg);
