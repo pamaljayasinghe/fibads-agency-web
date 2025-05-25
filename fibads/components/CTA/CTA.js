@@ -36,10 +36,23 @@ const CTA = () => {
         mainCircle.className = "main-circle";
         circleContainer.appendChild(mainCircle);
 
+        // Add a glowing effect
+        const glowEffect = document.createElement("div");
+        glowEffect.className = "glow-effect";
+        circleContainer.appendChild(glowEffect);
+
+        // Create grid lines
+        const gridLines = document.createElement("div");
+        gridLines.className = "grid-lines";
+        circleContainer.appendChild(gridLines);
+
         // Create accent dots
         const dotPositions = [
           { top: "80px", right: "auto", left: "calc(50% + 230px)" },
           { top: "500px", right: "auto", left: "calc(50% - 230px)" },
+          { top: "200px", right: "calc(50% - 300px)", left: "auto" },
+          { top: "350px", right: "auto", left: "calc(50% + 280px)" },
+          { top: "150px", right: "auto", left: "calc(50% - 180px)" },
         ];
 
         dotPositions.forEach((pos) => {
@@ -58,6 +71,8 @@ const CTA = () => {
             { className: "floating-shape shape-2" },
             { className: "floating-shape shape-3" },
             { className: "floating-shape shape-4" },
+            { className: "floating-shape shape-5" },
+            { className: "floating-shape shape-6" },
           ];
 
           shapes.forEach((shape) => {
@@ -115,6 +130,7 @@ const CTA = () => {
                 />
               </svg>
             </a>
+            <div className="button-glow"></div>
           </div>
         </div>
       </div>
