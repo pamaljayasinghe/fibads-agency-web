@@ -1,145 +1,139 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef } from "react";
 import "./Services.css";
 
 const Services = () => {
-  const [activeService, setActiveService] = useState(null);
+  const sectionRef = useRef(null);
+  
+  // Add animation triggers when the section comes into view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    
+    const section = sectionRef.current;
+    if (section) {
+      observer.observe(section);
+    }
+    
+    return () => {
+      if (section) {
+        observer.unobserve(section);
+      }
+    };
+  }, []);
 
+  // Define all services based on the screenshot
   const services = [
     {
-      id: "digital-strategy",
-      number: "01",
-      title: "Digital strategy & consulting",
-      imageUrl: "/img/service-digital-strategy.jpg",
-      link: "/services/digital-strategy",
+      id: "content-marketing",
+      label: "Excellent Performance",
+      title: "Content Marketing",
+      link: "/services/content-marketing",
     },
     {
-      id: "branding",
-      number: "02",
-      title: "Branding & identity design",
-      imageUrl: "/img/service-branding.jpg",
-      link: "/services/branding",
+      id: "website-designing",
+      label: "Designing Your Vision",
+      title: "Website Designing",
+      link: "/services/website-designing",
     },
     {
-      id: "web",
-      number: "03",
-      title: "Web development & design",
-      imageUrl: "/img/service-web.jpg",
-      link: "/services/web-development",
+      id: "email-marketing",
+      label: "Reach Your Audience",
+      title: "E-mail Marketing",
+      link: "/services/email-marketing",
     },
     {
-      id: "social-media",
-      number: "04",
-      title: "Social media management",
-      imageUrl: "/img/service-social.jpg",
-      link: "/services/social-media",
+      id: "webflow-development",
+      label: "Building Seamless Websites",
+      title: "Webflow Development",
+      link: "/services/webflow-development",
     },
     {
-      id: "marketing",
-      number: "05",
-      title: "Digital marketing",
-      imageUrl: "/img/service-marketing.jpg",
+      id: "social-media-marketing",
+      label: "Engage, Grow, Succeed",
+      title: "Social Media Marketing",
+      link: "/services/social-media-marketing",
+    },
+    {
+      id: "digital-marketing",
+      label: "Driving Online Success",
+      title: "Digital Marketing",
       link: "/services/digital-marketing",
     },
   ];
 
-  const handleMouseEnter = (id) => {
-    setActiveService(id);
-  };
-
-  const handleMouseLeave = () => {
-    setActiveService(null);
-  };
-
   return (
-    <section className="services-new-section">
-      <div className="services-new-container">
-        <div className="services-new-header">
-          <span className="services-new-label">Services</span>
-          <h2 className="services-new-title">Our digital offerings</h2>
+    <section className="services-section-dark" ref={sectionRef}>
+      <div className="services-container">
+        <div className="services-header">
+          <span className="services-label-recent">RECENT SERVICES</span>
+          <h2 className="services-title-main">
+            <span className="services-title-our">OUR</span>{" "}
+            <span className="services-title-services">SERVICES</span>
+          </h2>
         </div>
 
-        <div className="services-new-list">
-          {services.map((service) => (
-            <a
-              href={service.link}
-              key={service.id}
-              className={`service-new-item ${
-                activeService === service.id ? "active" : ""
-              }`}
-              onMouseEnter={() => handleMouseEnter(service.id)}
-              onMouseLeave={handleMouseLeave}
+        <div className="services-grid">
+          {services.map((service, index) => (
+            <div 
+              key={service.id} 
+              className="service-card"
+              style={{ animationDelay: `${0.1 * (index + 1)}s` }}
             >
-              <div className="service-item-left">
-                <span className="service-new-number">{service.number}</span>
-                <h3 className="service-new-name">{service.title}</h3>
+              <div className="service-content">
+                <span className="service-label">{service.label}</span>
+                <h3 className="service-title">{service.title}</h3>
               </div>
-
-              <div className="service-item-right">
-                <div className="service-new-arrow">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7 17L17 7"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M7 7H17V17"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
-
-              {activeService === service.id && (
-                <div className="service-image-wrapper">
-                  <div className="service-new-image">
-                    <img src={service.imageUrl} alt={service.title} />
-                  </div>
-                </div>
-              )}
-            </a>
+              <a href={service.link} className="service-link">
+                <svg 
+                  className="service-arrow"
+                  width="24" 
+                  height="24" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path 
+                    d="M7 17L17 7" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  />
+                  <path 
+                    d="M7 7H17V17" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
           ))}
         </div>
 
-        <div className="services-new-cta">
-          <a href="/services" className="services-new-link">
-            View Services
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6 14L14 6"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M6 6H14V14"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+        <div className="services-more">
+          <a href="/services" className="services-more-link">
+            <div className="services-more-button">
+              <span>More</span>
+              <span>Service</span>
+            </div>
           </a>
+        </div>
+
+        {/* 3D element shown in screenshot */}
+        <div className="services-3d-element">
+          <img src="/img/3d-ring.png" alt="3D Element" className="floating" />
         </div>
       </div>
     </section>
