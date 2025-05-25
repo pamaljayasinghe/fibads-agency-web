@@ -398,11 +398,11 @@ body.menu-open {
   .logo-image {
     max-height: 32px; /* Smaller logo on mobile */
   }
-  
+
   .mobile-menu {
     padding-top: 5rem; /* Reduce top padding on mobile menu */
   }
-  
+
   .mobile-nav-link {
     font-size: 1.1rem; /* Smaller font size for mobile menu items */
     padding: 0.8rem 0; /* Less vertical padding */
@@ -414,21 +414,21 @@ body.menu-open {
   .header {
     height: 55px;
   }
-  
+
   .logo-image {
     max-height: 28px;
   }
-  
+
   .mobile-menu-toggle {
     width: 22px;
     height: 16px;
   }
-  
+
   .mobile-nav-link {
     font-size: 1rem;
     padding: 0.7rem 0;
   }
-  
+
   .mobile-nav-link.cta {
     padding: 0.8rem 1.5rem;
   }

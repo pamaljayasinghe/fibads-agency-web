@@ -533,11 +533,11 @@
   .shape-6 {
     display: none;
   }
-  
+
   .container {
     padding: 0 1rem;
   }
-  
+
   .cta-content {
     padding: 1.5rem;
   }
@@ -548,12 +548,12 @@
   .cta-title {
     font-size: clamp(1.5rem, 5vw, 2.5rem);
   }
-  
+
   .cta-button {
     font-size: 0.8rem;
     padding: 0.6rem 1rem;
   }
-  
+
   .cta-section {
     min-height: 40vh;
   }
