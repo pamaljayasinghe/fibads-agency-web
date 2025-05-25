@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./CaseStudy.css";
 
 const CaseStudy = () => {
@@ -8,46 +8,90 @@ const CaseStudy = () => {
   const caseStudies = [
     {
       id: 1,
-      title: "Project digital transformation initiative",
-      date: "17 Mar 2025",
-      image: "/img/Logog.png", // Using an existing image from your project
+      title: "Redefining E-Commerce",
+      date: "Apr 2025",
+      image:
+        "https://placehold.co/600x400/f9f9f9/000000?text=Product+Design+Studio",
+      tags: ["Branding", "UI/UX"],
       description:
-        "The Brand elevation strategy launch is aimed at reshaping brands through innovative digital strategies. Our team integrates advanced technologies & creative solutions to enhance user experiences, streamline processes, & drive measurable growth.",
+        "A complete redesign for an e-commerce platform that resulted in a 45% increase in user engagement and 60% higher conversion rates. Our approach focused on simplifying the user journey while creating a distinctive brand presence.",
     },
     {
       id: 2,
-      title: "Brand elevation strategy launch",
-      date: "12 Feb 2025",
-      image: "/img/Logow.png",
+      title: "Design That Converts",
+      date: "Mar 2025",
+      image:
+        "https://placehold.co/600x400/f9f9f9/000000?text=Mobile+App+Design",
+      tags: ["Design", "Idea"],
       description:
-        "Brand elevation focuses on enhancing market position and perception. We create comprehensive strategies that refine visual identity, messaging, and customer touchpoints to establish a stronger emotional connection with target audiences.",
+        "Strategic design implementation that transformed user interaction and increased conversion rates by 37%. We created a seamless experience across all touchpoints while maintaining strong brand consistency.",
     },
     {
       id: 3,
-      title: "Innovation through digital design",
-      date: "05 Jan 2025",
-      image: "/img/Logob.png",
+      title: "A New Brand Identity",
+      date: "Feb 2025",
+      image: "https://placehold.co/600x400/f9f9f9/000000?text=Brand+Identity",
+      tags: ["Branding", "Mockup"],
       description:
-        "Our digital design innovation combines cutting-edge aesthetics with functional excellence. We develop responsive, intuitive interfaces that captivate users while ensuring seamless experiences across all platforms and devices.",
+        "Creating a cohesive brand identity system for a startup that helped them secure additional funding rounds. Our comprehensive approach covered everything from visual identity to brand voice and positioning strategy.",
     },
     {
       id: 4,
-      title: "Creative vision for growth",
-      date: "30 Dec 2025",
-      image: "/img/iconwhite.png",
+      title: "Business Card Design",
+      date: "Jan 2025",
+      image:
+        "https://placehold.co/600x400/f9f9f9/000000?text=Business+Card+Design",
+      tags: ["Design", "Card"],
       description:
-        "Creative vision drives sustainable business growth by reimagining possibilities. We align bold creative concepts with strategic business objectives to create memorable brand experiences that resonate with audiences and foster long-term loyalty.",
+        "Minimalist yet impactful business card design that perfectly captured the essence of the client's brand. The design increased brand recall and recognition in a competitive marketplace.",
     },
   ];
 
-  // State to track which case study is currently hovered
+  // State to track which case study is currently hovered/active
   const [activeStudy, setActiveStudy] = useState(caseStudies[0].id);
+
+  // Animation tracking
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  // Handle case study selection with animation
+  const handleCaseStudyChange = (id) => {
+    if (activeStudy !== id && !isAnimating) {
+      setIsAnimating(true);
+      setActiveStudy(id);
+      setTimeout(() => setIsAnimating(false), 400); // Match fadeIn animation duration
+    }
+  };
+
+  // Initialize animations on component mount
+  useEffect(() => {
+    // Add stagger effect to case study items
+    const items = document.querySelectorAll(".case-study-item");
+    items.forEach((item, index) => {
+      item.classList.add("stagger-item");
+      item.style.animationDelay = `${0.1 * (index + 1)}s`;
+      item.style.animationName = "fadeIn";
+      item.style.animationDuration = "0.6s";
+      item.style.animationFillMode = "forwards";
+    });
+
+    // Animate the title
+    const titleElement = document.querySelector(".case-studies-title");
+    if (titleElement) {
+      titleElement.classList.add("slide-up");
+    }
+
+    // Animate section label
+    const labelElement = document.querySelector(".section-label");
+    if (labelElement) {
+      labelElement.classList.add("fade-in");
+    }
+  }, []);
 
   return (
     <section className="case-studies-section">
       <div className="container">
         <span className="section-label">Case studies</span>
-        <h2 className="case-studies-title">Our latest case studies</h2>
+        <h2 className="case-studies-title">SELECTED WORKS..</h2>
 
         <div className="case-studies-container">
           <div className="case-studies-list">
@@ -57,10 +101,17 @@ const CaseStudy = () => {
                 className={`case-study-item ${
                   activeStudy === study.id ? "active" : ""
                 }`}
-                onMouseEnter={() => setActiveStudy(study.id)}
+                onMouseEnter={() => handleCaseStudyChange(study.id)}
               >
                 <h3 className="case-study-item-title">{study.title}</h3>
                 <p className="case-study-item-date">{study.date}</p>
+                <div className="case-study-tags">
+                  {study.tags.map((tag, index) => (
+                    <span key={index} className="case-study-tag">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
                 <div className="arrow-icon">
                   <svg
                     width="24"
@@ -94,7 +145,12 @@ const CaseStudy = () => {
             {caseStudies
               .filter((study) => study.id === activeStudy)
               .map((study) => (
-                <div key={study.id} className="case-study-details">
+                <div
+                  key={study.id}
+                  className={`case-study-details ${
+                    isAnimating ? "animating" : ""
+                  }`}
+                >
                   <div className="case-study-image">
                     <img src={study.image} alt={study.title} />
                   </div>
@@ -107,8 +163,11 @@ const CaseStudy = () => {
         </div>
 
         <div className="case-studies-view-more">
-          <a href="/case-studies" className="view-case-studies-btn">
-            View Case Studies
+          <a
+            href="/case-studies"
+            className="view-case-studies-btn animated-underline"
+          >
+            ALL PROJECT
             <svg
               width="16"
               height="16"

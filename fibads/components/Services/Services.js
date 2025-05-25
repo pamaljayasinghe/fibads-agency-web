@@ -5,25 +5,25 @@ import "./Services.css";
 
 const Services = () => {
   const sectionRef = useRef(null);
-  
+
   // Add animation triggers when the section comes into view
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
+            entry.target.classList.add("in-view");
           }
         });
       },
       { threshold: 0.2 }
     );
-    
+
     const section = sectionRef.current;
     if (section) {
       observer.observe(section);
     }
-    
+
     return () => {
       if (section) {
         observer.unobserve(section);
@@ -84,8 +84,8 @@ const Services = () => {
 
         <div className="services-grid">
           {services.map((service, index) => (
-            <div 
-              key={service.id} 
+            <div
+              key={service.id}
               className="service-card"
               style={{ animationDelay: `${0.1 * (index + 1)}s` }}
             >
@@ -94,26 +94,26 @@ const Services = () => {
                 <h3 className="service-title">{service.title}</h3>
               </div>
               <a href={service.link} className="service-link">
-                <svg 
+                <svg
                   className="service-arrow"
-                  width="24" 
-                  height="24" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path 
-                    d="M7 17L17 7" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
+                  <path
+                    d="M7 17L17 7"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
                     strokeLinejoin="round"
                   />
-                  <path 
-                    d="M7 7H17V17" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
+                  <path
+                    d="M7 7H17V17"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                 </svg>

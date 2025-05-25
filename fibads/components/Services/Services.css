@@ -256,11 +256,11 @@
   .services-title-main {
     font-size: 60px;
   }
-  
+
   .services-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .services-3d-element {
     width: 150px;
     height: 150px;
@@ -273,15 +273,15 @@
   .services-section-dark {
     padding: 60px 0;
   }
-  
+
   .services-title-main {
     font-size: 42px;
   }
-  
+
   .service-title {
     font-size: 24px;
   }
-  
+
   .services-3d-element {
     width: 120px;
     height: 120px;
@@ -293,28 +293,28 @@
   .services-section-dark {
     padding: 40px 0;
   }
-  
+
   .services-header {
     margin-bottom: 40px;
   }
-  
+
   .services-title-main {
     font-size: 32px;
   }
-  
+
   .service-card {
     padding: 1.5rem 0;
     flex-direction: column;
   }
-  
+
   .service-link {
     margin-top: 15px;
   }
-  
+
   .services-3d-element {
     display: none; /* Hide on mobile for better layout */
   }
-  
+
   .services-more-button {
     width: 120px;
     height: 120px;

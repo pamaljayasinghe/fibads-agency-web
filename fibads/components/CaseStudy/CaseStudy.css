@@ -10,6 +10,9 @@
   font-size: 3.5rem;
   margin-bottom: 3rem;
   color: var(--black);
+  font-family: "Eurostile Bold Extended", sans-serif;
+  letter-spacing: 0.5px;
+  animation: fadeIn 0.8s ease-in-out;
 }
 
 .case-studies-container {
@@ -32,6 +35,7 @@
   border-bottom: 1px solid var(--light-gray);
   transition: all 0.3s ease;
   cursor: pointer;
+  opacity: 0; /* Start hidden for stagger animation */
 }
 
 .case-study-item:first-child {
@@ -63,6 +67,28 @@
   color: var(--gray);
 }
 
+.case-study-tags {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.case-study-tag {
+  font-size: 0.8rem;
+  color: var(--dark-gray);
+}
+
+.case-study-tag:not(:last-child)::after {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--primary-red);
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
 .arrow-icon {
   position: absolute;
   right: 0;
@@ -92,6 +118,10 @@
   animation: fadeIn 0.4s ease-in-out;
 }
 
+.case-study-details.animating {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -110,12 +140,17 @@
   border-radius: 8px;
   box-shadow: var(--shadow-md);
   margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.case-study-image:hover {
+  transform: translateY(-5px);
 }
 
 .case-study-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Change to contain to show full logo images properly */
+  object-fit: contain; /* Changed to contain to show full logo images properly */
   transition: transform 0.5s ease;
   background-color: #f9f9f9; /* Light background for logos */
   padding: 1rem;
@@ -147,10 +182,13 @@
   color: var(--black);
   font-weight: 500;
   transition: all 0.3s ease;
+  background-color: #f3f234; /* Match the yellow button from the screenshot */
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
 }
 
 .view-case-studies-btn:hover {
-  color: var(--primary-red);
+  color: var(--black);
   transform: translateX(5px);
 }
 
@@ -160,6 +198,17 @@
 
 .view-case-studies-btn:hover svg {
   transform: translateX(5px);
+}
+
+/* Additional hover effects for case studies */
+.case-study-item {
+  transform: translateX(0);
+  transition: transform 0.3s ease, padding-left 0.3s ease;
+}
+
+.case-study-item:hover,
+.case-study-item.active {
+  transform: translateX(10px);
 }
 
 /* Responsive styles */
