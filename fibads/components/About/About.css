@@ -255,18 +255,43 @@
 
 @media (max-width: 480px) {
   .about-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .about-description {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
   }
 
   .stat-number {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .stat-label {
+    font-size: 0.8rem;
+  }
+  
+  .about-section {
+    padding: 3rem 0;
+  }
+  
+  .experience-badge {
+    width: 70px;
+    height: 70px;
+    top: -10px;
+    right: -10px;
+  }
+  
+  .years {
+    font-size: 1.3rem;
+  }
+  
+  .text {
+    font-size: 0.6rem;
+  }
+  
+  .about-button {
     font-size: 0.9rem;
+    padding: 0.8rem 1.5rem;
   }
 }

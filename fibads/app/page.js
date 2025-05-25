@@ -14,6 +14,7 @@ export default function Home() {
       <Services />
       <CaseStudy />
       <CTA /> {/* CTA placed before FAQ to ensure visibility */}
+      <FAQ />
     </>
   );
 }

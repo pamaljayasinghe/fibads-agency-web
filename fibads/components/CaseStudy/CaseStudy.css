@@ -256,14 +256,37 @@
   }
 
   .case-studies-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .case-study-item-title {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .case-study-image {
-    height: 200px;
+    height: 180px;
+  }
+  
+  .case-study-item {
+    padding: 1.2rem 0;
+  }
+  
+  .case-study-item-date,
+  .case-study-tag {
+    font-size: 0.7rem;
+  }
+  
+  .case-study-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .view-case-studies-btn {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .arrow-icon {
+    transform: scale(0.8);
   }
 }

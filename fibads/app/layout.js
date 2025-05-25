@@ -14,6 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="nl">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
         {/* Third-party libraries - load with defer to improve performance */}
         <link
@@ -47,18 +48,19 @@ export default function RootLayout({ children }) {
               // Initialize AOS with minimal settings
               if (typeof AOS !== 'undefined') {
                 AOS.init({
-                  duration: 800,
+                  duration: 600,
                   once: true,
-                  disable: 'mobile'
+                  offset: 50,
+                  delay: 0,
+                  easing: 'ease-out',
+                  disable: window.innerWidth < 768
                 });
               }
               
               // Make sure AOS refreshes on window resize
               window.addEventListener('resize', function() {
                 if (typeof AOS !== 'undefined') {
-                  setTimeout(function() {
-                    AOS.refresh();
-                  }, 500);
+                  AOS.refresh();
                 }
               });
             });

@@ -31,14 +31,19 @@
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
   animation: pulse-glow 8s infinite ease-in-out;
   opacity: 0.5;
   z-index: 0;
 }
 
 @keyframes pulse-glow {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(-50%, -50%) scale(1);
     opacity: 0.5;
   }
@@ -54,8 +59,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    ),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 50px 50px;
   opacity: 0.4;
@@ -68,7 +76,8 @@
   height: 20px;
   background-color: rgba(255, 255, 255, 0.1);
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  animation: cta-float 11s infinite ease-in-out 1.5s, cta-rotate 18s linear infinite;
+  animation: cta-float 11s infinite ease-in-out 1.5s,
+    cta-rotate 18s linear infinite;
 }
 
 .shape-6 {
@@ -78,7 +87,8 @@
   height: 35px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
-  animation: cta-float 9.5s infinite ease-in-out 3.5s, cta-rotate 25s linear infinite reverse;
+  animation: cta-float 9.5s infinite ease-in-out 3.5s,
+    cta-rotate 25s linear infinite reverse;
 }
 
 .main-circle {
@@ -318,7 +328,11 @@
   transform: translate(-50%, -50%);
   width: 200px;
   height: 80px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
   filter: blur(10px);
   z-index: -1;
   opacity: 0;
@@ -331,7 +345,8 @@
 }
 
 @keyframes button-pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(-50%, -50%) scale(1);
   }
   50% {
@@ -347,12 +362,7 @@
   transform: translateX(-50%);
   width: 100px;
   height: 2px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    #fff 50%,
-    transparent
-  );
+  background: linear-gradient(to right, transparent, #fff 50%, transparent);
   opacity: 0.5;
 }
 
@@ -499,25 +509,52 @@
 
 @media (max-width: 480px) {
   .cta-section {
-    padding: 4rem 0;
+    padding: 3rem 0;
+    min-height: 50vh;
   }
 
   .main-circle {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
   }
 
   .cta-title {
-    font-size: clamp(2rem, 6vw, 4rem);
+    font-size: clamp(1.8rem, 5vw, 3rem);
   }
 
   .cta-button {
-    font-size: 1rem;
-    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
   }
 
   .shape-3,
-  .shape-4 {
+  .shape-4,
+  .shape-5,
+  .shape-6 {
     display: none;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .cta-content {
+    padding: 1.5rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .cta-title {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
+  
+  .cta-button {
+    font-size: 0.8rem;
+    padding: 0.6rem 1rem;
+  }
+  
+  .cta-section {
+    min-height: 40vh;
   }
 }

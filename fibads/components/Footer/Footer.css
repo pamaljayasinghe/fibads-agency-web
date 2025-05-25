@@ -312,4 +312,56 @@
   .logo-image {
     max-height: 40px;
   }
+  
+  .footer-description {
+    font-size: 0.85rem;
+  }
+  
+  .footer-link, 
+  .contact-item span,
+  .contact-item a {
+    font-size: 0.9rem;
+  }
+  
+  .social-link {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .footer {
+    padding: 3rem 0 1.5rem;
+  }
+  
+  .legal-link, 
+  .copyright {
+    font-size: 0.8rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .logo-image {
+    max-height: 35px;
+  }
+  
+  .footer-description {
+    font-size: 0.8rem;
+  }
+  
+  .footer-link, 
+  .contact-item span,
+  .contact-item a,
+  .legal-link, 
+  .copyright {
+    font-size: 0.8rem;
+  }
+  
+  .social-link {
+    width: 34px;
+    height: 34px;
+  }
+  
+  .footer-heading {
+    font-size: 1.1rem;
+  }
 }
