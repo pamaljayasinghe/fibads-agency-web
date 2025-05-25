@@ -9,12 +9,13 @@
   overflow: hidden;
   z-index: 1;
   color: #ffffff;
+  padding-top: 80px; /* Add padding to account for header */
 }
 
 /* Agency info in top left */
 .agency-info {
   position: absolute;
-  top: 50px;
+  top: 120px; /* Increased from 50px to ensure visibility below header */
   left: 50px;
   z-index: 5;
 }
@@ -143,24 +144,25 @@
   .hero-title.cretive {
     font-size: 100px;
   }
-  
+
   .hero-title.branding {
     font-size: 150px;
   }
-  
+
   .hero-title.world {
     font-size: 100px;
   }
-  
-  .star-icon, .smiley-icon {
+
+  .star-icon,
+  .smiley-icon {
     font-size: 80px;
   }
-  
+
   .o-image {
     width: 100px;
     height: 100px;
   }
-  
+
   .wireframe-sphere img {
     width: 180px;
     height: 180px;
@@ -171,28 +173,29 @@
   .hero-title.cretive {
     font-size: 80px;
   }
-  
+
   .hero-title.branding {
     font-size: 120px;
   }
-  
+
   .hero-title.world {
     font-size: 80px;
   }
-  
-  .star-icon, .smiley-icon {
+
+  .star-icon,
+  .smiley-icon {
     font-size: 70px;
   }
-  
+
   .o-image {
     width: 80px;
     height: 80px;
   }
-  
+
   .agency-description {
     font-size: 16px;
   }
-  
+
   .wireframe-sphere img {
     width: 150px;
     height: 150px;
@@ -203,36 +206,37 @@
   .hero-title.cretive {
     font-size: 60px;
   }
-  
+
   .hero-title.branding {
     font-size: 90px;
   }
-  
+
   .hero-title.world {
     font-size: 60px;
   }
-  
-  .star-icon, .smiley-icon {
+
+  .star-icon,
+  .smiley-icon {
     font-size: 50px;
     margin-left: 10px;
   }
-  
+
   .o-image {
     width: 60px;
     height: 60px;
   }
-  
+
   .agency-info {
     top: 30px;
     left: 30px;
   }
-  
+
   .agency-description {
     bottom: 30px;
     right: 30px;
     font-size: 14px;
   }
-  
+
   .wireframe-sphere img {
     width: 120px;
     height: 120px;
@@ -243,29 +247,30 @@
   .hero-title.cretive {
     font-size: 50px;
   }
-  
+
   .hero-title.branding {
     font-size: 70px;
   }
-  
+
   .hero-title.world {
     font-size: 50px;
   }
-  
-  .star-icon, .smiley-icon {
+
+  .star-icon,
+  .smiley-icon {
     font-size: 40px;
   }
-  
+
   .o-image {
     width: 50px;
     height: 50px;
     top: 10px;
   }
-  
+
   .agency-description {
     font-size: 12px;
   }
-  
+
   .wireframe-sphere img {
     width: 100px;
     height: 100px;
@@ -276,40 +281,41 @@
   .hero-title.cretive {
     font-size: 40px;
   }
-  
+
   .hero-title.branding {
     font-size: 55px;
   }
-  
+
   .hero-title.world {
     font-size: 40px;
   }
-  
-  .star-icon, .smiley-icon {
+
+  .star-icon,
+  .smiley-icon {
     font-size: 30px;
   }
-  
+
   .o-image {
     width: 40px;
     height: 40px;
   }
-  
+
   .agency-info {
     top: 20px;
     left: 20px;
   }
-  
+
   .agency-location {
     font-size: 14px;
   }
-  
+
   .agency-description {
     bottom: 20px;
     right: 20px;
     font-size: 11px;
     line-height: 1.4;
   }
-  
+
   .wireframe-sphere img {
     width: 80px;
     height: 80px;
@@ -317,7 +323,9 @@
 }
 
 /* Animation classes */
-.hero-title, .star-icon, .smiley-icon {
+.hero-title,
+.star-icon,
+.smiley-icon {
   animation: fadeIn 0.8s ease-in-out, slideUp 0.8s ease-in-out;
 }
 

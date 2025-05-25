@@ -20,8 +20,7 @@ const Hero = () => {
     <section className="hero-section">
       <div className="agency-info">
         <p className="agency-location">
-          Creative Agency Beside{" "}
-          <span className="red-arrow">→</span>
+          Creative Agency Beside <span className="red-arrow">→</span>
           <br />
           New York USA
         </p>
@@ -49,11 +48,7 @@ const Hero = () => {
             <h1 className="hero-title world">
               W
               <span className="o-letter">
-                <img
-                  src="/img/3d-ring.png"
-                  alt="3D O"
-                  className="o-image"
-                />
+                <img src="/img/3d-ring.png" alt="3D O" className="o-image" />
               </span>
               RLD.
             </h1>
