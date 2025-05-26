@@ -112,11 +112,11 @@
 
 .service-card:hover .service-arrow {
   transform: translate(5px, -5px);
-  color: #ffb86c; /* Gold/amber highlight on hover */
+  color: #c8ff00; /* Updated to consistent green */
 }
 
 .service-card:hover .service-title {
-  color: #ffb86c; /* Gold/amber highlight on hover */
+  color: #c8ff00; /* Updated to consistent green */
 }
 
 /* 3D Element - The gold/amber ring shown in screenshot */
@@ -154,12 +154,12 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background-color: #c6ff00; /* Bright neon green as in screenshot */
+  background-color: #c8ff00; /* Updated to consistent green */
   color: #000000; /* Black text */
   font-weight: 700;
   text-transform: uppercase;
   transition: all 0.3s ease;
-  box-shadow: 0 0 30px rgba(198, 255, 0, 0.4);
+  box-shadow: 0 0 30px rgba(200, 255, 0, 0.4);
   animation: services-pulse 2s infinite ease-in-out;
 }
 
@@ -172,7 +172,7 @@
 
 .services-more-button:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 40px rgba(198, 255, 0, 0.6);
+  box-shadow: 0 0 40px rgba(200, 255, 0, 0.6);
 }
 
 /* Animation for the 3D element */

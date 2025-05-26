@@ -80,8 +80,8 @@
   top: -25px;
   right: -25px;
   z-index: 3;
-  background-color: var(--primary-red);
-  color: white;
+  background-color: #c8ff00;
+  color: #000;
   border-radius: 50%;
   width: 100px;
   height: 100px;
@@ -91,7 +91,7 @@
   justify-content: center;
   text-align: center;
   padding: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 20px rgba(200, 255, 0, 0.25);
   animation: pulse 2s infinite;
 }
 
@@ -139,7 +139,7 @@
   font-family: "Eurostile Bold Extended", sans-serif;
   font-size: 2.5rem;
   font-weight: bold;
-  color: #c8ff00; /* Changed to lime green accent color */
+  color: #c8ff00; /* Consistent green color */
   margin-bottom: 0.5rem;
   line-height: 1;
 }
@@ -168,12 +168,12 @@
   position: relative;
   overflow: hidden;
   text-decoration: none;
+  box-shadow: 0 4px 10px rgba(200, 255, 0, 0.25);
 }
 
 .about-button:hover {
-  background-color: #d5ff33;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(200, 255, 0, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(200, 255, 0, 0.4);
 }
 
 .button-arrow {
