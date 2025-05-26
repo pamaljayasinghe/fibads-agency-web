@@ -301,13 +301,13 @@
     width: 50px;
     height: 50px;
   }
-  
+
   /* Improve spacing between title lines */
   .title-line {
     margin-bottom: 6px; /* Increased spacing between title lines */
     position: relative;
   }
-  
+
   /* Show the mobile hero CTA */
   .mobile-hero-cta {
     display: flex;
@@ -316,18 +316,18 @@
     width: 100%;
     max-width: 300px;
   }
-  
+
   .mobile-hero-button {
     width: 100%;
   }
-  
+
   .secondary-button {
     background-color: transparent;
     border: 2px solid #c8ff00;
     color: #c8ff00;
     box-shadow: none;
   }
-  
+
   .agency-description {
     font-size: 12px;
     width: 100%;
@@ -338,14 +338,14 @@
     bottom: 80px;
     line-height: 1.8; /* Increase line height for better readability */
   }
-  
+
   .agency-description p {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  
+
   /* Add visual spacing to line breaks */
   .agency-description p br {
     content: "";
@@ -515,7 +515,7 @@
     font-size: 11px;
     line-height: 1.6; /* Increased line height */
   }
-  
+
   /* Add spacing between text lines in mobile view */
   .agency-description p br {
     display: block;

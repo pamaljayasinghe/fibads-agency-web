@@ -30,7 +30,7 @@ const About = () => {
           >
             <div className="about-image-wrapper">
               <img
-                src="/img/Logob.png"
+                src="/img/fibads1.png"
                 alt="Fib Digital Agency"
                 className="about-image"
               />
