@@ -15,10 +15,10 @@ const About = () => {
     <section className="about-section">
       <div className="about-container">
         <div className="about-header" data-aos="fade-up">
-          <span className="section-label">About Us</span>
+          <span className="section-label">Over ons</span>
           <h2 className="about-title">
-            We Create Digital <br />
-            Experiences That Matter
+            Wij creëren digitale <br />
+            ervaringen die écht tellen
           </h2>
         </div>
 
@@ -39,24 +39,22 @@ const About = () => {
             <div className="experience-badge">
               <span className="years">8+</span>
               <span className="text">
-                Years of
+                jaar
                 <br />
-                Experience
+                ervaring
               </span>
             </div>
           </div>
 
           <div className="about-text" data-aos="fade-left" data-aos-delay="300">
             <p className="about-description">
-              Bij Fib Ads draait alles om balans en ontwikkeling. We combineren
-              branding, webdesign en Google Ads om jouw bedrijf op een
-              natuurlijke en effectieve manier te laten groeien.
+              Fib Digital is jouw partner voor opvallende branding, 
+              maatwerk webdesign en resultaatgerichte online campagnes.
             </p>
 
             <p className="about-description">
-              Ons ervaren team van specialisten werkt samen om strategieën te
-              ontwikkelen die niet alleen korte termijn resultaten opleveren,
-              maar ook duurzame groei stimuleren.
+              Met meer dan 150 afgeronde projecten en een klanttevredenheid 
+              van 98%, tillen we jouw merk naar nieuwe hoogten.
             </p>
 
             <div className="about-stats">
@@ -66,7 +64,7 @@ const About = () => {
                 data-aos-delay="400"
               >
                 <span className="stat-number">150+</span>
-                <span className="stat-label">Projects Completed</span>
+                <span className="stat-label">projecten voltooid</span>
               </div>
               <div
                 className="stat-item"
@@ -74,13 +72,21 @@ const About = () => {
                 data-aos-delay="500"
               >
                 <span className="stat-number">98%</span>
-                <span className="stat-label">Client Satisfaction</span>
+                <span className="stat-label">klanttevredenheid</span>
+              </div>
+              <div
+                className="stat-item"
+                data-aos="fade-up"
+                data-aos-delay="600"
+              >
+                <span className="stat-number">8+</span>
+                <span className="stat-label">jaar ervaring</span>
               </div>
             </div>
 
-            <div className="about-cta" data-aos="fade-up" data-aos-delay="600">
+            <div className="about-cta" data-aos="fade-up" data-aos-delay="700">
               <a href="/contact" className="about-button">
-                Contact Us <span className="button-arrow">→</span>
+                Neem contact op <span className="button-arrow">→</span>
               </a>
             </div>
           </div>

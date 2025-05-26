@@ -122,7 +122,8 @@
 
 .about-stats {
   display: flex;
-  gap: 3rem;
+  flex-wrap: wrap;
+  gap: 2rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
@@ -130,13 +131,15 @@
 .stat-item {
   display: flex;
   flex-direction: column;
+  min-width: 100px;
+  flex: 1;
 }
 
 .stat-number {
   font-family: "Eurostile Bold Extended", sans-serif;
   font-size: 2.5rem;
   font-weight: bold;
-  color: var(--primary-blue);
+  color: #c8ff00; /* Changed to lime green accent color */
   margin-bottom: 0.5rem;
   line-height: 1;
 }
@@ -153,22 +156,24 @@
 .about-button {
   display: inline-flex;
   align-items: center;
-  background-color: var(--black);
-  color: var(--white);
+  background-color: #c8ff00;
+  color: #000;
   padding: 1rem 2rem;
   border-radius: 4px;
   font-size: 1rem;
   text-transform: uppercase;
+  font-weight: 600;
   letter-spacing: 1px;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  text-decoration: none;
 }
 
 .about-button:hover {
-  background-color: var(--primary-red);
+  background-color: #d5ff33;
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(200, 255, 0, 0.2);
 }
 
 .button-arrow {

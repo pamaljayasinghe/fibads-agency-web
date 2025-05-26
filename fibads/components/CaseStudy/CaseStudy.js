@@ -9,7 +9,8 @@ const CaseStudy = () => {
     {
       id: 1,
       title: "Redefining E-Commerce",
-      date: "Apr 2025",
+      date: "mrt. 2025",
+      type: "Webshop optimalisatie",
       image:
         "https://placehold.co/600x400/f9f9f9/000000?text=Product+Design+Studio",
       tags: ["Branding", "UI/UX"],
@@ -19,7 +20,8 @@ const CaseStudy = () => {
     {
       id: 2,
       title: "Design That Converts",
-      date: "Mar 2025",
+      date: "feb. 2025",
+      type: "UI/UX-revisie",
       image:
         "https://placehold.co/600x400/f9f9f9/000000?text=Mobile+App+Design",
       tags: ["Design", "Idea"],
@@ -29,7 +31,8 @@ const CaseStudy = () => {
     {
       id: 3,
       title: "A New Brand Identity",
-      date: "Feb 2025",
+      date: "jan. 2025",
+      type: "Volledige rebranding",
       image: "https://placehold.co/600x400/f9f9f9/000000?text=Brand+Identity",
       tags: ["Branding", "Mockup"],
       description:
@@ -38,7 +41,8 @@ const CaseStudy = () => {
     {
       id: 4,
       title: "Business Card Design",
-      date: "Jan 2025",
+      date: "dec. 2024",
+      type: "Print & digital assets",
       image:
         "https://placehold.co/600x400/f9f9f9/000000?text=Business+Card+Design",
       tags: ["Design", "Card"],
@@ -91,7 +95,7 @@ const CaseStudy = () => {
     <section className="case-studies-section">
       <div className="container">
         <span className="section-label">Case studies</span>
-        <h2 className="case-studies-title">SELECTED WORKS..</h2>
+        <h2 className="case-studies-title">GESELECTEERDE CASES</h2>
 
         <div className="case-studies-container">
           <div className="case-studies-list">
@@ -104,14 +108,7 @@ const CaseStudy = () => {
                 onMouseEnter={() => handleCaseStudyChange(study.id)}
               >
                 <h3 className="case-study-item-title">{study.title}</h3>
-                <p className="case-study-item-date">{study.date}</p>
-                <div className="case-study-tags">
-                  {study.tags.map((tag, index) => (
-                    <span key={index} className="case-study-tag">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                <p className="case-study-item-date">{study.date} · {study.type}</p>
                 <div className="arrow-icon">
                   <svg
                     width="24"
@@ -167,22 +164,7 @@ const CaseStudy = () => {
             href="/case-studies"
             className="view-case-studies-btn animated-underline"
           >
-            ALL PROJECT
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M1 8H15M15 8L8 1M15 8L8 15"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            Alle projecten bekijken →
           </a>
         </div>
       </div>

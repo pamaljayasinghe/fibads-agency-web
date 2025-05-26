@@ -278,7 +278,7 @@
     margin-bottom: 2rem;
   }
 
-  .footer-title, 
+  .footer-title,
   .footer-title-second {
     font-size: 3rem;
   }
@@ -370,19 +370,19 @@
   .footer .container {
     padding: 0 1rem;
   }
-  
+
   /* Further reduce title size */
-  .footer-title, 
+  .footer-title,
   .footer-title-second {
     font-size: 2.5rem;
   }
-  
+
   /* Make services and info full width */
   .footer-column {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   /* Adjust content spacing */
   .service-section h3,
   .info-section h3,
@@ -390,37 +390,37 @@
     font-size: 1.1rem;
     margin-bottom: 1rem;
   }
-  
+
   .footer-content ul li {
     margin-bottom: 0.75rem;
   }
-  
+
   .footer-content ul li a {
     font-size: 0.95rem;
   }
-  
+
   /* Address and phone */
   .address {
     font-size: 0.95rem;
     margin-bottom: 1rem;
   }
-  
+
   .phone a {
     font-size: 1.1rem;
   }
-  
+
   /* Social links - 2x2 grid */
   .social-links {
     grid-template-columns: repeat(2, 1fr);
     max-width: 140px;
   }
-  
+
   /* Legal links on separate lines */
   .footer-legal {
     flex-direction: column;
     gap: 0.8rem;
   }
-  
+
   .legal-link,
   .copyright {
     font-size: 0.85rem;
@@ -429,36 +429,36 @@
 
 /* Extra small devices */
 @media (max-width: 360px) {
-  .footer-title, 
+  .footer-title,
   .footer-title-second {
     font-size: 2rem;
   }
-  
+
   .contact-btn {
     font-size: 0.85rem;
     padding: 0.75rem 1rem;
   }
-  
+
   .footer-star-container {
     width: 80px;
     height: 80px;
   }
-  
+
   .footer-content ul li a,
   .address,
   .legal-link,
   .copyright {
     font-size: 0.85rem;
   }
-  
+
   .phone a {
     font-size: 1rem;
   }
-  
+
   .social-links a {
     height: 36px;
   }
-  
+
   .footer-bottom {
     margin-top: 2rem;
   }
@@ -470,20 +470,20 @@
     display: block;
     padding: 8px 0;
   }
-  
+
   .legal-link {
     display: block;
     padding: 8px 0;
   }
-  
+
   .social-links a {
     transition: transform 0.2s ease;
   }
-  
+
   .social-links a:active {
     transform: scale(0.95);
   }
-  
+
   /* Contact button touch feedback */
   .contact-btn:active {
     transform: scale(0.98);

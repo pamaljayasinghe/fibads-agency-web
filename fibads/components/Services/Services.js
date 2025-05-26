@@ -35,39 +35,45 @@ const Services = () => {
   const services = [
     {
       id: "content-marketing",
-      label: "Excellent Performance",
-      title: "Content Marketing",
+      label: "Storytelling die verbindt",
+      title: "Contentmarketing",
       link: "/services/content-marketing",
+      description: "Verhalen die verbinden en engagement opbouwen."
     },
     {
       id: "website-designing",
-      label: "Designing Your Vision",
-      title: "Website Designing",
+      label: "Perfecte gebruikerservaring",
+      title: "Webdesign & Development",
       link: "/services/website-designing",
+      description: "Visueel verbluffende, razendsnelle websites."
     },
     {
       id: "email-marketing",
-      label: "Reach Your Audience",
-      title: "E-mail Marketing",
+      label: "Doelgerichte communicatie",
+      title: "E-mailmarketing",
       link: "/services/email-marketing",
+      description: "Gepersonaliseerde campagnes met meetbare ROI."
     },
     {
       id: "webflow-development",
-      label: "Building Seamless Websites",
-      title: "Webflow Development",
+      label: "Flexibele contentbeheer",
+      title: "Webflow-ontwikkeling",
       link: "/services/webflow-development",
+      description: "Pixel-perfecte, no-code sites die je zelf beheert."
     },
     {
       id: "social-media-marketing",
-      label: "Engage, Grow, Succeed",
-      title: "Social Media Marketing",
+      label: "Effectieve sociale aanwezigheid",
+      title: "Social media marketing",
       link: "/services/social-media-marketing",
+      description: "Doelgerichte ads op Facebook, Instagram en LinkedIn."
     },
     {
       id: "digital-marketing",
-      label: "Driving Online Success",
-      title: "Digital Marketing",
+      label: "Allesomvattende strategie",
+      title: "Digital marketing",
       link: "/services/digital-marketing",
+      description: "Holistische strategieën voor groei & conversie."
     },
   ];
 
@@ -75,10 +81,10 @@ const Services = () => {
     <section className="services-section-dark" ref={sectionRef}>
       <div className="services-container">
         <div className="services-header">
-          <span className="services-label-recent">RECENT SERVICES</span>
+          <span className="services-label-recent">ONZE DIENSTEN</span>
           <h2 className="services-title-main">
-            <span className="services-title-our">OUR</span>{" "}
-            <span className="services-title-services">SERVICES</span>
+            <span className="services-title-our">ONZE</span>{" "}
+            <span className="services-title-services">DIENSTEN</span>
           </h2>
         </div>
 
@@ -92,6 +98,7 @@ const Services = () => {
               <div className="service-content">
                 <span className="service-label">{service.label}</span>
                 <h3 className="service-title">{service.title}</h3>
+                <p className="service-description">{service.description}</p>
               </div>
               <a href={service.link} className="service-link">
                 <svg
@@ -122,11 +129,16 @@ const Services = () => {
           ))}
         </div>
 
+        <div className="services-cta-banner">
+          <p className="services-cta-text">Samen groeien? Vraag nu je gratis strategie aan →</p>
+          <a href="/contact" className="services-cta-link">Vraag strategie aan</a>
+        </div>
+
         <div className="services-more">
           <a href="/services" className="services-more-link">
             <div className="services-more-button">
-              <span>More</span>
-              <span>Service</span>
+              <span>Meer</span>
+              <span>Diensten</span>
             </div>
           </a>
         </div>

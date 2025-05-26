@@ -7,33 +7,33 @@ const FAQ = () => {
   const faqs = [
     {
       id: 1,
-      question: "What services do you offer as a creative agency?",
+      question: "Welke diensten biedt Fib Digital aan?",
       answer:
-        "We offer a wide range of services, including branding, graphic design, web development, digital marketing, social media strategy, content creation, UX/UI design, and advertising campaigns. Our team tailors each solution to fit the unique needs of your business.",
+        "We bieden een breed scala aan diensten, waaronder branding, webdesign, webontwikkeling, digital marketing, social media strategie, contentcreatie, UX/UI-design en advertentiecampagnes. Ons team stemt elke oplossing af op de unieke behoeften van uw bedrijf.",
     },
     {
       id: 2,
-      question: "How can a creative agency help my business grow?",
+      question: "Hoe helpt een creatieve agency mijn merk groeien?",
       answer:
-        "A creative agency can help your business grow by developing a strong brand identity, creating engaging digital experiences, implementing effective marketing strategies, and ensuring your message resonates with your target audience. We focus on delivering measurable results that drive business growth.",
+        "Een creatief bureau kan uw bedrijf helpen groeien door een sterke merkidentiteit te ontwikkelen, boeiende digitale ervaringen te creëren, effectieve marketingstrategieën te implementeren en ervoor te zorgen dat uw boodschap resoneert bij uw doelgroep. Wij richten ons op het leveren van meetbare resultaten die bedrijfsgroei stimuleren.",
     },
     {
       id: 3,
-      question: "How long does it take to complete a project?",
+      question: "Hoelang duurt een gemiddeld project?",
       answer:
-        "Project timelines vary based on scope, complexity, and specific requirements. Small projects might take a few weeks, while comprehensive branding or website development could take several months. We provide detailed timelines during our initial consultation and keep you informed throughout the process.",
+        "Projecttijdlijnen variëren op basis van omvang, complexiteit en specifieke vereisten. Kleine projecten kunnen enkele weken duren, terwijl uitgebreide branding of website-ontwikkeling enkele maanden kan duren. We verstrekken gedetailleerde tijdlijnen tijdens onze eerste consultatie en houden u gedurende het proces op de hoogte.",
     },
     {
       id: 4,
-      question: "What is your design process like?",
+      question: "Werk ik zelf mee aan het ontwerp?",
       answer:
-        "Our design process begins with understanding your business goals and target audience. We then move through research, conceptualization, design development, client feedback, refinement, and final delivery. We maintain open communication and collaborative approach throughout the entire process.",
+        "Absoluut! Ons ontwerpproces is zeer collaboratief. We beginnen met het begrijpen van uw bedrijfsdoelen en doelgroep, en betrekken u bij elke fase van onderzoek, conceptontwikkeling, design, feedback en verfijning. We houden gedurende het hele proces open communicatie en een samenwerkingsgerichte aanpak.",
     },
     {
       id: 5,
-      question: "Do you provide ongoing support after project completion?",
+      question: "Bieden jullie nazorg en support?",
       answer:
-        "Yes, we offer various support plans to ensure your digital assets remain effective after launch. These can include website maintenance, performance monitoring, content updates, and marketing campaign optimization. We're committed to building long-term relationships with our clients.",
+        "Ja, we bieden verschillende ondersteuningsplannen om ervoor te zorgen dat uw digitale middelen na de lancering effectief blijven. Deze kunnen website-onderhoud, prestatiemonitoring, content-updates en optimalisatie van marketingcampagnes omvatten. We zijn toegewijd aan het opbouwen van langdurige relaties met onze klanten.",
     },
   ];
 
@@ -48,7 +48,7 @@ const FAQ = () => {
       <div className="container">
         <div className="faq-header">
           <span className="section-label">FAQ</span>
-          <h2 className="faq-title">Popular questions</h2>
+          <h2 className="faq-title">Populaire vragen</h2>
         </div>
 
         <div className="faq-content">
@@ -101,22 +101,7 @@ const FAQ = () => {
 
         <div className="faq-footer">
           <a href="/faq" className="view-faq-btn">
-            View FAQ
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M1 8H15M15 8L8 1M15 8L8 15"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            Bekijk alle FAQs →
           </a>
         </div>
       </div>

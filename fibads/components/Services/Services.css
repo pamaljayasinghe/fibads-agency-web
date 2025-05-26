@@ -85,6 +85,15 @@
   font-weight: 600;
   font-family: "Eurostile Bold Extended", sans-serif;
   transition: color 0.3s ease;
+  margin-bottom: 12px;
+}
+
+.service-description {
+  font-size: 16px;
+  color: #bbbbbb;
+  margin: 0 0 16px 0;
+  line-height: 1.5;
+  max-width: 80%;
 }
 
 .service-link {
@@ -248,6 +257,64 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Services CTA Banner */
+.services-cta-banner {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(200, 255, 0, 0.1), rgba(200, 255, 0, 0.2));
+  border-radius: 12px;
+  border: 1px solid rgba(200, 255, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.services-cta-text {
+  font-size: 1.25rem;
+  color: #ffffff;
+  margin: 0;
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.services-cta-link {
+  padding: 0.85rem 1.5rem;
+  background-color: #c8ff00;
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.services-cta-link:hover {
+  background-color: #d5ff33;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(200, 255, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .services-cta-banner {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+  
+  .services-cta-text {
+    padding-right: 0;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  
+  .services-cta-link {
+    width: 100%;
+    text-align: center;
   }
 }
 

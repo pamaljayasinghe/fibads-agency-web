@@ -10,12 +10,12 @@ const Footer = () => {
         <div className="footer-header">
           <div className="footer-title-container">
             <h2 className="footer-title">
-              LET'S <span>WORK</span>
+              Laten we iets <span>moois</span>
             </h2>
-            <h2 className="footer-title-second">TOGETHER!</h2>
+            <h2 className="footer-title-second">creëren!</h2>
             <div className="contact-btn-container">
               <a href="/contact" className="contact-btn">
-                CONTACT US <span>↗</span>
+                Neem contact op <span>↗</span>
               </a>
             </div>
           </div>
@@ -46,19 +46,19 @@ const Footer = () => {
 
             {/* Services Section */}
             <div className="service-section">
-              <h3>Services</h3>
+              <h3>Diensten</h3>
               <ul>
                 <li>
-                  <a href="/services/web-design">Web Design</a>
+                  <a href="/services/web-design">Webdesign</a>
                 </li>
                 <li>
-                  <a href="/services/video-production">Video Production</a>
+                  <a href="/services/video-production">Video Productie</a>
                 </li>
                 <li>
                   <a href="/services/digital-marketing">Digital Marketing</a>
                 </li>
                 <li>
-                  <a href="/services/web-development">Web Development</a>
+                  <a href="/services/web-development">Webontwikkeling</a>
                 </li>
                 <li>
                   <a href="/services/ui-ux-design">UI/UX Design</a>
@@ -68,22 +68,22 @@ const Footer = () => {
 
             {/* Information Section */}
             <div className="info-section">
-              <h3>Information</h3>
+              <h3>Informatie</h3>
               <ul>
                 <li>
-                  <a href="/about">About Company</a>
+                  <a href="/about">Over ons</a>
                 </li>
                 <li>
-                  <a href="/case-study">Case Study</a>
+                  <a href="/case-study">Case Studies</a>
                 </li>
                 <li>
-                  <a href="/careers">Our Careers</a>
+                  <a href="/careers">Carrières</a>
                 </li>
                 <li>
-                  <a href="/blog">Our Blogs</a>
+                  <a href="/blog">Blogs</a>
                 </li>
                 <li>
-                  <a href="/contact">Contact Us</a>
+                  <a href="/contact">Contact</a>
                 </li>
               </ul>
             </div>
@@ -92,12 +92,13 @@ const Footer = () => {
           {/* Right Column with Address */}
           <div className="address-column">
             <div className="address-section">
-              <h3>ADDRESS</h3>
+              <h3>Adres & Contact</h3>
               <p className="address">
-                5919 trussvillecrossings pkwy, birmingham
+                Fib Digital BV<br />
+                Stationstraat 10, 1011 AB Amsterdam
               </p>
               <div className="phone">
-                <a href="tel:+2456343244">+2 456 (343) 24 45</a>
+                <a href="tel:+31201234567">+31 (0)20 123 45 67</a>
               </div>
               <div className="social-links">
                 <a
@@ -169,14 +170,14 @@ const Footer = () => {
         <div className="footer-bottom">
           <div className="footer-bottom-content">
             <p className="copyright">
-              © FIB Digital {currentYear}. All rights reserved.
+              © Fib Digital {currentYear}. Alle rechten voorbehouden.
             </p>
             <div className="footer-legal">
               <a href="/terms-conditions" className="legal-link">
-                Terms & Conditions
+                Algemene voorwaarden
               </a>
               <a href="/privacy-policy" className="legal-link">
-                Privacy Policy
+                Privacybeleid
               </a>
             </div>
           </div>

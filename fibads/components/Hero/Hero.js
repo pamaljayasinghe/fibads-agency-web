@@ -30,7 +30,7 @@ const Hero = () => {
       <div className="hero-content">
         <div className="title-container">
           <div className="title-line">
-            <h1 className="hero-title cretive">CRETIVE</h1>
+            <h1 className="hero-title cretive">CREATIEVE</h1>
             <div
               className="star-icon"
               style={{ transform: `rotate(${rotation}deg)` }}
@@ -46,18 +46,35 @@ const Hero = () => {
 
           <div className="title-line">
             <h1 className="hero-title world">
-              W
+              3D-
               <span className="o-letter">
                 <img src="/img/3d-ring.png" alt="3D O" className="o-image" />
               </span>
-              RLD.
+              WERELD.
             </h1>
           </div>
 
-          {/* Mobile-only CTA button */}
           <div className="mobile-hero-cta">
-            <a href="/contact" className="mobile-hero-button">
-              Get Started
+            <a href="/diensten" className="mobile-hero-button">
+              Ontdek onze diensten
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 12H19M19 12L12 5M19 12L12 19"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
+            <a href="/contact" className="mobile-hero-button secondary-button">
+              Plan een gratis strategiegesprek
               <svg
                 width="16"
                 height="16"
@@ -80,11 +97,11 @@ const Hero = () => {
 
       <div className="agency-description">
         <p>
-          Elevate Your Brand With The
+          "Bij Fib Digital combineren we strategie, design
           <br />
-          Agencyo Agency – Everything From
+          en techniek om merken écht te laten groeien.
           <br />
-          Strategy To Advertising & Scale
+          Durf jij de volgende stap te zetten?"
         </p>
       </div>
 

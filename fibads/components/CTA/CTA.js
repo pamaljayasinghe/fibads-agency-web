@@ -108,14 +108,18 @@ const CTA = () => {
       <div className="container">
         <div className="cta-content">
           <h2 className="cta-title">
-            <span className="title-first-line">Have A</span>
-            <span className="title-second-line">Project</span>
-            <span className="title-third-line">In Mind?</span>
+            <span className="title-first-line">Zit er een</span>
+            <span className="title-second-line">project</span>
+            <span className="title-third-line">in je hoofd?</span>
           </h2>
+
+          <div className="cta-subtitle">
+            <p>Vertel ons jouw uitdaging en laten we samen iets bijzonders bouwen.</p>
+          </div>
 
           <div className="cta-button-container">
             <a href="/contact" className="cta-button">
-              <span>Let's Work Together</span>
+              <span>Laten we samenwerken</span>
               <svg
                 width="20"
                 height="20"
