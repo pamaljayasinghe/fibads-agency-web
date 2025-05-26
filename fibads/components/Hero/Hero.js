@@ -92,9 +92,9 @@ const Hero = () => {
       <div className="agency-description">
         <p>
           "Bij Fib Digital combineren we strategie, design
-          <br />
+          <br className="line-break" />
           en techniek om merken écht te laten groeien.
-          <br />
+          <br className="line-break" />
           Durf jij de volgende stap te zetten?"
         </p>
       </div>

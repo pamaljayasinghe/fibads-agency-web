@@ -264,6 +264,7 @@
     justify-content: center;
     align-items: center;
     padding-top: 0;
+    min-height: 650px; /* Ensure enough space for content */
   }
 
   .hero-content {
@@ -299,17 +300,57 @@
   .o-image {
     width: 50px;
     height: 50px;
-    top: 10px;
   }
-
+  
+  /* Improve spacing between title lines */
+  .title-line {
+    margin-bottom: 6px; /* Increased spacing between title lines */
+    position: relative;
+  }
+  
+  /* Show the mobile hero CTA */
+  .mobile-hero-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .mobile-hero-button {
+    width: 100%;
+  }
+  
+  .secondary-button {
+    background-color: transparent;
+    border: 2px solid #c8ff00;
+    color: #c8ff00;
+    box-shadow: none;
+  }
+  
   .agency-description {
     font-size: 12px;
     width: 100%;
     text-align: center;
     right: auto;
     left: 0;
-    padding: 0 20px;
+    padding: 0 1.5rem;
     bottom: 80px;
+    line-height: 1.8; /* Increase line height for better readability */
+  }
+  
+  .agency-description p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Add visual spacing to line breaks */
+  .agency-description p br {
+    content: "";
+    display: block;
+    margin-bottom: 0.4rem;
   }
 
   .wireframe-sphere {
@@ -472,7 +513,14 @@
   .agency-description {
     bottom: 70px;
     font-size: 11px;
-    line-height: 1.4;
+    line-height: 1.6; /* Increased line height */
+  }
+  
+  /* Add spacing between text lines in mobile view */
+  .agency-description p br {
+    display: block;
+    content: "";
+    margin-bottom: 8px; /* Space after each line break */
   }
 
   .wireframe-sphere {
@@ -487,7 +535,7 @@
   }
 
   .title-line {
-    margin-bottom: -8px;
+    margin-bottom: 10px; /* Increase space between title lines in smallest screens */
   }
 
   .hero-title.branding {
@@ -539,14 +587,15 @@
   }
 }
 
-@media (max-width: 360px) {
-  .mobile-hero-button {
-    font-size: 12px;
-    padding: 10px 20px;
-  }
+/* Style for line breaks with added spacing */
+.line-break {
+  display: inline-block;
+}
 
-  .mobile-hero-cta {
-    margin-top: 20px;
+@media (max-width: 768px) {
+  .line-break {
+    display: block;
+    margin-bottom: 0.5rem;
   }
 }
 

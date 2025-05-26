@@ -227,6 +227,25 @@
   .case-study-item-title {
     font-size: 1.5rem;
   }
+
+  /* Mobile image appears after the title */
+  .mobile-case-study-image {
+    display: none; /* Hidden by default, shown in mobile */
+    width: 100%;
+    height: auto;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+
+  .mobile-case-study-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    background-color: #f9f9f9;
+    padding: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -240,7 +259,15 @@
   }
 
   .case-study-item {
-    padding: 1.5rem 0;
+    position: relative;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid rgba(200, 200, 200, 0.15);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .case-study-item:last-child {
+    border-bottom: none;
   }
 
   .case-study-item-title {
@@ -249,6 +276,28 @@
 
   .case-study-image {
     height: 250px;
+  }
+
+  /* Show the mobile image in this breakpoint */
+  .mobile-case-study-image {
+    display: block;
+  }
+
+  /* Hide the regular case study preview on mobile */
+  .case-study-preview {
+    display: none;
+  }
+
+  /* Improve mobile image appearance */
+  .mobile-case-study-image {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Add smooth hover effect */
+  .case-study-item.active .case-study-item-title {
+    color: #c8ff00;
   }
 }
 
@@ -272,7 +321,37 @@
   .case-study-item {
     padding: 1.2rem 0;
   }
+  
+  /* Better spacing for mobile case study items */
+  .case-study-item:not(:last-child) {
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(200, 200, 200, 0.2);
+  }
+  
+  /* Improve the mobile image display */
+  .mobile-case-study-image {
+    height: 140px;
+    margin: 1rem 0;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+  
+  .mobile-case-study-image img {
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .case-study-item.active .mobile-case-study-image img {
+    transform: scale(1.03);
+  }
 
+  .case-study-item.active {
+    background-color: rgba(200, 255, 0, 0.03);
+    border-radius: 8px;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+  
   .case-study-item-date,
   .case-study-tag {
     font-size: 0.7rem;

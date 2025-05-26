@@ -63,6 +63,19 @@ const CaseStudy = () => {
       setIsAnimating(true);
       setActiveStudy(id);
       setTimeout(() => setIsAnimating(false), 400); // Match fadeIn animation duration
+
+      // For mobile: scroll to the active case study item to ensure it's visible
+      if (window.innerWidth <= 768) {
+        const activeElement = document.querySelector(
+          `.case-study-item[data-id="${id}"]`
+        );
+        if (activeElement) {
+          activeElement.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+          });
+        }
+      }
     }
   };
 
@@ -111,6 +124,10 @@ const CaseStudy = () => {
                 <p className="case-study-item-date">
                   {study.date} · {study.type}
                 </p>
+                {/* Mobile image appears after title - only shown in mobile view via CSS */}
+                <div className="mobile-case-study-image">
+                  <img src={study.image} alt={study.title} />
+                </div>
                 <div className="arrow-icon">
                   <svg
                     width="24"

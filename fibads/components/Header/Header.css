@@ -143,6 +143,7 @@
   cursor: pointer;
   padding: 0;
   z-index: 1001;
+  transition: all 0.3s ease; /* Added for smoother animations */
 }
 
 .mobile-menu-btn span {
@@ -328,6 +329,65 @@
   .mobile-contact-btn {
     height: 45px;
     font-size: 15px;
+  }
+
+  /* Improve mobile menu button appearance */
+  .mobile-menu-btn {
+    width: 26px;
+    height: 18px;
+  }
+
+  .mobile-menu-btn span {
+    height: 2px;
+  }
+
+  /* Enhance mobile menu animations */
+  .mobile-menu.active .mobile-nav-link {
+    opacity: 0;
+    animation: fadeInDown 0.4s forwards;
+  }
+
+  .mobile-menu.active .mobile-nav-links li:nth-child(1) .mobile-nav-link {
+    animation-delay: 0.1s;
+  }
+
+  .mobile-menu.active .mobile-nav-links li:nth-child(2) .mobile-nav-link {
+    animation-delay: 0.2s;
+  }
+
+  .mobile-menu.active .mobile-nav-links li:nth-child(3) .mobile-nav-link {
+    animation-delay: 0.3s;
+  }
+
+  .mobile-menu.active .mobile-nav-links li:nth-child(4) .mobile-nav-link {
+    animation-delay: 0.4s;
+  }
+
+  .mobile-menu.active .mobile-contact-btn {
+    opacity: 0;
+    animation: fadeInUp 0.5s forwards 0.5s;
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
