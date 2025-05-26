@@ -62,6 +62,7 @@
   margin: 0;
   line-height: 1;
   text-transform: uppercase;
+  color: #fff; /* Explicitly setting to white for better visibility */
 }
 
 .footer-title span {
@@ -74,6 +75,7 @@
   margin: 0;
   line-height: 1;
   text-transform: uppercase;
+  color: #fff; /* Explicitly setting to white for better visibility */
 }
 
 .contact-btn-container {
