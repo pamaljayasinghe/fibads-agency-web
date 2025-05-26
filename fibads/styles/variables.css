@@ -28,6 +28,10 @@
   --font-4xl: 3rem; /* 48px */
   --font-5xl: 3.75rem; /* 60px */
 
+  /* Font families */
+  --font-primary: "Eurostile", sans-serif;
+  --font-secondary: "Open Sans", sans-serif;
+
   /* Spacing */
   --space-xs: 0.25rem; /* 4px */
   --space-sm: 0.5rem; /* 8px */
