@@ -108,7 +108,9 @@ const CaseStudy = () => {
                 onMouseEnter={() => handleCaseStudyChange(study.id)}
               >
                 <h3 className="case-study-item-title">{study.title}</h3>
-                <p className="case-study-item-date">{study.date} · {study.type}</p>
+                <p className="case-study-item-date">
+                  {study.date} · {study.type}
+                </p>
                 <div className="arrow-icon">
                   <svg
                     width="24"

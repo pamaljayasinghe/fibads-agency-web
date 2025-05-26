@@ -99,19 +99,6 @@
   line-height: 0.5;
 }
 
-/* O letter with 3D ring */
-.o-letter {
-  display: inline-block;
-  position: relative;
-}
-
-.o-image {
-  width: 120px;
-  height: 120px;
-  position: relative;
-  top: 20px;
-}
-
 /* Agency description in bottom right */
 .agency-description {
   position: absolute;
@@ -190,11 +177,6 @@
   .star-icon,
   .smiley-icon {
     font-size: 80px;
-  }
-
-  .o-image {
-    width: 100px;
-    height: 100px;
   }
 
   .wireframe-sphere img {

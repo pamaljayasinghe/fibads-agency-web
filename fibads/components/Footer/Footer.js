@@ -94,7 +94,8 @@ const Footer = () => {
             <div className="address-section">
               <h3>Adres & Contact</h3>
               <p className="address">
-                Fib Digital BV<br />
+                Fib Digital BV
+                <br />
                 Stationstraat 10, 1011 AB Amsterdam
               </p>
               <div className="phone">

@@ -114,7 +114,10 @@ const CTA = () => {
           </h2>
 
           <div className="cta-subtitle">
-            <p>Vertel ons jouw uitdaging en laten we samen iets bijzonders bouwen.</p>
+            <p>
+              Vertel ons jouw uitdaging en laten we samen iets bijzonders
+              bouwen.
+            </p>
           </div>
 
           <div className="cta-button-container">

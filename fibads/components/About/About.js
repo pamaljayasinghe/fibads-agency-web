@@ -48,13 +48,13 @@ const About = () => {
 
           <div className="about-text" data-aos="fade-left" data-aos-delay="300">
             <p className="about-description">
-              Fib Digital is jouw partner voor opvallende branding, 
-              maatwerk webdesign en resultaatgerichte online campagnes.
+              Fib Digital is jouw partner voor opvallende branding, maatwerk
+              webdesign en resultaatgerichte online campagnes.
             </p>
 
             <p className="about-description">
-              Met meer dan 150 afgeronde projecten en een klanttevredenheid 
-              van 98%, tillen we jouw merk naar nieuwe hoogten.
+              Met meer dan 150 afgeronde projecten en een klanttevredenheid van
+              98%, tillen we jouw merk naar nieuwe hoogten.
             </p>
 
             <div className="about-stats">
